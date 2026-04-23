@@ -7,119 +7,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<style>
-  .tabs-row {
-    display: flex; gap: 0; margin: 3rem 0 0;
-    border-bottom: 2px solid var(--line);
-  }
-  .tab-btn {
-    padding: 1rem 2rem;
-    font-size: 1rem; font-weight: 600;
-    color: var(--ink-soft);
-    border-bottom: 2px solid transparent;
-    margin-bottom: -2px;
-    background: transparent;
-    transition: all 0.2s;
-    cursor: pointer;
-  }
-  .tab-btn.active {
-    color: var(--coral); border-bottom-color: var(--coral);
-  }
-  .tab-panel { display: none; }
-  .tab-panel.active { display: block; }
-
-  .custom-hero-block {
-    background: linear-gradient(135deg, var(--coral) 0%, var(--butter) 100%);
-    padding: 4rem 3rem;
-    border-radius: 8px;
-    margin: 4rem 0;
-    color: var(--ink);
-    display: grid; grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  @media (min-width: 900px) {
-    .custom-hero-block { grid-template-columns: 1.5fr 1fr; align-items: end; }
-  }
-  .custom-hero-block h2 {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(2rem, 5vw, 4rem);
-    line-height: 0.95;
-    font-weight: 400; letter-spacing: -0.03em;
-  }
-  .custom-hero-block h2 em {
-    font-style: italic; color: var(--ink);
-    text-decoration: underline; text-decoration-style: wavy;
-    text-underline-offset: 8px;
-  }
-  .custom-hero-block p { font-size: 1.1rem; line-height: 1.5; margin-top: 1.5rem; max-width: 44rem; }
-
-  .format-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 0; margin-top: 3rem;
-    border-top: 1px solid var(--line-strong);
-    border-left: 1px solid var(--line-strong);
-  }
-  @media (max-width: 700px) { .format-grid { grid-template-columns: 1fr; } }
-  .format-card {
-    padding: 2.5rem;
-    border-right: 1px solid var(--line-strong);
-    border-bottom: 1px solid var(--line-strong);
-    background: var(--paper);
-    transition: background 0.3s;
-  }
-  .format-card:hover { background: var(--butter-soft); }
-  .format-card .num {
-    font-family: 'Fraunces', serif;
-    font-size: 2.5rem; color: var(--coral);
-    font-weight: 400; font-style: italic;
-  }
-  .format-card h3 {
-    font-family: 'Fraunces', serif;
-    font-size: 1.75rem; font-weight: 500;
-    margin: 1rem 0;
-    letter-spacing: -0.02em;
-  }
-  .format-card ul {
-    list-style: none; margin-top: 1rem;
-    font-size: 0.9rem;
-  }
-  .format-card ul li {
-    padding: 0.4rem 0;
-    padding-left: 1.5rem;
-    position: relative;
-    color: var(--ink-soft);
-  }
-  .format-card ul li::before {
-    content: '→';
-    position: absolute; left: 0;
-    color: var(--coral);
-    font-weight: 600;
-  }
-
-  .mou-strip {
-    background: var(--ink); color: var(--cream);
-    padding: 4rem 0; margin-top: 4rem;
-  }
-  .mou-strip h3 {
-    font-family: 'Fraunces', serif;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-  .mou-strip h3 em { color: var(--butter); font-style: italic; }
-  .mou-list {
-    display: flex; flex-wrap: wrap; gap: 0.75rem;
-  }
-  .mou-tag {
-    padding: 0.6rem 1.2rem;
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 999px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.8rem;
-    letter-spacing: 0.05em;
-  }
-</style>
+<link rel="stylesheet" href="../CSS/styles.css">
+<link rel="stylesheet" href="../CSS/programs.css">
 </head>
 <body>
 
@@ -143,7 +32,7 @@
   <!-- Main nav -->
   <nav class="main-nav">
     <div class="container">
-      <a href="index.html" class="logo"><span class="logo-dot"></span>AmpliSkill</a>
+       <a href="index.html" class="logo"><span><img src="../assets/Logo.png" alt="logo" class="logo-img"></span></a>
       <ul class="nav-links">
         <li class="has-submenu">
           <a href="programs.html">Programs</a>
@@ -577,21 +466,7 @@
   </div>
 </footer>
 
-<script src="script.js"></script>
-<script>
-  // Tab switching
-  document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-      btn.classList.add('active');
-      document.getElementById(btn.dataset.tab).classList.add('active');
-    });
-  });
-  // Handle #customized link
-  if (window.location.hash === '#customized') {
-    document.querySelector('[data-tab="customized"]').click();
-  }
-</script>
+<script src="../JS/script.js"></script>
+<script src="../JS/programs.js"></script>
 </body>
 </html>

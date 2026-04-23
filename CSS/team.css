@@ -1,0 +1,66 @@
+
+  .team-section { padding: 5rem 0; border-bottom: 1px solid var(--line); }
+  .team-section:last-of-type { border-bottom: none; }
+  .team-section-header {
+    display: flex; justify-content: space-between; align-items: end;
+    flex-wrap: wrap; gap: 2rem;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .team-section h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1; font-weight: 400;
+    letter-spacing: -0.025em;
+  }
+  .team-section h2 em { color: var(--coral); font-style: italic; }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 2.5rem;
+  }
+  .team-card { cursor: pointer; }
+  .team-card:hover .avatar { transform: translate(-4px, -4px); box-shadow: 8px 8px 0 var(--coral); }
+  .team-card .avatar { margin-bottom: 1.5rem; font-size: 5rem; }
+  .team-card h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem; font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  .team-card .role {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem; letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--coral);
+    margin: 0.3rem 0 0.75rem;
+  }
+  .team-card p { font-size: 0.9rem; color: var(--ink-soft); line-height: 1.5; }
+
+  /* Partners logos row */
+  .partners-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0;
+    border-top: 1px solid var(--line-strong);
+    border-left: 1px solid var(--line-strong);
+  }
+  .partner-cell {
+    padding: 2.5rem 1.5rem;
+    border-right: 1px solid var(--line-strong);
+    border-bottom: 1px solid var(--line-strong);
+    display: flex; align-items: center; justify-content: center;
+    background: var(--paper);
+    min-height: 140px;
+    transition: background 0.3s;
+    text-align: center;
+  }
+  .partner-cell:hover { background: var(--butter-soft); }
+  .partner-cell span {
+    font-family: 'Fraunces', serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--ink-soft);
+  }

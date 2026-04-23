@@ -7,166 +7,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<style>
-  .pub-tabs { display: flex; gap: 0; margin: 3rem 0 0; border-bottom: 2px solid var(--line); flex-wrap: wrap; }
-  .pub-tab {
-    padding: 1rem 2rem;
-    font-size: 1rem; font-weight: 600;
-    color: var(--ink-soft);
-    border-bottom: 2px solid transparent;
-    margin-bottom: -2px;
-    transition: all 0.2s;
-  }
-  .pub-tab.active { color: var(--coral); border-bottom-color: var(--coral); }
-  .pub-panel { display: none; padding: 4rem 0; }
-  .pub-panel.active { display: block; }
-
-  .featured-journal {
-    background: var(--butter);
-    padding: 4rem 0;
-    border-radius: 8px;
-    margin-top: 2rem;
-    position: relative; overflow: hidden;
-  }
-  .featured-journal::before {
-    content: 'AJMSI';
-    position: absolute;
-    bottom: -3rem; right: -1rem;
-    font-family: 'Fraunces', serif;
-    font-size: clamp(8rem, 22vw, 20rem);
-    font-style: italic;
-    font-weight: 300;
-    color: rgba(11, 18, 32, 0.07);
-    letter-spacing: 0.1em;
-    pointer-events: none;
-  }
-  .featured-journal .container {
-    display: grid;
-    grid-template-columns: 1fr; gap: 4rem;
-    align-items: center;
-    position: relative;
-  }
-  @media (min-width: 900px) {
-    .featured-journal .container { grid-template-columns: 1fr 1.2fr; }
-  }
-  .journal-cover {
-    background: var(--ink); color: var(--cream);
-    padding: 2.5rem 2rem;
-    border-radius: 4px;
-    aspect-ratio: 3/4;
-    max-width: 380px;
-    display: flex; flex-direction: column; justify-content: space-between;
-    box-shadow: 20px 20px 0 var(--coral);
-  }
-  .journal-cover .cover-top {
-    display: flex; justify-content: space-between;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem; letter-spacing: 0.15em;
-    padding-bottom: 1rem; opacity: 0.7;
-    border-bottom: 1px solid rgba(248, 243, 231, 0.2);
-  }
-  .journal-cover .cover-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem; letter-spacing: 0.2em;
-    opacity: 0.7; text-transform: uppercase;
-  }
-  .journal-cover h3 {
-    font-family: 'Fraunces', serif;
-    font-size: 2rem; line-height: 1;
-    font-weight: 400;
-    font-style: italic;
-    margin-top: 0.5rem;
-  }
-  .journal-cover h3 em { color: var(--butter); }
-  .journal-cover .cover-bottom {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem; line-height: 1.8;
-    opacity: 0.7;
-  }
-
-  .book-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 2.5rem;
-  }
-  .book-card { cursor: pointer; }
-  .book-card:hover .book-cover { transform: translate(-4px, -6px) rotate(-1deg); box-shadow: 12px 12px 0 var(--coral); }
-  .book-cover {
-    aspect-ratio: 2/3;
-    background: linear-gradient(135deg, var(--coral), var(--butter));
-    padding: 1.5rem; border-radius: 2px;
-    display: flex; flex-direction: column; justify-content: space-between;
-    transition: all 0.3s;
-    box-shadow: 8px 8px 0 var(--ink);
-    margin-bottom: 1.5rem;
-  }
-  .book-cover.v2 { background: linear-gradient(135deg, var(--ink), var(--coral)); color: var(--cream); }
-  .book-cover.v3 { background: linear-gradient(135deg, var(--teal), var(--butter)); }
-  .book-cover.v4 { background: linear-gradient(135deg, var(--butter), var(--teal)); }
-  .book-cover .cover-meta {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.65rem; letter-spacing: 0.15em;
-    opacity: 0.8; text-transform: uppercase;
-  }
-  .book-cover h4 {
-    font-family: 'Fraunces', serif;
-    font-size: 1.35rem;
-    font-weight: 500;
-    line-height: 1;
-    letter-spacing: -0.015em;
-  }
-  .book-card .book-title {
-    font-family: 'Fraunces', serif;
-    font-size: 1.15rem; font-weight: 500;
-    letter-spacing: -0.01em;
-  }
-  .book-card .book-author {
-    font-size: 0.85rem;
-    color: var(--ink-soft);
-    margin-top: 0.3rem;
-    font-style: italic;
-  }
-
-  .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 0;
-  }
-  .blog-card {
-    padding: 2rem 2rem 2rem 0;
-    border-right: 1px solid var(--line);
-    margin-right: 2rem;
-    margin-bottom: 2rem;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  .blog-card:hover h4 { color: var(--coral); }
-  .blog-card .category {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem; letter-spacing: 0.2em;
-    text-transform: uppercase; color: var(--coral);
-    margin-bottom: 1rem; display: inline-block;
-    padding-bottom: 0.3rem;
-    border-bottom: 1px solid var(--coral);
-  }
-  .blog-card h4 {
-    font-family: 'Fraunces', serif;
-    font-size: 1.6rem; line-height: 1.15;
-    font-weight: 500; letter-spacing: -0.015em;
-    margin-bottom: 1rem;
-    transition: color 0.2s;
-  }
-  .blog-card p {
-    font-size: 0.95rem; color: var(--ink-soft);
-    line-height: 1.5; margin-bottom: 1.5rem;
-  }
-  .blog-card .meta {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem; letter-spacing: 0.1em;
-    color: var(--ink-soft);
-  }
-</style>
+<link rel="stylesheet" href="../CSS/styles.css">
+<link rel="stylesheet" href="../CSS/publications.css">
 </head>
 <body>
 
@@ -190,7 +32,7 @@
   <!-- Main nav -->
   <nav class="main-nav">
     <div class="container">
-      <a href="index.html" class="logo"><span class="logo-dot"></span>AmpliSkill</a>
+       <a href="index.html" class="logo"><span><img src="../assets/Logo.png" alt="logo" class="logo-img"></span></a>
       <ul class="nav-links">
         <li class="has-submenu">
           <a href="programs.html">Programs</a>
@@ -658,16 +500,7 @@
     </div>
   </div>
 </footer>
-<script src="script.js"></script>
-<script>
-  document.querySelectorAll('.pub-tab').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.pub-tab').forEach(b => b.classList.remove('active'));
-      document.querySelectorAll('.pub-panel').forEach(p => p.classList.remove('active'));
-      btn.classList.add('active');
-      document.getElementById(btn.dataset.tab).classList.add('active');
-    });
-  });
-</script>
+<script src="../JS/script.js"></script>
+<script src="../JS/publications.js"></script>
 </body>
 </html>

@@ -7,52 +7,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<style>
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr; gap: 4rem;
-    margin-top: 3rem;
-  }
-  @media (min-width: 900px) {
-    .contact-grid { grid-template-columns: 1fr 1.5fr; }
-  }
-  .contact-info h3 {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem; letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--coral);
-    margin-bottom: 0.75rem;
-  }
-  .contact-info p {
-    font-family: 'Fraunces', serif;
-    font-size: 1.4rem; line-height: 1.25;
-    font-weight: 450;
-    margin-bottom: 2.5rem;
-    letter-spacing: -0.01em;
-  }
-  .contact-info a { color: var(--coral); }
-  .contact-info a:hover { text-decoration: underline; }
-
-  .success-msg {
-    display: none;
-    background: var(--butter);
-    padding: 2rem;
-    border-radius: 4px;
-    border: 1.5px solid var(--ink);
-    margin-top: 2rem;
-  }
-  .success-msg.show { display: block; animation: fadeIn 0.4s; }
-  .success-msg h4 {
-    font-family: 'Fraunces', serif;
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-</style>
+<link rel="stylesheet" href="../CSS/styles.css">
+<link rel="stylesheet" href="../CSS/contact.css">
 </head>
 <body>
 
@@ -76,7 +32,7 @@
   <!-- Main nav -->
   <nav class="main-nav">
     <div class="container">
-      <a href="index.html" class="logo"><span class="logo-dot"></span>AmpliSkill</a>
+       <a href="index.html" class="logo"><span><img src="../assets/Logo.png" alt="logo" class="logo-img"></span></a>
       <ul class="nav-links">
         <li class="has-submenu">
           <a href="programs.html">Programs</a>
@@ -384,15 +340,7 @@
     </div>
   </div>
 </footer>
-<script src="script.js"></script>
-<script>
-  // Form submission handling (demo — no backend)
-  document.getElementById('contactForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    e.target.style.display = 'none';
-    document.getElementById('successMsg').classList.add('show');
-    document.getElementById('successMsg').scrollIntoView({ behavior: 'smooth', block: 'center' });
-  });
-</script>
+<script src="../JS/script.js"></script>
+<script src="../JS/contact.js"></script>
 </body>
 </html>
