@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Publications — AmpliSkill</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .pub-tabs { display: flex; gap: 0; margin: 3rem 0 0; border-bottom: 2px solid var(--line); flex-wrap: wrap; }
+  .pub-tab {
+    padding: 1rem 2rem;
+    font-size: 1rem; font-weight: 600;
+    color: var(--ink-soft);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.2s;
+  }
+  .pub-tab.active { color: var(--coral); border-bottom-color: var(--coral); }
+  .pub-panel { display: none; padding: 4rem 0; }
+  .pub-panel.active { display: block; }
+
+  .featured-journal {
+    background: var(--butter);
+    padding: 4rem 0;
+    border-radius: 8px;
+    margin-top: 2rem;
+    position: relative; overflow: hidden;
+  }
+  .featured-journal::before {
+    content: 'AJMSI';
+    position: absolute;
+    bottom: -3rem; right: -1rem;
+    font-family: 'Fraunces', serif;
+    font-size: clamp(8rem, 22vw, 20rem);
+    font-style: italic;
+    font-weight: 300;
+    color: rgba(11, 18, 32, 0.07);
+    letter-spacing: 0.1em;
+    pointer-events: none;
+  }
+  .featured-journal .container {
+    display: grid;
+    grid-template-columns: 1fr; gap: 4rem;
+    align-items: center;
+    position: relative;
+  }
+  @media (min-width: 900px) {
+    .featured-journal .container { grid-template-columns: 1fr 1.2fr; }
+  }
+  .journal-cover {
+    background: var(--ink); color: var(--cream);
+    padding: 2.5rem 2rem;
+    border-radius: 4px;
+    aspect-ratio: 3/4;
+    max-width: 380px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    box-shadow: 20px 20px 0 var(--coral);
+  }
+  .journal-cover .cover-top {
+    display: flex; justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem; letter-spacing: 0.15em;
+    padding-bottom: 1rem; opacity: 0.7;
+    border-bottom: 1px solid rgba(248, 243, 231, 0.2);
+  }
+  .journal-cover .cover-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem; letter-spacing: 0.2em;
+    opacity: 0.7; text-transform: uppercase;
+  }
+  .journal-cover h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 2rem; line-height: 1;
+    font-weight: 400;
+    font-style: italic;
+    margin-top: 0.5rem;
+  }
+  .journal-cover h3 em { color: var(--butter); }
+  .journal-cover .cover-bottom {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem; line-height: 1.8;
+    opacity: 0.7;
+  }
+
+  .book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 2.5rem;
+  }
+  .book-card { cursor: pointer; }
+  .book-card:hover .book-cover { transform: translate(-4px, -6px) rotate(-1deg); box-shadow: 12px 12px 0 var(--coral); }
+  .book-cover {
+    aspect-ratio: 2/3;
+    background: linear-gradient(135deg, var(--coral), var(--butter));
+    padding: 1.5rem; border-radius: 2px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    transition: all 0.3s;
+    box-shadow: 8px 8px 0 var(--ink);
+    margin-bottom: 1.5rem;
+  }
+  .book-cover.v2 { background: linear-gradient(135deg, var(--ink), var(--coral)); color: var(--cream); }
+  .book-cover.v3 { background: linear-gradient(135deg, var(--teal), var(--butter)); }
+  .book-cover.v4 { background: linear-gradient(135deg, var(--butter), var(--teal)); }
+  .book-cover .cover-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem; letter-spacing: 0.15em;
+    opacity: 0.8; text-transform: uppercase;
+  }
+  .book-cover h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.015em;
+  }
+  .book-card .book-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.15rem; font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  .book-card .book-author {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    margin-top: 0.3rem;
+    font-style: italic;
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 0;
+  }
+  .blog-card {
+    padding: 2rem 2rem 2rem 0;
+    border-right: 1px solid var(--line);
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .blog-card:hover h4 { color: var(--coral); }
+  .blog-card .category {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--coral);
+    margin-bottom: 1rem; display: inline-block;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--coral);
+  }
+  .blog-card h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.6rem; line-height: 1.15;
+    font-weight: 500; letter-spacing: -0.015em;
+    margin-bottom: 1rem;
+    transition: color 0.2s;
+  }
+  .blog-card p {
+    font-size: 0.95rem; color: var(--ink-soft);
+    line-height: 1.5; margin-bottom: 1.5rem;
+  }
+  .blog-card .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem; letter-spacing: 0.1em;
+    color: var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <!-- Utility bar -->
+  <div class="utility-bar">
+    <div class="container">
+      <ul class="utility-links">
+        <li><a href="publications.html">Thought Leadership</a></li>
+        <li><a href="events.html">News &amp; Events</a></li>
+        <li><a href="publications.html#blogs">Articles</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div style="display:flex;gap:1.5rem;">
+        <a href="programs.html" class="utility-action">Apply to a Program</a>
+        <a href="journal.html#submit" class="utility-action">Submit to Journal</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main nav -->
+  <nav class="main-nav">
+    <div class="container">
+      <a href="index.html" class="logo"><span class="logo-dot"></span>AmpliSkill</a>
+      <ul class="nav-links">
+        <li class="has-submenu">
+          <a href="programs.html">Programs</a>
+          <div class="mega-menu">
+            <div class="container">
+              <div class="mega-grid">
+                <div class="mega-col">
+                  <h5>Format</h5>
+                  <ul>
+                    <li><a href="programs.html">Announced Programs<span class="desc">Calendar-based, open enrolment</span></a></li>
+                    <li><a href="programs.html#customized">Customized Programs<span class="desc">Designed for your organization</span></a></li>
+                    <li><a href="program-template.html">Flagship Intensive<span class="desc">Our 8-week senior leadership programme</span></a></li>
+                  </ul>
+                </div>
+                <div class="mega-col">
+                  <h5>By Category</h5>
+                  <ul>
+                    <li><a href="programs.html">Leadership</a></li>
+                    <li><a href="programs.html">Strategy</a></li>
+                    <li><a href="programs.html">Innovation</a></li>
+                    <li><a href="programs.html">Governance &amp; Boards</a></li>
+                    <li><a href="programs.html">AI for Leaders</a></li>
+                  </ul>
+                </div>
+                <div class="mega-col">
+                  <h5>Delivery</h5>
+                  <ul>
+                    <li><a href="programs.html">On-Campus · Residential</a></li>
+                    <li><a href="programs.html">Off-Campus · Non-Residential</a></li>
+                    <li><a href="programs.html">Hybrid &amp; Virtual</a></li>
+                    <li><a href="programs.html">Industry Training / OJT</a></li>
+                  </ul>
+                </div>
+                <div class="mega-col">
+                  <a href="program-template.html" class="mega-feature" style="text-decoration:none;">
+                    <span class="tag">Featured · May 2026</span>
+                    <h4>Senior Leadership Intensive</h4>
+                    <span class="link">Reserve a seat →</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><a href="consulting.html">Consulting</a></li>
+        <li class="has-submenu">
+          <a href="publications.html">Publications</a>
+          <div class="mega-menu">
+            <div class="container">
+              <div class="mega-grid">
+                <div class="mega-col">
+                  <h5>AJMSI Journal</h5>
+                  <ul>
+                    <li><a href="journal.html">Journal Home<span class="desc">Mission and editorial approach</span></a></li>
+                    <li><a href="journal.html#submit">Submission Guidelines</a></li>
+                    <li><a href="journal.html#roadmap">Editorial Roadmap</a></li>
+                    <li><a href="team.html">Editorial Board</a></li>
+                  </ul>
+                </div>
+                <div class="mega-col">
+                  <h5>Writing</h5>
+                  <ul>
+                    <li><a href="publications.html#books">Books<span class="desc">AmpliSkill Press titles</span></a></li>
+                    <li><a href="publications.html#blogs">Blogs &amp; Essays</a></li>
+                    <li><a href="publications.html#cases">Case Studies</a></li>
+                  </ul>
+                </div>
+                <div class="mega-col">
+                  <h5>Contribute</h5>
+                  <ul>
+                    <li><a href="journal.html#submit">Submit a Paper</a></li>
+                    <li><a href="contact.html">Pitch an Essay</a></li>
+                    <li><a href="contact.html">Propose a Case Study</a></li>
+                  </ul>
+                </div>
+                <div class="mega-col">
+                  <a href="journal.html" class="mega-feature" style="text-decoration:none;background:linear-gradient(135deg,var(--ink),var(--coral));color:var(--cream);">
+                    <span class="tag" style="color:var(--butter);">Call for Papers · Open</span>
+                    <h4 style="color:white;">AJMSI Inaugural Issue — Jan 2027</h4>
+                    <span class="link" style="color:var(--butter);">Submit now →</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="has-submenu">
+          <a href="about.html">About</a>
+          <div class="mega-menu">
+            <div class="container">
+              <div class="mega-grid">
+                <div class="mega-col">
+                  <h5>About AmpliSkill</h5>
+                  <ul>
+                    <li><a href="about.html">Who We Are<span class="desc">Mission, vision, and approach</span></a></li>
+                    <li><a href="about.html">Who We Serve</a></li>
+                    <li><a href="about.html">Our Story</a></li>
+                  </ul>
+                </div>
+                <div class="mega-col">
+                  <h5>People</h5>
+                  <ul>
+                    <li><a href="team.html">Executive Team</a></li>
+                    <li><a href="team.html">Advisory Council</a></li>
+                    <li><a href="team.html">Editorial Board</a></li>
+                  </ul>
+                </div>
+                <div class="mega-col">
+                  <h5>Partnerships</h5>
+                  <ul>
+                    <li><a href="team.html">Academic Partners</a></li>
+                    <li><a href="team.html">Industry Partners</a></li>
+                    <li><a href="contact.html">Become a Partner</a></li>
+                    <li><a href="contact.html">Careers</a></li>
+                    <li><a href="contact.html">Press &amp; Media</a></li>
+                  </ul>
+                </div>
+                <div class="mega-col">
+                  <a href="events.html" class="mega-feature" style="text-decoration:none;background:var(--butter);color:var(--ink);">
+                    <span class="tag">Flagship · Oct 2026</span>
+                    <h4>AmpliSkill Annual Management Summit</h4>
+                    <span class="link">Register interest →</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><a href="events.html">Events</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="search-btn" aria-label="Search" onclick="document.querySelector('.search-overlay').classList.add('open');document.querySelector('.search-overlay input').focus();">⌕</button>
+        <a href="contact.html" class="nav-cta">Get in touch</a>
+        <button class="mobile-toggle" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Search overlay -->
+<div class="search-overlay">
+  <button class="search-close" onclick="this.parentElement.classList.remove('open');">×</button>
+  <div class="search-box">
+    <input type="text" placeholder="Search programs, articles, people…" />
+    <p class="search-hint">Press ESC to close · Press ↵ to search</p>
+  </div>
+</div>
+
+<!-- Mobile menu -->
+<div class="mobile-menu">
+  <a href="about.html">About</a>
+  <a href="team.html">Team</a>
+  <a href="programs.html">Programs</a>
+  <a href="consulting.html">Consulting</a>
+  <a href="publications.html">Publications</a>
+  <a href="journal.html">AJMSI Journal</a>
+  <a href="events.html">Events</a>
+  <a href="contact.html" class="mobile-cta">Get in touch</a>
+</div>
+
+
+<div class="page-wrap">
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+  <div class="container">
+    <span class="eyebrow">Publications</span>
+    <h1>Research, <em>writing,</em><br>and <em>thinking</em> that travels.</h1>
+    <p class="lead">Our peer-reviewed journal, selected books from our faculty and partners, and regular writing on management practice — all in one place.</p>
+  </div>
+</section>
+
+<div class="container">
+  <!-- TABS -->
+  <div class="pub-tabs">
+    <button class="pub-tab active" data-tab="journal">Journal</button>
+    <button class="pub-tab" data-tab="books">Books</button>
+    <button class="pub-tab" data-tab="blogs">Blogs &amp; Essays</button>
+    <button class="pub-tab" data-tab="cases">Case Studies</button>
+  </div>
+
+  <!-- JOURNAL -->
+  <div class="pub-panel active" id="journal">
+    <div class="featured-journal">
+      <div class="container" style="padding:0;">
+        <div class="journal-cover">
+          <div class="cover-top">
+            <span>VOL. 01 · ISS. 01</span>
+            <span>JAN 2027</span>
+          </div>
+          <div>
+            <span class="cover-label">Inaugural issue</span>
+            <h3>The AmpliSkill<br>Journal of<br>Management,<br>Strategy <em>&amp;</em><br>Innovation</h3>
+          </div>
+          <div class="cover-bottom">
+            ISSN [TBD]<br>
+            Quarterly Review<br>
+            ampliskill.com/journal
+          </div>
+        </div>
+        <div>
+          <span class="eyebrow" style="color:var(--ink);">Inaugural issue · Call for papers open</span>
+          <h2 class="display-md mt-1">A <em class="italic-accent">new journal</em> for applied management research.</h2>
+          <p class="mt-2" style="font-size:1.05rem;line-height:1.6;">The AmpliSkill Journal of Management, Strategy &amp; Innovation (AJMSI) is a peer-reviewed quarterly publishing original research, empirical studies, and practice notes at the intersection of management science and industry practice.</p>
+          <p style="font-size:1.05rem;line-height:1.6;">The inaugural issue will be published in <strong>January 2027</strong>. Submissions are open for original research articles, empirical studies, case studies, practice notes, and essays.</p>
+          <div style="display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap;">
+            <a href="journal.html" class="btn-primary">Journal home →</a>
+            <a href="journal.html#submit" class="btn-ghost">Submit a paper</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Upcoming issues calendar -->
+    <div style="margin-top:5rem;">
+      <span class="eyebrow" style="color:var(--coral);">Publication calendar</span>
+      <h2 class="display-md mt-2">Four issues <em class="italic-accent">a year.</em></h2>
+      <div class="cards-grid mt-3">
+        <div class="card coral">
+          <div>
+            <div class="card-top">
+              <span class="tag">Inaugural</span>
+              <span class="duration">VOL 01 · ISS 01</span>
+            </div>
+            <h3>January 2027</h3>
+            <p>The inaugural issue of AJMSI. Call for papers open Jun 1 – Aug 31, 2026.</p>
+          </div>
+          <div class="card-bottom">
+            <div class="next-date">SUBMISSIONS OPEN<strong>Jun 01, 2026</strong></div>
+            <span class="card-arrow">↗</span>
+          </div>
+        </div>
+        <div class="card">
+          <div>
+            <div class="card-top">
+              <span class="tag">Upcoming</span>
+              <span class="duration">VOL 01 · ISS 02</span>
+            </div>
+            <h3>April 2027</h3>
+            <p>Submissions accepted on a rolling basis after the inaugural issue.</p>
+          </div>
+          <div class="card-bottom">
+            <div class="next-date">DEADLINE<strong>Nov 30, 2026</strong></div>
+            <span class="card-arrow">↗</span>
+          </div>
+        </div>
+        <div class="card">
+          <div>
+            <div class="card-top">
+              <span class="tag">Upcoming</span>
+              <span class="duration">VOL 01 · ISS 03</span>
+            </div>
+            <h3>July 2027</h3>
+            <p>Themed issue — theme to be announced by the editorial board.</p>
+          </div>
+          <div class="card-bottom">
+            <div class="next-date">DEADLINE<strong>Feb 28, 2027</strong></div>
+            <span class="card-arrow">↗</span>
+          </div>
+        </div>
+        <div class="card">
+          <div>
+            <div class="card-top">
+              <span class="tag">Upcoming</span>
+              <span class="duration">VOL 01 · ISS 04</span>
+            </div>
+            <h3>October 2027</h3>
+            <p>Annual retrospective issue featuring the year's most-cited articles.</p>
+          </div>
+          <div class="card-bottom">
+            <div class="next-date">DEADLINE<strong>May 31, 2027</strong></div>
+            <span class="card-arrow">↗</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOOKS -->
+  <div class="pub-panel" id="books">
+    <span class="eyebrow" style="color:var(--coral);">AmpliSkill Press</span>
+    <h2 class="display-md mt-2">Selected <em class="italic-accent">books.</em></h2>
+    <p style="max-width:40rem;color:var(--ink-soft);margin:1rem 0 3rem;font-size:1.05rem;">Titles authored by our faculty, partners, and editorial board — covering leadership, strategy, and innovation in practice.</p>
+
+    <div class="book-grid">
+      <div class="book-card">
+        <div class="book-cover">
+          <div class="cover-meta">AMPLISKILL PRESS / 01</div>
+          <h4>The Slow<br>Strategy</h4>
+        </div>
+        <div class="book-title">The Slow Strategy</div>
+        <div class="book-author">Dr. Meera Raghavan &amp; Adaeze Okafor · 2025</div>
+      </div>
+      <div class="book-card">
+        <div class="book-cover v2">
+          <div class="cover-meta">AMPLISKILL PRESS / 02</div>
+          <h4>Decision<br>Under<br>Ambiguity</h4>
+        </div>
+        <div class="book-title">Decision Under Ambiguity</div>
+        <div class="book-author">Prof. Hiroshi Tanaka · 2024</div>
+      </div>
+      <div class="book-card">
+        <div class="book-cover v3">
+          <div class="cover-meta">AMPLISKILL PRESS / 03</div>
+          <h4>Rebuilding<br>the Middle</h4>
+        </div>
+        <div class="book-title">Rebuilding the Middle</div>
+        <div class="book-author">Samir Irani · 2024</div>
+      </div>
+      <div class="book-card">
+        <div class="book-cover v4">
+          <div class="cover-meta">AMPLISKILL PRESS / 04</div>
+          <h4>Innovation<br>as Ritual</h4>
+        </div>
+        <div class="book-title">Innovation as Ritual</div>
+        <div class="book-author">Elena Rossi · 2023</div>
+      </div>
+      <div class="book-card">
+        <div class="book-cover">
+          <div class="cover-meta">AMPLISKILL PRESS / 05</div>
+          <h4>The<br>Governance<br>Question</h4>
+        </div>
+        <div class="book-title">The Governance Question</div>
+        <div class="book-author">Edited volume · 2023</div>
+      </div>
+      <div class="book-card">
+        <div class="book-cover v2">
+          <div class="cover-meta">AMPLISKILL PRESS / 06</div>
+          <h4>Leading<br>What You<br>Inherit</h4>
+        </div>
+        <div class="book-title">Leading What You Inherit</div>
+        <div class="book-author">Ashok &amp; Barendra · 2022</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOGS -->
+  <div class="pub-panel" id="blogs">
+    <span class="eyebrow" style="color:var(--coral);">Writing from the practice</span>
+    <h2 class="display-md mt-2">Short-form <em class="italic-accent">thinking.</em></h2>
+    <p style="max-width:40rem;color:var(--ink-soft);margin:1rem 0 3rem;font-size:1.05rem;">Essays, field notes, and observations from our faculty, consulting partners, and invited guests. Updated weekly.</p>
+
+    <div class="blog-grid">
+      <div class="blog-card">
+        <span class="category">Leadership</span>
+        <h4>The cost of managing by calendar alone</h4>
+        <p>Why the best senior operators build two clocks — one for the month, one for the decade — and how to hold both at once.</p>
+        <div class="meta">APR 18, 2026 · 7 MIN · BARENDRA</div>
+      </div>
+      <div class="blog-card">
+        <span class="category">Consulting</span>
+        <h4>What we've learned reviewing 300 internal policies</h4>
+        <p>Field notes from two years of policy reviews across banking, manufacturing, and the public sector. Patterns, anti-patterns, and what actually changes behaviour.</p>
+        <div class="meta">APR 11, 2026 · 9 MIN · ASHOK</div>
+      </div>
+      <div class="blog-card">
+        <span class="category">Innovation</span>
+        <h4>Why most corporate innovation programs fail (and the few that don't)</h4>
+        <p>Ten years of observation, compressed into five observable patterns. The programs that work don't look like the ones that get written up.</p>
+        <div class="meta">APR 04, 2026 · 12 MIN · GUEST</div>
+      </div>
+      <div class="blog-card">
+        <span class="category">Strategy</span>
+        <h4>A simpler way to think about TAM in emerging markets</h4>
+        <p>TAM/SAM/SOM was built for a different kind of economy. Here's what replaces it when your market is still being made.</p>
+        <div class="meta">MAR 28, 2026 · 6 MIN · ASHOK</div>
+      </div>
+      <div class="blog-card">
+        <span class="category">Research</span>
+        <h4>Call for papers: what we're looking for in AJMSI's inaugural issue</h4>
+        <p>Editor's notes on what makes an AJMSI paper — and what the inaugural issue will be looking for specifically.</p>
+        <div class="meta">MAR 21, 2026 · 5 MIN · EDITORIAL</div>
+      </div>
+      <div class="blog-card">
+        <span class="category">Practice</span>
+        <h4>On the quiet rigour of a weekly review</h4>
+        <p>A short essay on why the most effective senior leaders we work with all keep one discipline in common.</p>
+        <div class="meta">MAR 14, 2026 · 4 MIN · BARENDRA</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASES -->
+  <div class="pub-panel" id="cases">
+    <span class="eyebrow" style="color:var(--coral);">For teaching and research</span>
+    <h2 class="display-md mt-2">Case <em class="italic-accent">studies.</em></h2>
+    <p style="max-width:40rem;color:var(--ink-soft);margin:1rem 0 3rem;font-size:1.05rem;">Original teaching cases developed by AmpliSkill faculty — available to academic institutions and program participants. Request access below.</p>
+
+    <div class="blog-grid">
+      <div class="blog-card">
+        <span class="category">Banking · Risk</span>
+        <h4>Orion Bank: Rebuilding the risk function</h4>
+        <p>A mid-sized private bank navigates a regulatory finding, a board transition, and a cultural reset — all while preparing for digital transformation.</p>
+        <div class="meta">CASE · 14 PAGES · DR. MEERA RAGHAVAN</div>
+      </div>
+      <div class="blog-card">
+        <span class="category">CPG · Strategy</span>
+        <h4>Meridian Foods: The emerging-market portfolio decision</h4>
+        <p>An Indian food company weighs entry into three potential Southeast Asian markets — each with different unit economics and regulatory regimes.</p>
+        <div class="meta">CASE · 18 PAGES · BARENDRA &amp; GUEST</div>
+      </div>
+      <div class="blog-card">
+        <span class="category">Technology · People</span>
+        <h4>Helix: Leadership transition at a scale-up</h4>
+        <p>A founder-led scale-up brings in its first external CEO. The case explores governance, succession, and the culture question that nobody put in the offer letter.</p>
+        <div class="meta">CASE · 12 PAGES · ASHOK</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta-band" style="margin-top:4rem;">
+  <div class="container">
+    <h2>Want to <em class="italic-accent">publish</em> with us?</h2>
+    <p>Researchers, practitioners, and scholars — submissions are open for the AJMSI inaugural issue and rolling for our blog.</p>
+    <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;">
+      <a class="btn-ghost" href="journal.html">Journal guidelines →</a>
+      <a href="contact.html" class="nav-cta" style="background:var(--ink);color:var(--cream);padding:1rem 2rem;font-size:0.95rem;">Pitch a piece</a>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>AmpliSkill<span style="color:var(--coral);">.</span></h3>
+        <p>Driving excellence through academic and industry collaboration.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="consulting.html">Consulting</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Research</h5>
+        <ul>
+          <li><a href="journal.html">AJMSI Journal</a></li>
+          <li><a href="publications.html">Books</a></li>
+          <li><a href="publications.html">Blogs</a></li>
+          <li><a href="events.html">Events</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Connect</h5>
+        <ul>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">Careers</a></li>
+          <li><a href="contact.html">Press</a></li>
+          <li><a href="contact.html">Partners</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AMPLISKILL · ALL RIGHTS RESERVED</span>
+      <span>PRIVACY · TERMS · COOKIES</span>
+    </div>
+  </div>
+</footer>
+<script src="script.js"></script>
+<script>
+  document.querySelectorAll('.pub-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.pub-tab').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.pub-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

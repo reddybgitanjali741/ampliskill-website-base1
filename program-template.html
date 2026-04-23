@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Senior Leadership Intensive — AmpliSkill</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .prog-hero {
+    background: var(--cream);
+    padding: 4rem 0 6rem;
+  }
+  .prog-hero-grid {
+    display: grid; grid-template-columns: 1fr; gap: 3rem;
+    align-items: end;
+  }
+  @media (min-width: 900px) {
+    .prog-hero-grid { grid-template-columns: 1.8fr 1fr; }
+  }
+  .prog-hero .breadcrumb {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--ink-soft);
+    margin-bottom: 2rem;
+  }
+  .prog-hero .breadcrumb a { color: var(--coral); }
+  .prog-hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.5rem, 7vw, 6rem);
+    line-height: 0.95;
+    font-weight: 400; letter-spacing: -0.035em;
+  }
+  .prog-hero h1 em {
+    color: var(--coral); font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 100;
+  }
+  .prog-hero .intro {
+    font-size: 1.2rem; line-height: 1.55;
+    margin-top: 2rem; max-width: 38rem;
+    color: var(--ink-soft);
+  }
+  .prog-meta-box {
+    background: var(--ink); color: var(--cream);
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 12px 12px 0 var(--coral);
+  }
+  .prog-meta-row {
+    display: flex; justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(248, 243, 231, 0.15);
+    font-size: 0.9rem;
+  }
+  .prog-meta-row:last-of-type { border-bottom: none; }
+  .prog-meta-row .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem; letter-spacing: 0.15em;
+    text-transform: uppercase; opacity: 0.6;
+  }
+  .prog-meta-row .value { font-weight: 500; text-align: right; }
+  .prog-meta-box .btn-primary {
+    width: 100%; justify-content: center;
+    margin-top: 1.5rem;
+  }
+
+  .prog-section {
+    padding: 5rem 0;
+    border-top: 1px solid var(--line);
+  }
+  .prog-section .sec-grid {
+    display: grid; grid-template-columns: 1fr; gap: 3rem;
+  }
+  @media (min-width: 900px) {
+    .prog-section .sec-grid { grid-template-columns: 1fr 2fr; }
+  }
+  .prog-section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--coral);
+  }
+  .prog-section h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1; font-weight: 400;
+    letter-spacing: -0.025em;
+    margin-top: 1rem;
+  }
+  .prog-section h2 em { color: var(--coral); font-style: italic; }
+  .prog-section p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 1.25rem; }
+
+  .audience-list {
+    list-style: none; margin-top: 1rem;
+  }
+  .audience-list li {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 1rem;
+    display: grid; grid-template-columns: 30px 1fr; gap: 1rem;
+    align-items: start;
+  }
+  .audience-list li::before {
+    content: '✓';
+    color: var(--coral);
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+
+  .module-list { list-style: none; }
+  .module-list li {
+    display: grid; grid-template-columns: 60px 1fr;
+    gap: 1.5rem; padding: 1.5rem 0;
+    border-bottom: 1px solid var(--line);
+    align-items: start;
+  }
+  .module-list .num {
+    font-family: 'Fraunces', serif;
+    font-size: 2rem; font-weight: 400;
+    color: var(--coral); line-height: 1;
+    font-style: italic;
+  }
+  .module-list h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.35rem; font-weight: 500;
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.01em;
+  }
+  .module-list p {
+    font-size: 0.95rem; color: var(--ink-soft);
+    margin: 0; line-height: 1.5;
+  }
+
+  .faculty-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+  }
+  .faculty-card .avatar { margin-bottom: 1rem; font-size: 4rem; }
+  .faculty-card h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+  .faculty-card .role {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--coral);
+    margin: 0.3rem 0;
+  }
+  .faculty-card p {
+    font-size: 0.9rem; color: var(--ink-soft);
+    line-height: 1.5; margin: 0;
+  }
+
+  .schedule-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+  .schedule-table th, .schedule-table td {
+    padding: 1.2rem 1rem; text-align: left;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.95rem;
+  }
+  .schedule-table th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--ink-soft);
+    font-weight: 500; background: var(--paper);
+  }
+  .schedule-table .day {
+    font-family: 'Fraunces', serif;
+    font-size: 1.15rem; font-weight: 500;
+    color: var(--coral); width: 90px;
+    font-style: italic;
+  }
+
+  .faq-item {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--line);
+    cursor: pointer;
+  }
+  .faq-q {
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'Fraunces', serif;
+    font-size: 1.25rem; font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  .faq-q span { font-size: 1.5rem; color: var(--coral); transition: transform 0.3s; display: inline-block; }
+  .faq-a {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.4s, margin-top 0.4s;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  .faq-item.open .faq-a { max-height: 300px; margin-top: 1rem; }
+  .faq-item.open .faq-q span { transform: rotate(45deg); }
+
+  .fees-card {
+    background: var(--butter);
+    padding: 2.5rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+  }
+  .fees-card .amount {
+    font-family: 'Fraunces', serif;
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+  .fees-card .amount small {
+    font-size: 1rem; opacity: 0.7;
+    font-weight: 500;
+  }
+  .fees-card ul {
+    list-style: none; margin-top: 2rem;
+  }
+  .fees-card ul li {
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  .fees-card ul li::before {
+    content: '◆';
+    position: absolute; left: 0;
+    color: var(--coral);
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <!-- Utility bar -->
+  <div class="utility-bar">
+    <div class="container">
+      <ul class="utility-links">
+        <li><a href="publications.html">Thought Leadership</a></li>
+        <li><a href="events.html">News &amp; Events</a></li>
+        <li><a href="publications.html#blogs">Articles</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div style="display:flex;gap:1.5rem;">
+        <a href="programs.html" class="utility-action">Apply to a Program</a>
+        <a href="journal.html#submit" class="utility-action">Submit to Journal</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main nav -->
+  <nav class="main-nav">
+    <div class="container">
+      <a href="index.html" class="logo"><span class="logo-dot"></span>AmpliSkill</a>
+      <ul class="nav-links">
+        <li class="has-submenu">
+          <a href="programs.html">Programs</a>
+          <div class="mega-menu">
+            <div class="container">
+              <div class="mega-grid">
+                <div class="mega-col">
+                  <h5>Format</h5>
+                  <ul>
+                    <li><a href="programs.html">Announced Programs<span class="desc">Calendar-based, open enrolment</span></a></li>
+                    <li><a href="programs.html#customized">Customized Programs<span class="desc">Designed for your organization</span></a></li>
+                    <li><a href="program-template.html">Flagship Intensive<span class="desc">Our 8-week senior leadership programme</span></a></li>
+                  </ul>
+                </div>
+                <div class="mega-col">
+                  <h5>By Category</h5>
+                  <ul>
+                    <li><a href="programs.html">Leadership</a></li>
+                    <li><a href="programs.html">Strategy</a></li>
+                    <li><a href="programs.html">Innovation</a></li>
+                    <li><a href="programs.html">Governance &amp; Boards</a></li>
+                    <li><a href="programs.html">AI for Leaders</a></li>
+                  </ul>
+                </div>
+                <div class="mega-col">
+                  <h5>Delivery</h5>
+                  <ul>
+                    <li><a href="programs.html">On-Campus · Residential</a></li>
+                    <li><a href="programs.html">Off-Campus · Non-Residential</a></li>
+                    <li><a href="programs.html">Hybrid &amp; Virtual</a></li>
+                    <li><a href="programs.html">Industry Training / OJT</a></li>
+                  </ul>
+                </div>
+                <div class="mega-col">
+                  <a href="program-template.html" class="mega-feature" style="text-decoration:none;">
+                    <span class="tag">Featured · May 2026</span>
+                    <h4>Senior Leadership Intensive</h4>
+                    <span class="link">Reserve a seat →</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><a href="consulting.html">Consulting</a></li>
+        <li class="has-submenu">
+          <a href="publications.html">Publications</a>
+          <div class="mega-menu">
+            <div class="container">
+              <div class="mega-grid">
+                <div class="mega-col">
+                  <h5>AJMSI Journal</h5>
+                  <ul>
+                    <li><a href="journal.html">Journal Home<span class="desc">Mission and editorial approach</span></a></li>
+                    <li><a href="journal.html#submit">Submission Guidelines</a></li>
+                    <li><a href="journal.html#roadmap">Editorial Roadmap</a></li>
+                    <li><a href="team.html">Editorial Board</a></li>
+                  </ul>
+                </div>
+                <div class="mega-col">
+                  <h5>Writing</h5>
+                  <ul>
+                    <li><a href="publications.html#books">Books<span class="desc">AmpliSkill Press titles</span></a></li>
+                    <li><a href="publications.html#blogs">Blogs &amp; Essays</a></li>
+                    <li><a href="publications.html#cases">Case Studies</a></li>
+                  </ul>
+                </div>
+                <div class="mega-col">
+                  <h5>Contribute</h5>
+                  <ul>
+                    <li><a href="journal.html#submit">Submit a Paper</a></li>
+                    <li><a href="contact.html">Pitch an Essay</a></li>
+                    <li><a href="contact.html">Propose a Case Study</a></li>
+                  </ul>
+                </div>
+                <div class="mega-col">
+                  <a href="journal.html" class="mega-feature" style="text-decoration:none;background:linear-gradient(135deg,var(--ink),var(--coral));color:var(--cream);">
+                    <span class="tag" style="color:var(--butter);">Call for Papers · Open</span>
+                    <h4 style="color:white;">AJMSI Inaugural Issue — Jan 2027</h4>
+                    <span class="link" style="color:var(--butter);">Submit now →</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="has-submenu">
+          <a href="about.html">About</a>
+          <div class="mega-menu">
+            <div class="container">
+              <div class="mega-grid">
+                <div class="mega-col">
+                  <h5>About AmpliSkill</h5>
+                  <ul>
+                    <li><a href="about.html">Who We Are<span class="desc">Mission, vision, and approach</span></a></li>
+                    <li><a href="about.html">Who We Serve</a></li>
+                    <li><a href="about.html">Our Story</a></li>
+                  </ul>
+                </div>
+                <div class="mega-col">
+                  <h5>People</h5>
+                  <ul>
+                    <li><a href="team.html">Executive Team</a></li>
+                    <li><a href="team.html">Advisory Council</a></li>
+                    <li><a href="team.html">Editorial Board</a></li>
+                  </ul>
+                </div>
+                <div class="mega-col">
+                  <h5>Partnerships</h5>
+                  <ul>
+                    <li><a href="team.html">Academic Partners</a></li>
+                    <li><a href="team.html">Industry Partners</a></li>
+                    <li><a href="contact.html">Become a Partner</a></li>
+                    <li><a href="contact.html">Careers</a></li>
+                    <li><a href="contact.html">Press &amp; Media</a></li>
+                  </ul>
+                </div>
+                <div class="mega-col">
+                  <a href="events.html" class="mega-feature" style="text-decoration:none;background:var(--butter);color:var(--ink);">
+                    <span class="tag">Flagship · Oct 2026</span>
+                    <h4>AmpliSkill Annual Management Summit</h4>
+                    <span class="link">Register interest →</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><a href="events.html">Events</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="search-btn" aria-label="Search" onclick="document.querySelector('.search-overlay').classList.add('open');document.querySelector('.search-overlay input').focus();">⌕</button>
+        <a href="contact.html" class="nav-cta">Get in touch</a>
+        <button class="mobile-toggle" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Search overlay -->
+<div class="search-overlay">
+  <button class="search-close" onclick="this.parentElement.classList.remove('open');">×</button>
+  <div class="search-box">
+    <input type="text" placeholder="Search programs, articles, people…" />
+    <p class="search-hint">Press ESC to close · Press ↵ to search</p>
+  </div>
+</div>
+
+<!-- Mobile menu -->
+<div class="mobile-menu">
+  <a href="about.html">About</a>
+  <a href="team.html">Team</a>
+  <a href="programs.html">Programs</a>
+  <a href="consulting.html">Consulting</a>
+  <a href="publications.html">Publications</a>
+  <a href="journal.html">AJMSI Journal</a>
+  <a href="events.html">Events</a>
+  <a href="contact.html" class="mobile-cta">Get in touch</a>
+</div>
+
+
+<div class="page-wrap">
+
+<!-- HERO -->
+<section class="prog-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="programs.html">Programs</a> / Announced / Flagship
+    </div>
+    <div class="prog-hero-grid">
+      <div>
+        <h1>The Senior<br>Leadership <em>Intensive</em></h1>
+        <p class="intro">An eight-week modular programme for experienced leaders navigating the step-change into enterprise-level responsibility. Designed for clarity under pressure, strategy under ambiguity, and leadership at scale.</p>
+      </div>
+      <div class="prog-meta-box">
+        <div class="prog-meta-row">
+          <span class="label">Next cohort</span>
+          <span class="value">May 12, 2026</span>
+        </div>
+        <div class="prog-meta-row">
+          <span class="label">Duration</span>
+          <span class="value">8 weeks · modular</span>
+        </div>
+        <div class="prog-meta-row">
+          <span class="label">Format</span>
+          <span class="value">Residential (On-campus)</span>
+        </div>
+        <div class="prog-meta-row">
+          <span class="label">Capacity</span>
+          <span class="value">24 seats / cohort</span>
+        </div>
+        <div class="prog-meta-row">
+          <span class="label">Fees</span>
+          <span class="value">₹4,50,000 + GST</span>
+        </div>
+        <a href="contact.html" class="btn-primary">Reserve your seat →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="prog-section">
+  <div class="container">
+    <div class="sec-grid">
+      <div>
+        <span class="prog-section-label">01 — Overview</span>
+        <h2>What the <em>programme</em> does.</h2>
+      </div>
+      <div>
+        <p>The Senior Leadership Intensive is designed for leaders who have proven themselves in functional or business-unit roles and are now stepping into enterprise-level responsibility — where the old playbook no longer fits.</p>
+        <p>Over eight weeks of modular residential sessions, you'll build the thinking, the frameworks, and the peer community to lead at the level your role demands. Faculty are senior practitioners and academic scholars. Every module is anchored in real-world application — not theory for its own sake.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE -->
+<section class="prog-section" style="background:var(--paper);">
+  <div class="container">
+    <div class="sec-grid">
+      <div>
+        <span class="prog-section-label">02 — Who it's for</span>
+        <h2>Designed <em>for leaders</em> who —</h2>
+      </div>
+      <div>
+        <ul class="audience-list">
+          <li>Hold a senior functional or business-unit role and are being prepared for enterprise-level responsibility.</li>
+          <li>Have 12+ years of management experience with clear impact at the P&amp;L or function level.</li>
+          <li>Are moving into roles that require cross-functional judgement, board-facing communication, and multi-horizon strategy.</li>
+          <li>Want a cohort experience — peer learning as much as faculty teaching.</li>
+          <li>Are committed to applying learning between modules, not just attending them.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section class="prog-section">
+  <div class="container">
+    <div class="sec-grid">
+      <div>
+        <span class="prog-section-label">03 — Curriculum</span>
+        <h2>Eight <em>modules.</em> One arc.</h2>
+      </div>
+      <div>
+        <ul class="module-list">
+          <li>
+            <span class="num">01</span>
+            <div>
+              <h4>The Leader as Decision-Maker</h4>
+              <p>Frameworks for decision quality, judgment under uncertainty, and the cognitive biases that derail senior leadership.</p>
+            </div>
+          </li>
+          <li>
+            <span class="num">02</span>
+            <div>
+              <h4>Strategic Thinking &amp; Diagnosis</h4>
+              <p>Reading the competitive landscape, identifying leverage points, and separating signal from noise.</p>
+            </div>
+          </li>
+          <li>
+            <span class="num">03</span>
+            <div>
+              <h4>Leading Organizations at Scale</h4>
+              <p>Organization design, operating models, and the architecture of enterprise-level execution.</p>
+            </div>
+          </li>
+          <li>
+            <span class="num">04</span>
+            <div>
+              <h4>Finance for Enterprise Leaders</h4>
+              <p>Capital allocation, value creation, and the financial fluency the CFO will expect of you.</p>
+            </div>
+          </li>
+          <li>
+            <span class="num">05</span>
+            <div>
+              <h4>Leading Through Change</h4>
+              <p>Transformation, crisis, and the psychology of taking people through uncertainty.</p>
+            </div>
+          </li>
+          <li>
+            <span class="num">06</span>
+            <div>
+              <h4>Stakeholder &amp; Board Communication</h4>
+              <p>Writing, speaking, and presenting at the level your role demands — boards, investors, regulators, media.</p>
+            </div>
+          </li>
+          <li>
+            <span class="num">07</span>
+            <div>
+              <h4>Innovation &amp; Growth</h4>
+              <p>Building the muscle to see new businesses, spin up ventures, and protect the core while growing beyond it.</p>
+            </div>
+          </li>
+          <li>
+            <span class="num">08</span>
+            <div>
+              <h4>Capstone &amp; Executive Practicum</h4>
+              <p>Apply the arc to a real strategic question you bring from your organization. Faculty review, peer challenge, and a presentation to the cohort.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FACULTY -->
+<section class="prog-section" style="background:var(--paper);">
+  <div class="container">
+    <div class="sec-grid">
+      <div>
+        <span class="prog-section-label">04 — Faculty</span>
+        <h2>Taught by <em>practitioners.</em></h2>
+      </div>
+      <div>
+        <div class="faculty-row">
+          <div class="faculty-card">
+            <div class="avatar">A</div>
+            <h4>Ashok</h4>
+            <div class="role">Lead Faculty · Leadership</div>
+            <p>Two decades of general management; leads modules on decision-making and stakeholder engagement.</p>
+          </div>
+          <div class="faculty-card">
+            <div class="avatar v2">B</div>
+            <h4>Barendra</h4>
+            <div class="role">Faculty · Strategy</div>
+            <p>Banking and consulting background; leads modules on strategy, organization design, and finance.</p>
+          </div>
+          <div class="faculty-card">
+            <div class="avatar v3">G</div>
+            <h4>Guest Scholar</h4>
+            <div class="role">Visiting · Innovation</div>
+            <p>Rotating visiting scholar from academic partner institutions; leads the innovation module.</p>
+          </div>
+          <div class="faculty-card">
+            <div class="avatar v4">P</div>
+            <h4>Industry Practitioner</h4>
+            <div class="role">Guest · Change</div>
+            <p>Senior practitioners from our Industry Partner network guest-teach the change and transformation module.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="prog-section">
+  <div class="container">
+    <div class="sec-grid">
+      <div>
+        <span class="prog-section-label">05 — Schedule</span>
+        <h2>Eight <em>modules</em> across eight weeks.</h2>
+      </div>
+      <div>
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Week</th>
+              <th>Module</th>
+              <th>Dates</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="day">01</td><td>The Leader as Decision-Maker</td><td>May 12–16, 2026</td></tr>
+            <tr><td class="day">02</td><td>Strategic Thinking &amp; Diagnosis</td><td>May 19–23, 2026</td></tr>
+            <tr><td class="day">03</td><td>Leading Organizations at Scale</td><td>May 26–30, 2026</td></tr>
+            <tr><td class="day">04</td><td>Finance for Enterprise Leaders</td><td>Jun 02–06, 2026</td></tr>
+            <tr><td class="day">05</td><td>Leading Through Change</td><td>Jun 09–13, 2026</td></tr>
+            <tr><td class="day">06</td><td>Stakeholder &amp; Board Communication</td><td>Jun 16–20, 2026</td></tr>
+            <tr><td class="day">07</td><td>Innovation &amp; Growth</td><td>Jun 23–27, 2026</td></tr>
+            <tr><td class="day">08</td><td>Capstone &amp; Executive Practicum</td><td>Jun 30 – Jul 04, 2026</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEES -->
+<section class="prog-section" style="background:var(--paper);">
+  <div class="container">
+    <div class="sec-grid">
+      <div>
+        <span class="prog-section-label">06 — Fees &amp; Enrolment</span>
+        <h2>Invest in <em>the work.</em></h2>
+      </div>
+      <div>
+        <div class="fees-card">
+          <span class="prog-section-label" style="color:var(--ink);">Programme fee</span>
+          <div class="amount" style="margin-top:0.5rem;">₹4,50,000 <small>+ GST</small></div>
+          <p style="margin-top:1rem;font-size:0.95rem;">Fees are inclusive of tuition, materials, meals, and on-campus accommodation for the residential modules.</p>
+          <ul>
+            <li>Early-bird discount: 10% before March 31, 2026</li>
+            <li>Alumni referral: 5% for both parties</li>
+            <li>Corporate nominations (3+): custom pricing available</li>
+            <li>Scholarship seats: 2 per cohort — by application</li>
+          </ul>
+          <div style="display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap;">
+            <a href="contact.html" class="btn-primary" style="background:var(--ink);color:var(--cream);">Apply now →</a>
+            <a href="contact.html" class="btn-ghost">Request brochure</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="prog-section">
+  <div class="container">
+    <div class="sec-grid">
+      <div>
+        <span class="prog-section-label">07 — FAQ</span>
+        <h2>Common <em>questions.</em></h2>
+      </div>
+      <div>
+        <div class="faq-item">
+          <div class="faq-q">Is attendance in-person mandatory for all modules? <span>+</span></div>
+          <div class="faq-a">Yes. The residential format is core to the programme's design. We do not offer virtual attendance for the Senior Leadership Intensive.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What happens if I miss a module? <span>+</span></div>
+          <div class="faq-a">You may make up a missed module with the next cohort on a case-by-case basis. More than one missed module may require re-enrolment.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Is this programme certified or credentialed? <span>+</span></div>
+          <div class="faq-a">You receive a Certificate of Completion from AmpliSkill. The programme is non-accredited and is not currently a formal certification.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can my organization sponsor me? <span>+</span></div>
+          <div class="faq-a">Yes — corporate sponsorship is common. We can invoice your employer directly and provide all necessary documentation.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What's the selection process? <span>+</span></div>
+          <div class="faq-a">Application review, a brief conversation with a programme director, and reference checks. We select for cohort balance across industries and functional backgrounds.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="container">
+    <h2>Ready to <em class="italic-accent">apply?</em></h2>
+    <p>Only 24 seats per cohort. Applications for the May 2026 cohort close on April 10, 2026.</p>
+    <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;">
+      <a class="btn-ghost" href="programs.html">View all programs</a>
+      <a href="contact.html" class="nav-cta" style="background:var(--ink);color:var(--cream);padding:1rem 2rem;font-size:0.95rem;">Start application</a>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>AmpliSkill<span style="color:var(--coral);">.</span></h3>
+        <p>Driving excellence through academic and industry collaboration.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="consulting.html">Consulting</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Research</h5>
+        <ul>
+          <li><a href="journal.html">AJMSI Journal</a></li>
+          <li><a href="publications.html">Books</a></li>
+          <li><a href="publications.html">Blogs</a></li>
+          <li><a href="events.html">Events</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Connect</h5>
+        <ul>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html">Careers</a></li>
+          <li><a href="contact.html">Press</a></li>
+          <li><a href="contact.html">Partners</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AMPLISKILL · ALL RIGHTS RESERVED</span>
+      <span>PRIVACY · TERMS · COOKIES</span>
+    </div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
