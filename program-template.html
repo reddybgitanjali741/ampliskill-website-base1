@@ -10,8 +10,12 @@
       href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../CSS/styles.css" />
-    <link rel="stylesheet" href="../CSS/program-template.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="program-template.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
   </head>
   <body>
     <header class="site-header">
@@ -26,10 +30,10 @@
           </ul>
           <div style="display: flex; gap: 1.5rem">
             <a href="programs.html" class="utility-action"
-              >Apply to a Program</a
+              ><i class="fa-solid fa-graduation-cap"></i> Apply to a Program</a
             >
             <a href="journal.html#submit" class="utility-action"
-              >Submit to Journal</a
+              ><i class="fa-solid fa-file-pen"></i> Submit to Journal</a
             >
           </div>
         </div>
@@ -276,10 +280,14 @@
                 document.querySelector('.search-overlay input').focus();
               "
             >
-              ⌕
+              <i class="fa-solid fa-magnifying-glass"></i>
             </button>
-            <a href="contact.html" class="nav-cta">Get in touch</a>
-            <button class="mobile-toggle" aria-label="Menu">☰</button>
+            <a href="contact.html" class="nav-cta"
+              ><i class="fa-solid fa-envelope"></i> Get in touch</a
+            >
+            <button class="mobile-toggle" aria-label="Menu">
+              <i class="fa-solid fa-bars"></i>
+            </button>
           </div>
         </div>
       </nav>
@@ -291,7 +299,7 @@
         class="search-close"
         onclick="this.parentElement.classList.remove('open')"
       >
-        ×
+        <i class="fa-solid fa-xmark"></i>
       </button>
       <div class="search-box">
         <input type="text" placeholder="Search programs, articles, people…" />
@@ -308,7 +316,9 @@
       <a href="publications.html">Publications</a>
       <a href="journal.html">AJMSI Journal</a>
       <a href="events.html">Events</a>
-      <a href="contact.html" class="mobile-cta">Get in touch</a>
+      <a href="contact.html" class="mobile-cta"
+        ><i class="fa-solid fa-envelope"></i> Get in touch</a
+      >
     </div>
 
     <div class="page-wrap">
@@ -789,7 +799,7 @@
             </p>
           </div>
           <div>
-            <h5>Explore</h5>
+            <h5><i class="fa-solid fa-compass"></i> Explore</h5>
             <ul>
               <li><a href="about.html">About Us</a></li>
               <li><a href="team.html">Team</a></li>
@@ -798,7 +808,7 @@
             </ul>
           </div>
           <div>
-            <h5>Research</h5>
+            <h5><i class="fa-solid fa-flask"></i> Research</h5>
             <ul>
               <li><a href="journal.html">AJMSI Journal</a></li>
               <li><a href="publications.html">Books</a></li>
@@ -807,7 +817,7 @@
             </ul>
           </div>
           <div>
-            <h5>Connect</h5>
+            <h5><i class="fa-solid fa-network-wired"></i> Connect</h5>
             <ul>
               <li><a href="contact.html">Contact</a></li>
               <li><a href="contact.html">Careers</a></li>
@@ -822,6 +832,6 @@
         </div>
       </div>
     </footer>
-    <script src="../JS/script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

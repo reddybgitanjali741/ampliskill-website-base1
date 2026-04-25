@@ -3,15 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Events — AmpliSkill</title>
+    <title>About Us — AmpliSkill</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../CSS/styles.css" />
-    <link rel="stylesheet" href="../CSS/events.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="about.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
   </head>
   <body>
     <header class="site-header">
@@ -26,10 +30,10 @@
           </ul>
           <div style="display: flex; gap: 1.5rem">
             <a href="programs.html" class="utility-action"
-              >Apply to a Program</a
+              ><i class="fa-solid fa-graduation-cap"></i> Apply to a Program</a
             >
             <a href="journal.html#submit" class="utility-action"
-              >Submit to Journal</a
+              ><i class="fa-solid fa-file-pen"></i> Submit to Journal</a
             >
           </div>
         </div>
@@ -276,10 +280,14 @@
                 document.querySelector('.search-overlay input').focus();
               "
             >
-              ⌕
+              <i class="fa-solid fa-magnifying-glass"></i>
             </button>
-            <a href="contact.html" class="nav-cta">Get in touch</a>
-            <button class="mobile-toggle" aria-label="Menu">☰</button>
+            <a href="contact.html" class="nav-cta"
+              ><i class="fa-solid fa-envelope"></i> Get in touch</a
+            >
+            <button class="mobile-toggle" aria-label="Menu">
+              <i class="fa-solid fa-bars"></i>
+            </button>
           </div>
         </div>
       </nav>
@@ -291,7 +299,7 @@
         class="search-close"
         onclick="this.parentElement.classList.remove('open')"
       >
-        ×
+        <i class="fa-solid fa-xmark"></i>
       </button>
       <div class="search-box">
         <input type="text" placeholder="Search programs, articles, people…" />
@@ -308,284 +316,207 @@
       <a href="publications.html">Publications</a>
       <a href="journal.html">AJMSI Journal</a>
       <a href="events.html">Events</a>
-      <a href="contact.html" class="mobile-cta">Get in touch</a>
+      <a href="contact.html" class="mobile-cta"
+        ><i class="fa-solid fa-envelope"></i> Get in touch</a
+      >
     </div>
 
     <div class="page-wrap">
       <!-- PAGE HEADER -->
       <section class="page-header">
         <div class="container">
-          <span class="eyebrow">Events</span>
-          <h1>Seminars, <em>summits,</em><br />and <em>launches.</em></h1>
+          <span class="eyebrow">About AmpliSkill</span>
+          <h1>
+            Built at the intersection of <em>rigour</em><br />and
+            <em>real work.</em>
+          </h1>
           <p class="lead">
-            Our calendar of conferences, public lectures, workshops, and journal
-            launches — open to industry, academia, and the wider AmpliSkill
-            community.
+            AmpliSkill is a management learning, research, and consulting firm —
+            purpose-built for the leaders and institutions who treat excellence
+            as a practice, not an event.
           </p>
         </div>
       </section>
 
-      <div class="container">
-        <!-- FEATURED EVENT -->
-        <div class="featured-event">
-          <span class="tag">Flagship Event 2026</span>
-          <h2>The AmpliSkill Annual <em>Management Summit</em></h2>
-          <p>
-            A two-day gathering of practitioners, scholars, and senior leaders —
-            featuring keynote addresses, panel discussions, and the AJMSI
-            Journal soft launch.
-          </p>
-          <div class="evt-details">
+      <!-- WHO WE ARE -->
+      <section>
+        <div class="container">
+          <div class="who-section">
+            <span class="eyebrow" style="color: var(--coral)">Who we are</span>
             <div>
-              <span class="label">Dates</span>
-              <strong>Oct 15–16, 2026</strong>
-            </div>
-            <div>
-              <span class="label">Location</span>
-              <strong>Bengaluru, India</strong>
-            </div>
-            <div>
-              <span class="label">Format</span>
-              <strong>Hybrid</strong>
-            </div>
-            <div>
-              <span class="label">Seats</span>
-              <strong>300 in-person</strong>
+              <h2 class="display-md">
+                A firm that teaches, <em>advises</em>, and publishes — because
+                each strengthens the other.
+              </h2>
+              <p class="mt-2">
+                AmpliSkill was founded on the belief that management is a
+                discipline best learned where theory and practice meet. Our
+                faculty are practitioners. Our consulting partners are scholars.
+                Our journal is edited by both.
+              </p>
+              <p>
+                We build programs that don't end at the classroom, advisory
+                engagements that don't stop at the deck, and research that
+                refuses to separate itself from the people who do the work.
+              </p>
             </div>
           </div>
-          <div class="btns">
-            <a href="contact.html" class="btn-primary">Register interest →</a>
-            <a href="contact.html" class="btn-ghost">Speaking / sponsorship</a>
+
+          <div class="stats-row">
+            <div class="stat-col">
+              <div class="num">5+</div>
+              <div class="label">Consulting practices</div>
+            </div>
+            <div class="stat-col">
+              <div class="num">20+</div>
+              <div class="label">Programs on the calendar</div>
+            </div>
+            <div class="stat-col">
+              <div class="num">4</div>
+              <div class="label">Journal issues per year</div>
+            </div>
+            <div class="stat-col">
+              <div class="num">∞</div>
+              <div class="label">Customized engagements</div>
+            </div>
           </div>
         </div>
+      </section>
 
-        <!-- UPCOMING EVENTS -->
-        <div style="margin-top: 5rem">
-          <div
-            style="
-              display: flex;
-              justify-content: space-between;
-              align-items: end;
-              flex-wrap: wrap;
-              gap: 2rem;
-              margin-bottom: 1rem;
-            "
-          >
+      <!-- WHO WE SERVE -->
+      <section
+        style="
+          background: var(--paper);
+          border-top: 1px solid var(--line);
+          border-bottom: 1px solid var(--line);
+        "
+      >
+        <div class="container">
+          <div class="pillars-header">
             <div>
               <span class="eyebrow" style="color: var(--coral)"
-                >Upcoming · 2026</span
+                >Who we serve</span
               >
               <h2 class="display-md mt-2">
-                What's <em class="italic-accent">next.</em>
+                Five audiences.<br /><em class="italic-accent"
+                  >One standard.</em
+                >
+              </h2>
+            </div>
+            <p style="max-width: 28rem; color: var(--ink-soft)">
+              From C-suites in Fortune 500s to faculty at global universities,
+              we apply the same standard of craft, curiosity, and consequence.
+            </p>
+          </div>
+        </div>
+        <div class="container" style="padding: 0">
+          <div class="serve-grid">
+            <div class="serve-card">
+              <span class="serve-num">01</span>
+              <div>
+                <h3>Corporates</h3>
+                <p>
+                  Enterprises building leadership bench strength, transforming
+                  capabilities, and preparing for what's next.
+                </p>
+              </div>
+            </div>
+            <div class="serve-card">
+              <span class="serve-num">02</span>
+              <div>
+                <h3>Universities</h3>
+                <p>
+                  Partner institutions for faculty exchange, joint research, and
+                  executive education delivery.
+                </p>
+              </div>
+            </div>
+            <div class="serve-card">
+              <span class="serve-num">03</span>
+              <div>
+                <h3>Students</h3>
+                <p>
+                  Emerging leaders — MBAs, doctoral researchers, and
+                  early-career professionals — pursuing applied rigor.
+                </p>
+              </div>
+            </div>
+            <div class="serve-card">
+              <span class="serve-num">04</span>
+              <div>
+                <h3>Professionals</h3>
+                <p>
+                  Mid-career and senior leaders stepping into step-change roles
+                  where the old playbook no longer fits.
+                </p>
+              </div>
+            </div>
+            <div class="serve-card">
+              <span class="serve-num">05</span>
+              <div>
+                <h3>Government<br />Agencies</h3>
+                <p>
+                  Public institutions building policy capacity, leadership
+                  pipelines, and evidence-based practice.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MISSION, VISION, GOAL -->
+      <section>
+        <div class="container">
+          <div class="pillars-header">
+            <div>
+              <span class="eyebrow" style="color: var(--coral)"
+                >Mission · Vision · Goal</span
+              >
+              <h2 class="display-md mt-2">
+                What guides <em class="italic-accent">the work.</em>
               </h2>
             </div>
           </div>
-
-          <div class="filter-row">
-            <button class="filter-chip active">All events</button>
-            <button class="filter-chip">Seminars</button>
-            <button class="filter-chip">Workshops</button>
-            <button class="filter-chip">Panels</button>
-            <button class="filter-chip">Book launches</button>
-            <button class="filter-chip">Journal events</button>
-          </div>
-
-          <div class="events-list">
-            <a
-              class="event-row"
-              href="#"
-              style="text-decoration: none; color: inherit"
-            >
-              <div class="evt-date">May 23<span class="year">2026</span></div>
-              <div>
-                <h4>
-                  Industry-Academia Dialogue: The Future of Executive Education
-                </h4>
-                <span class="evt-type">Seminar · Public</span>
-              </div>
-              <div class="evt-location">Mumbai · Hybrid · 18:00</div>
-              <div class="evt-cta">Register →</div>
-            </a>
-            <a
-              class="event-row"
-              href="#"
-              style="text-decoration: none; color: inherit"
-            >
-              <div class="evt-date">Jun 11<span class="year">2026</span></div>
-              <div>
-                <h4>Masterclass: Decision-Making Under Ambiguity</h4>
-                <span class="evt-type">Workshop · By invitation</span>
-              </div>
-              <div class="evt-location">Bengaluru · In-person · 09:30</div>
-              <div class="evt-cta">Request invite →</div>
-            </a>
-            <a
-              class="event-row"
-              href="#"
-              style="text-decoration: none; color: inherit"
-            >
-              <div class="evt-date">Jul 04<span class="year">2026</span></div>
-              <div>
-                <h4>AJMSI Call for Papers: Authors' Briefing Session</h4>
-                <span class="evt-type">Webinar · Open</span>
-              </div>
-              <div class="evt-location">Virtual · 17:00 IST</div>
-              <div class="evt-cta">Register →</div>
-            </a>
-            <a
-              class="event-row"
-              href="#"
-              style="text-decoration: none; color: inherit"
-            >
-              <div class="evt-date">Aug 20<span class="year">2026</span></div>
-              <div>
-                <h4>Panel: Governance in the Age of AI</h4>
-                <span class="evt-type">Panel · Public</span>
-              </div>
-              <div class="evt-location">New Delhi · In-person · 18:30</div>
-              <div class="evt-cta">Register →</div>
-            </a>
-            <a
-              class="event-row"
-              href="#"
-              style="text-decoration: none; color: inherit"
-            >
-              <div class="evt-date">Sep 17<span class="year">2026</span></div>
-              <div>
-                <h4>Book Launch: "The Slow Strategy" by Dr. Meera Raghavan</h4>
-                <span class="evt-type">Book Launch · Public</span>
-              </div>
-              <div class="evt-location">Bengaluru · In-person · 18:00</div>
-              <div class="evt-cta">Register →</div>
-            </a>
-            <a
-              class="event-row"
-              href="#"
-              style="text-decoration: none; color: inherit"
-            >
-              <div class="evt-date">Oct 15<span class="year">2026</span></div>
-              <div>
-                <h4>AmpliSkill Annual Management Summit</h4>
-                <span class="evt-type">Flagship · Hybrid</span>
-              </div>
-              <div class="evt-location">Bengaluru · 2 days</div>
-              <div class="evt-cta">Featured →</div>
-            </a>
-            <a
-              class="event-row"
-              href="#"
-              style="text-decoration: none; color: inherit"
-            >
-              <div class="evt-date">Nov 12<span class="year">2026</span></div>
-              <div>
-                <h4>Roundtable: CSR Measurement and Impact</h4>
-                <span class="evt-type">Roundtable · Invite only</span>
-              </div>
-              <div class="evt-location">Mumbai · In-person · 14:00</div>
-              <div class="evt-cta">Request invite →</div>
-            </a>
-            <a
-              class="event-row"
-              href="#"
-              style="text-decoration: none; color: inherit"
-            >
-              <div class="evt-date">Dec 04<span class="year">2026</span></div>
-              <div>
-                <h4>Year-End Faculty Colloquium</h4>
-                <span class="evt-type">Colloquium · By invitation</span>
-              </div>
-              <div class="evt-location">Virtual · 16:00 IST</div>
-              <div class="evt-cta">Request invite →</div>
-            </a>
-            <a
-              class="event-row"
-              href="#"
-              style="text-decoration: none; color: inherit"
-            >
-              <div class="evt-date">Jan 21<span class="year">2027</span></div>
-              <div>
-                <h4>AJMSI Inaugural Issue — Launch Event</h4>
-                <span class="evt-type">Launch · Public</span>
-              </div>
-              <div class="evt-location">Bengaluru · Hybrid · 18:00</div>
-              <div class="evt-cta">Register →</div>
-            </a>
-          </div>
-        </div>
-
-        <!-- PAST EVENTS -->
-        <div style="margin-top: 6rem; padding-bottom: 4rem">
-          <div
-            style="
-              display: flex;
-              justify-content: space-between;
-              align-items: end;
-              flex-wrap: wrap;
-              gap: 2rem;
-              margin-bottom: 1rem;
-            "
-          >
-            <div>
-              <span class="eyebrow" style="color: var(--coral)"
-                >Archive · Selected</span
-              >
-              <h2 class="display-md mt-2">
-                Past <em class="italic-accent">events.</em>
-              </h2>
+          <div class="mvg-grid">
+            <div class="mvg-card">
+              <span class="label">Our Mission</span>
+              <h2>Amplify the practice of management.</h2>
+              <p>
+                To help leaders and organizations translate rigorous management
+                science into better decisions, stronger capabilities, and more
+                humane workplaces.
+              </p>
+            </div>
+            <div class="mvg-card">
+              <span class="label">Our Vision</span>
+              <h2>A world where excellence is shared.</h2>
+              <p>
+                To be the connective tissue between academic rigor and industry
+                practice — making the best thinking available to the broadest
+                range of leaders.
+              </p>
+            </div>
+            <div class="mvg-card">
+              <span class="label">Our Goal</span>
+              <h2>Build enduring partnerships.</h2>
+              <p>
+                By 2030, to serve 10,000+ leaders through programs, support 200+
+                organizations through consulting, and publish the most-read
+                applied management journal in the region.
+              </p>
             </div>
           </div>
-
-          <div class="events-list">
-            <a
-              class="event-row"
-              href="#"
-              style="text-decoration: none; color: inherit; opacity: 0.75"
-            >
-              <div class="evt-date">Mar 18<span class="year">2026</span></div>
-              <div>
-                <h4>Workshop: AI Strategy for Senior Leaders</h4>
-                <span class="evt-type">Workshop · Completed</span>
-              </div>
-              <div class="evt-location">Bengaluru · 48 attendees</div>
-              <div class="evt-cta">View recap →</div>
-            </a>
-            <a
-              class="event-row"
-              href="#"
-              style="text-decoration: none; color: inherit; opacity: 0.75"
-            >
-              <div class="evt-date">Feb 06<span class="year">2026</span></div>
-              <div>
-                <h4>Fireside Chat: The Board as Strategic Asset</h4>
-                <span class="evt-type">Fireside · Completed</span>
-              </div>
-              <div class="evt-location">Mumbai · 62 attendees</div>
-              <div class="evt-cta">View recap →</div>
-            </a>
-            <a
-              class="event-row"
-              href="#"
-              style="text-decoration: none; color: inherit; opacity: 0.75"
-            >
-              <div class="evt-date">Dec 10<span class="year">2025</span></div>
-              <div>
-                <h4>Founders' Announcement: Introducing AmpliSkill</h4>
-                <span class="evt-type">Launch · Completed</span>
-              </div>
-              <div class="evt-location">Virtual · 180+ attendees</div>
-              <div class="evt-cta">View recap →</div>
-            </a>
-          </div>
         </div>
-      </div>
+      </section>
 
       <!-- CTA -->
       <section class="cta-band">
         <div class="container">
-          <h2>Stay in the <em class="italic-accent">loop.</em></h2>
+          <h2>Work with <em class="italic-accent">us.</em></h2>
           <p>
-            Subscribe to be the first to hear about new programs, journal
-            issues, and events.
+            Whether you're looking for a program, an advisory partner, or a
+            place to publish — we'd like to hear from you.
           </p>
           <div
             style="
@@ -595,6 +526,7 @@
               flex-wrap: wrap;
             "
           >
+            <a class="btn-ghost" href="team.html">Meet the team →</a>
             <a
               href="contact.html"
               class="nav-cta"
@@ -604,7 +536,7 @@
                 padding: 1rem 2rem;
                 font-size: 0.95rem;
               "
-              >Subscribe</a
+              >Get in touch</a
             >
           </div>
         </div>
@@ -622,7 +554,7 @@
             </p>
           </div>
           <div>
-            <h5>Explore</h5>
+            <h5><i class="fa-solid fa-compass"></i> Explore</h5>
             <ul>
               <li><a href="about.html">About Us</a></li>
               <li><a href="team.html">Team</a></li>
@@ -631,7 +563,7 @@
             </ul>
           </div>
           <div>
-            <h5>Research</h5>
+            <h5><i class="fa-solid fa-flask"></i> Research</h5>
             <ul>
               <li><a href="journal.html">AJMSI Journal</a></li>
               <li><a href="publications.html">Books</a></li>
@@ -640,7 +572,7 @@
             </ul>
           </div>
           <div>
-            <h5>Connect</h5>
+            <h5><i class="fa-solid fa-network-wired"></i> Connect</h5>
             <ul>
               <li><a href="contact.html">Contact</a></li>
               <li><a href="contact.html">Careers</a></li>
@@ -655,6 +587,6 @@
         </div>
       </div>
     </footer>
-    <script src="../JS/script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

@@ -3,15 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact — AmpliSkill</title>
+    <title>Consulting — AmpliSkill</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../CSS/styles.css" />
-    <link rel="stylesheet" href="../CSS/contact.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="consulting.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
   </head>
   <body>
     <header class="site-header">
@@ -26,10 +30,10 @@
           </ul>
           <div style="display: flex; gap: 1.5rem">
             <a href="programs.html" class="utility-action"
-              >Apply to a Program</a
+              ><i class="fa-solid fa-graduation-cap"></i> Apply to a Program</a
             >
             <a href="journal.html#submit" class="utility-action"
-              >Submit to Journal</a
+              ><i class="fa-solid fa-file-pen"></i> Submit to Journal</a
             >
           </div>
         </div>
@@ -38,7 +42,7 @@
       <!-- Main nav -->
       <nav class="main-nav">
         <div class="container">
-          <a href="../html/index.html" class="logo"
+          <a href="index.html" class="logo"
             ><span
               ><img
                 src="../assets/Logo.png"
@@ -276,10 +280,14 @@
                 document.querySelector('.search-overlay input').focus();
               "
             >
-              ⌕
+              <i class="fa-solid fa-magnifying-glass"></i>
             </button>
-            <a href="contact.html" class="nav-cta">Get in touch</a>
-            <button class="mobile-toggle" aria-label="Menu">☰</button>
+            <a href="contact.html" class="nav-cta"
+              ><i class="fa-solid fa-envelope"></i> Get in touch</a
+            >
+            <button class="mobile-toggle" aria-label="Menu">
+              <i class="fa-solid fa-bars"></i>
+            </button>
           </div>
         </div>
       </nav>
@@ -291,7 +299,7 @@
         class="search-close"
         onclick="this.parentElement.classList.remove('open')"
       >
-        ×
+        <i class="fa-solid fa-xmark"></i>
       </button>
       <div class="search-box">
         <input type="text" placeholder="Search programs, articles, people…" />
@@ -308,172 +316,338 @@
       <a href="publications.html">Publications</a>
       <a href="journal.html">AJMSI Journal</a>
       <a href="events.html">Events</a>
-      <a href="contact.html" class="mobile-cta">Get in touch</a>
+      <a href="contact.html" class="mobile-cta"
+        ><i class="fa-solid fa-envelope"></i> Get in touch</a
+      >
     </div>
 
     <div class="page-wrap">
       <!-- PAGE HEADER -->
       <section class="page-header">
         <div class="container">
-          <span class="eyebrow">Contact</span>
-          <h1>Tell us <em>what</em><br />you're <em>working on.</em></h1>
+          <span class="eyebrow">Consulting</span>
+          <h1>Advisory that <em>thinks</em><br />and <em>ships.</em></h1>
           <p class="lead">
-            Programs, consulting, journal submissions, partnerships, or press —
-            fill in the short form below and the right person will come back to
-            you within two working days.
+            Five focused practices delivered by senior practitioners. We combine
+            the rigour of academic inquiry with the pragmatism of people who
+            have run large organizations — so you get answers, not just
+            analysis.
           </p>
         </div>
       </section>
 
-      <!-- CONTACT -->
-      <section style="padding: 4rem 0 8rem">
+      <!-- FIVE SERVICES -->
+      <section>
         <div class="container">
-          <div class="contact-grid">
-            <div class="contact-info">
-              <h3>General inquiries</h3>
-              <p>
-                <a href="mailto:hello@ampliskill.com">hello@ampliskill.com</a>
-              </p>
-
-              <h3>Programs</h3>
-              <p>
-                <a href="mailto:programs@ampliskill.com"
-                  >programs@ampliskill.com</a
-                >
-              </p>
-
-              <h3>Consulting</h3>
-              <p>
-                <a href="mailto:consulting@ampliskill.com"
-                  >consulting@ampliskill.com</a
-                >
-              </p>
-
-              <h3>Journal submissions</h3>
-              <p>
-                <a href="mailto:editor@ampliskill.com">editor@ampliskill.com</a>
-              </p>
-
-              <h3>Press &amp; media</h3>
-              <p>
-                <a href="mailto:press@ampliskill.com">press@ampliskill.com</a>
-              </p>
-
-              <h3>Registered office</h3>
-              <p>
-                [ Office Address Line 1 ]<br />
-                [ Office Address Line 2 ]<br />
-                Bengaluru, India
-              </p>
-
-              <h3>Follow</h3>
-              <p>
-                <a href="#">LinkedIn</a> · <a href="#">X</a> ·
-                <a href="#">YouTube</a>
-              </p>
-            </div>
-
-            <div class="form-card">
-              <h3
-                style="
-                  font-family: &quot;Fraunces&quot;, serif;
-                  font-size: 1.75rem;
-                  font-weight: 500;
-                  margin-bottom: 0.5rem;
-                  letter-spacing: -0.015em;
-                "
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: end;
+              flex-wrap: wrap;
+              gap: 2rem;
+            "
+          >
+            <div>
+              <span class="eyebrow" style="color: var(--coral)"
+                >Five focused practices</span
               >
-                Get in touch
-              </h3>
-              <p style="color: var(--ink-soft); margin-bottom: 2rem">
-                Fields marked * are required.
-              </p>
-              <form id="contactForm">
-                <div class="form-grid">
-                  <div class="field">
-                    <label>Full name *</label>
-                    <input type="text" name="name" required />
-                  </div>
-                  <div class="field">
-                    <label>Work email *</label>
-                    <input type="email" name="email" required />
-                  </div>
-                  <div class="field">
-                    <label>Organization</label>
-                    <input type="text" name="org" />
-                  </div>
-                  <div class="field">
-                    <label>Role</label>
-                    <input type="text" name="role" />
-                  </div>
-                  <div class="field full">
-                    <label>What would you like to talk about? *</label>
-                    <select name="topic" required>
-                      <option value="">Please select…</option>
-                      <option>Enrolling in an announced program</option>
-                      <option>Customized program for our organization</option>
-                      <option>Consulting engagement</option>
-                      <option>AJMSI journal submission / inquiry</option>
-                      <option>Speaking / sponsoring at an event</option>
-                      <option>Faculty / partnership inquiry</option>
-                      <option>Press / media</option>
-                      <option>Something else</option>
-                    </select>
-                  </div>
-                  <div class="field full">
-                    <label>Tell us more *</label>
-                    <textarea
-                      name="message"
-                      rows="4"
-                      required
-                      placeholder="A few sentences on what you're looking for, your timeline, and anything else that would help us route your message to the right person."
-                    ></textarea>
-                  </div>
-                  <div class="field full">
-                    <label
-                      style="
-                        display: flex;
-                        gap: 0.5rem;
-                        align-items: center;
-                        letter-spacing: normal;
-                        text-transform: none;
-                        font-size: 0.85rem;
-                      "
-                    >
-                      <input
-                        type="checkbox"
-                        name="newsletter"
-                        style="width: auto; border: 1.5px solid var(--ink)"
-                      />
-                      Add me to the AmpliSkill newsletter (quarterly).
-                    </label>
-                  </div>
-                  <div class="field full">
-                    <button
-                      type="submit"
-                      class="btn-primary"
-                      style="
-                        border: none;
-                        cursor: pointer;
-                        font-family: inherit;
-                      "
-                    >
-                      Send message →
-                    </button>
-                  </div>
-                </div>
-              </form>
+              <h2 class="display-md mt-2">
+                What we <em class="italic-accent">consult on.</em>
+              </h2>
+            </div>
+            <p style="max-width: 28rem; color: var(--ink-soft)">
+              Every engagement is scoped, staffed, and led by senior team
+              members. No junior-loaded pyramids.
+            </p>
+          </div>
+        </div>
 
-              <div class="success-msg" id="successMsg">
-                <h4>Thank you — we've got your message.</h4>
+        <div class="container" style="padding: 0">
+          <div class="services-grid">
+            <div class="service-card">
+              <div>
+                <span class="service-num">01</span>
+                <h3>CSR Impact<br />Assessment</h3>
                 <p>
-                  We'll come back to you within two working days. In the
-                  meantime, feel free to explore our
-                  <a href="programs.html">programs</a> or the
-                  <a href="journal.html">AJMSI journal</a>.
+                  Independent assessment of your Corporate Social Responsibility
+                  programs — impact measurement, beneficiary outcomes, and
+                  reporting aligned to statutory and voluntary frameworks.
                 </p>
               </div>
+              <ul>
+                <li>Theory-of-change mapping</li>
+                <li>Beneficiary surveys &amp; field visits</li>
+                <li>Impact measurement (SROI, IRIS+)</li>
+                <li>Board-ready reports</li>
+              </ul>
             </div>
+
+            <div class="service-card">
+              <div>
+                <span class="service-num">02</span>
+                <h3>Internal Policy<br />Review</h3>
+                <p>
+                  Independent review of your internal policies — HR, risk,
+                  governance, procurement — to assess currency, coherence, and
+                  alignment with leading practice and regulation.
+                </p>
+              </div>
+              <ul>
+                <li>Policy inventory &amp; gap analysis</li>
+                <li>Benchmarking against peers</li>
+                <li>Redrafting &amp; harmonization</li>
+                <li>Implementation roadmap</li>
+              </ul>
+            </div>
+
+            <div class="service-card">
+              <div>
+                <span class="service-num">03</span>
+                <h3>Employee<br />Assessment</h3>
+                <p>
+                  Structured assessment of employee capability, leadership bench
+                  strength, and organizational health — using validated
+                  psychometrics, 360° reviews, and simulation-based assessment
+                  centres.
+                </p>
+              </div>
+              <ul>
+                <li>Individual leadership profiling</li>
+                <li>High-potential identification</li>
+                <li>Assessment &amp; development centres</li>
+                <li>Culture &amp; engagement diagnostics</li>
+              </ul>
+            </div>
+
+            <div class="service-card">
+              <div>
+                <span class="service-num">04</span>
+                <h3>Feasibility<br />Study</h3>
+                <p>
+                  Rigorous pre-investment and pre-commitment studies for new
+                  business lines, market entries, geographies, products, or
+                  strategic initiatives.
+                </p>
+              </div>
+              <ul>
+                <li>Market &amp; demand sizing</li>
+                <li>Competitive &amp; regulatory analysis</li>
+                <li>Financial modelling &amp; scenarios</li>
+                <li>Risk assessment &amp; recommendation</li>
+              </ul>
+            </div>
+
+            <div class="service-card">
+              <div>
+                <span class="service-num">05</span>
+                <h3>Risk &amp; Controls<br />Assessment</h3>
+                <p>
+                  Enterprise and operational risk assessment — identifying key
+                  risks, testing the control environment, and recommending
+                  improvements aligned to regulatory and board expectations.
+                </p>
+              </div>
+              <ul>
+                <li>Enterprise risk assessment</li>
+                <li>Process-level controls testing</li>
+                <li>Regulatory gap &amp; readiness review</li>
+                <li>Board-ready risk reporting</li>
+              </ul>
+            </div>
+
+            <div
+              class="service-card"
+              style="background: var(--ink); color: var(--cream)"
+            >
+              <div>
+                <span class="service-num" style="color: var(--butter)">+</span>
+                <h3 style="color: var(--cream)">Custom<br />Engagements</h3>
+                <p style="color: rgba(248, 243, 231, 0.75)">
+                  Outside our five practice lines but still in our wheelhouse?
+                  We take on select custom engagements where senior AmpliSkill
+                  team members can lead from the front.
+                </p>
+              </div>
+              <ul>
+                <li style="color: rgba(248, 243, 231, 0.75)">
+                  Governance reviews
+                </li>
+                <li style="color: rgba(248, 243, 231, 0.75)">
+                  Organization design
+                </li>
+                <li style="color: rgba(248, 243, 231, 0.75)">
+                  Strategy offsites
+                </li>
+                <li style="color: rgba(248, 243, 231, 0.75)">
+                  Public-sector advisory
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- APPROACH -->
+      <section class="approach-section" style="padding: 8rem 0">
+        <div class="container">
+          <div class="pillars-header">
+            <div>
+              <span class="eyebrow" style="color: var(--butter)"
+                >Our approach</span
+              >
+              <h2 class="display-lg mt-2">
+                Senior-led, <em>outcome-focused,</em><br />evidence-based.
+              </h2>
+            </div>
+          </div>
+          <div class="approach-grid">
+            <div class="approach-step">
+              <span class="step-num">01</span>
+              <h4>Scope</h4>
+              <p>
+                A clear problem statement and success criteria — agreed upfront,
+                in writing. No bait-and-switch.
+              </p>
+            </div>
+            <div class="approach-step">
+              <span class="step-num">02</span>
+              <h4>Diagnose</h4>
+              <p>
+                Field work, interviews, data analysis, benchmarks. We look for
+                what's happening — not what we want to find.
+              </p>
+            </div>
+            <div class="approach-step">
+              <span class="step-num">03</span>
+              <h4>Design</h4>
+              <p>
+                Recommendations that account for your constraints, your people,
+                and your pace. Strategy that can be implemented.
+              </p>
+            </div>
+            <div class="approach-step">
+              <span class="step-num">04</span>
+              <h4>Deliver</h4>
+              <p>
+                We stay for implementation where it makes sense. We leave when
+                your team owns the work — never before.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CASE HIGHLIGHTS -->
+      <section>
+        <div class="container">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: end;
+              flex-wrap: wrap;
+              gap: 2rem;
+            "
+          >
+            <div>
+              <span class="eyebrow" style="color: var(--coral)"
+                >Case highlights</span
+              >
+              <h2 class="display-md mt-2">
+                Some of the <em class="italic-accent">work.</em>
+              </h2>
+            </div>
+            <p style="max-width: 26rem; color: var(--ink-soft)">
+              Anonymized, but representative of the kind of engagements we lead.
+            </p>
+          </div>
+
+          <div class="cases-grid">
+            <div class="case-row">
+              <div class="case-sector">Banking · Risk</div>
+              <h4>
+                Enterprise risk transformation for a mid-sized private bank
+              </h4>
+              <div class="case-outcome">
+                Re-architected the RCSA framework across 12 business lines;
+                board-approved roadmap.
+              </div>
+              <span class="case-arrow">→</span>
+            </div>
+            <div class="case-row">
+              <div class="case-sector">Manufacturing · CSR</div>
+              <h4>
+                CSR impact assessment across 4 states for an industrial group
+              </h4>
+              <div class="case-outcome">
+                Evaluated 28 programs, reallocated 40% of CSR budget to
+                higher-impact interventions.
+              </div>
+              <span class="case-arrow">→</span>
+            </div>
+            <div class="case-row">
+              <div class="case-sector">Public Sector · Feasibility</div>
+              <h4>
+                Feasibility study for a state-level skills training initiative
+              </h4>
+              <div class="case-outcome">
+                Sizing, cost modelling, and delivery architecture for a
+                50,000-learner programme.
+              </div>
+              <span class="case-arrow">→</span>
+            </div>
+            <div class="case-row">
+              <div class="case-sector">Technology · People</div>
+              <h4>Leadership assessment for a scale-up preparing for IPO</h4>
+              <div class="case-outcome">
+                Executive team profiling, bench-strength mapping, and succession
+                recommendations.
+              </div>
+              <span class="case-arrow">→</span>
+            </div>
+            <div class="case-row">
+              <div class="case-sector">Conglomerate · Policy</div>
+              <h4>
+                Group-wide policy harmonization across 9 operating companies
+              </h4>
+              <div class="case-outcome">
+                Consolidated 340 policies into 54 group-level and 110
+                entity-level policies.
+              </div>
+              <span class="case-arrow">→</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta-band">
+        <div class="container">
+          <h2>Have a <em class="italic-accent">question</em> to work on?</h2>
+          <p>
+            Tell us the shape of it. We'll come back with a short note on how
+            we'd approach it — no commitment.
+          </p>
+          <div
+            style="
+              display: flex;
+              justify-content: center;
+              gap: 1rem;
+              flex-wrap: wrap;
+            "
+          >
+            <a
+              href="contact.html"
+              class="nav-cta"
+              style="
+                background: var(--ink);
+                color: var(--cream);
+                padding: 1rem 2rem;
+                font-size: 0.95rem;
+              "
+              >Start a conversation</a
+            >
           </div>
         </div>
       </section>
@@ -490,7 +664,7 @@
             </p>
           </div>
           <div>
-            <h5>Explore</h5>
+            <h5><i class="fa-solid fa-compass"></i> Explore</h5>
             <ul>
               <li><a href="about.html">About Us</a></li>
               <li><a href="team.html">Team</a></li>
@@ -499,7 +673,7 @@
             </ul>
           </div>
           <div>
-            <h5>Research</h5>
+            <h5><i class="fa-solid fa-flask"></i> Research</h5>
             <ul>
               <li><a href="journal.html">AJMSI Journal</a></li>
               <li><a href="publications.html">Books</a></li>
@@ -508,7 +682,7 @@
             </ul>
           </div>
           <div>
-            <h5>Connect</h5>
+            <h5><i class="fa-solid fa-network-wired"></i> Connect</h5>
             <ul>
               <li><a href="contact.html">Contact</a></li>
               <li><a href="contact.html">Careers</a></li>
@@ -523,7 +697,6 @@
         </div>
       </div>
     </footer>
-    <script src="../JS/script.js"></script>
-    <script src="../JS/contact.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

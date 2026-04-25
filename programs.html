@@ -3,15 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Team — AmpliSkill</title>
+    <title>Programs — AmpliSkill</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../CSS/styles.css" />
-    <link rel="stylesheet" href="../CSS/team.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="programs.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
   </head>
   <body>
     <header class="site-header">
@@ -26,10 +30,10 @@
           </ul>
           <div style="display: flex; gap: 1.5rem">
             <a href="programs.html" class="utility-action"
-              >Apply to a Program</a
+              ><i class="fa-solid fa-graduation-cap"></i> Apply to a Program</a
             >
             <a href="journal.html#submit" class="utility-action"
-              >Submit to Journal</a
+              ><i class="fa-solid fa-file-pen"></i> Submit to Journal</a
             >
           </div>
         </div>
@@ -276,10 +280,14 @@
                 document.querySelector('.search-overlay input').focus();
               "
             >
-              ⌕
+              <i class="fa-solid fa-magnifying-glass"></i>
             </button>
-            <a href="contact.html" class="nav-cta">Get in touch</a>
-            <button class="mobile-toggle" aria-label="Menu">☰</button>
+            <a href="contact.html" class="nav-cta"
+              ><i class="fa-solid fa-envelope"></i> Get in touch</a
+            >
+            <button class="mobile-toggle" aria-label="Menu">
+              <i class="fa-solid fa-bars"></i>
+            </button>
           </div>
         </div>
       </nav>
@@ -291,7 +299,7 @@
         class="search-close"
         onclick="this.parentElement.classList.remove('open')"
       >
-        ×
+        <i class="fa-solid fa-xmark"></i>
       </button>
       <div class="search-box">
         <input type="text" placeholder="Search programs, articles, people…" />
@@ -308,328 +316,389 @@
       <a href="publications.html">Publications</a>
       <a href="journal.html">AJMSI Journal</a>
       <a href="events.html">Events</a>
-      <a href="contact.html" class="mobile-cta">Get in touch</a>
+      <a href="contact.html" class="mobile-cta"
+        ><i class="fa-solid fa-envelope"></i> Get in touch</a
+      >
     </div>
 
     <div class="page-wrap">
       <!-- PAGE HEADER -->
       <section class="page-header">
         <div class="container">
-          <span class="eyebrow">The People</span>
-          <h1>Experts</h1>
+          <span class="eyebrow">Management Development Programs</span>
+          <h1>
+            Leadership, <em>by the</em><br />calendar — and <em>by design.</em>
+          </h1>
           <p class="lead">
-            Our executive team, advisory council, academic partners, industry
-            partners, and editorial board — a deliberately hybrid bench that
-            keeps our work rigorous and relevant.
+            Two ways to work with us: enrol in one of our published,
+            calendar-based programs, or co-design a customized program for your
+            organization — residential or non-residential.
           </p>
         </div>
       </section>
 
-      <!-- EXECUTIVE TEAM -->
-      <section class="team-section">
-        <div class="container">
-          <div class="team-section-header">
-            <div>
-              <span class="eyebrow" style="color: var(--coral)"
-                >01 — Executive Team</span
-              >
-              <h2 class="mt-2">The <em>Management</em> Team.</h2>
-            </div>
-            <p style="max-width: 28rem; color: var(--ink-soft)">
-              Professional and educators who built their careers at the
-              intersection of practice and teaching.
-            </p>
-          </div>
-          <div class="team-grid">
-            <div class="team-card">
-              <div class="avatar">BKD</div>
-              <h4>Dr.Barendra Kumar Das</h4>
-              <div class="role">Founding-Partner</div>
-              <p>
-                Two decades of general management experience across
-                manufacturing, financial services, and public-sector advisory.
-                Leads AmpliSkill's MDP practice and client relationships.
-              </p>
-            </div>
-            <div class="team-card">
-              <div class="avatar v2">BKD</div>
-              <h4>Dr. Brajendra Kumar Das</h4>
-              <div class="role">Co-founder &amp; Managing Director</div>
-              <p>
-                A medical practitioner by profession, bring decades of
-                experience in hospital management, government relationships to
-                strengthen consulting practice.
-              </p>
-            </div>
-            <div class="team-card">
-              <div class="avatar v3">AKP</div>
-              <h4>Dr. Ashok Kumar Patnaik</h4>
-              <div class="role">Chief Operating Officer</div>
-              <p>
-                Placeholder — to be appointed. Will own program design, faculty
-                recruitment, and cohort operations across the calendar.
-              </p>
-            </div>
-            <div class="team-card">
-              <div class="avatar v4">TMP</div>
-              <h4>Trupti Mayee Panigrahi</h4>
-              <div class="role">Program Officer</div>
-              <p>
-                Placeholder — editorial leadership for the AmpliSkill Journal of
-                Management, Strategy &amp; Innovation. Will chair the editorial
-                board.
-              </p>
-            </div>
-          </div>
+      <div class="container">
+        <!-- TABS -->
+        <div class="tabs-row">
+          <button class="tab-btn active" data-tab="announced">
+            Announced Programs
+          </button>
+          <button class="tab-btn" data-tab="customized">
+            Customized Programs
+          </button>
         </div>
-      </section>
 
-      <!-- ADVISORY COUNCIL -->
-      <section class="team-section" style="background: var(--paper)">
-        <div class="container">
-          <div class="team-section-header">
-            <div>
-              <span class="eyebrow" style="color: var(--coral)"
-                >02 — Advisory Council</span
-              >
-              <h2 class="mt-2">Seasoned <em>counsel.</em></h2>
-            </div>
-            <p style="max-width: 28rem; color: var(--ink-soft)">
-              An independent body of senior leaders who guide strategy,
-              governance, and standards.
-            </p>
-          </div>
-          <div class="team-grid">
-            <div class="team-card">
-              <div class="avatar v5">M</div>
-              <h4>[ Member 01 ]</h4>
-              <div class="role">Advisory Council</div>
-              <p>
-                Former CEO, Fortune 500 — financial services sector. Advisory
-                focus: governance, risk, and enterprise strategy.
-              </p>
-            </div>
-            <div class="team-card">
-              <div class="avatar v6">M</div>
-              <h4>[ Member 02 ]</h4>
-              <div class="role">Advisory Council</div>
-              <p>
-                Retired Secretary to Government, policy and public
-                administration. Advisory focus: public sector engagements.
-              </p>
-            </div>
-            <div class="team-card">
-              <div class="avatar v2">M</div>
-              <h4>[ Member 03 ]</h4>
-              <div class="role">Advisory Council</div>
-              <p>
-                Dean Emeritus, leading business school. Advisory focus: academic
-                rigor, faculty development, and research.
-              </p>
-            </div>
-            <div class="team-card">
-              <div class="avatar">M</div>
-              <h4>[ Member 04 ]</h4>
-              <div class="role">Advisory Council</div>
-              <p>
-                Founder, scaled technology enterprise. Advisory focus:
-                innovation, digital transformation, and growth strategy.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ACADEMIC PARTNERS -->
-      <section class="team-section">
-        <div class="container">
-          <div class="team-section-header">
-            <div>
-              <span class="eyebrow" style="color: var(--coral)"
-                >03 — Academic Partners</span
-              >
-              <h2 class="mt-2">Universities we <em>work with.</em></h2>
-            </div>
-            <p style="max-width: 28rem; color: var(--ink-soft)">
-              Formal MoUs with Indian and international institutions for faculty
-              exchange, research, and joint programs.
-            </p>
-          </div>
-        </div>
-        <div class="container" style="padding: 0">
-          <div class="partners-row">
-            <div class="partner-cell"><span></span></div>
-            <div class="partner-cell"><span></span></div>
-            <div class="partner-cell"><span></span></div>
-            <div class="partner-cell"><span></span></div>
-            <div class="partner-cell"><span></span></div>
-            <div class="partner-cell"><span></span></div>
-            <div class="partner-cell"><span></span></div>
-          </div>
-        </div>
-        <div
-          style="
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-            padding-top: 30px;
-          "
-        >
-          <a class="btn-ghost" href="">Partner with us →</a>
-          <a
-            href=""
-            class="nav-cta"
-            style="
-              background: var(--ink);
-              color: var(--cream);
-              padding: 1rem 2rem;
-              font-size: 0.95rem;
-            "
-            >Join our faculty</a
-          >
-        </div>
-      </section>
-
-      <!-- INDUSTRY PARTNERS -->
-      <section class="team-section" style="background: var(--paper)">
-        <div class="container">
-          <div class="team-section-header">
-            <div>
-              <span class="eyebrow" style="color: var(--coral)"
-                >04 — Industry Partners</span
-              >
-              <h2 class="mt-2">Organizations in <em>the field.</em></h2>
-            </div>
-            <p style="max-width: 28rem; color: var(--ink-soft)">
-              Corporate partners across banking, manufacturing, technology, and
-              public sector for training, consulting, research, workshops, and
-              internships.
-            </p>
-          </div>
-        </div>
-        <div class="container" style="padding: 0">
-          <div class="partners-row">
-            <div class="partner-cell"><span></span></div>
-            <div class="partner-cell"><span></span></div>
-            <div class="partner-cell"><span></span></div>
-            <div class="partner-cell"><span></span></div>
-            <div class="partner-cell"><span></span></div>
-            <div class="partner-cell"><span></span></div>
-            <div class="partner-cell"><span></span></div>
-          </div>
-        </div>
-        <div
-          style="
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-            padding-top: 30px;
-          "
-        >
-          <a class="btn-ghost" href="">Partner with us →</a>
-          <a
-            href=""
-            class="nav-cta"
-            style="
-              background: var(--ink);
-              color: var(--cream);
-              padding: 1rem 2rem;
-              font-size: 0.95rem;
-            "
-            >Join our faculty</a
-          >
-        </div>
-      </section>
-
-      <!-- EDITORIAL BOARD -->
-      <section class="team-section">
-        <div class="container">
-          <div class="team-section-header">
-            <div>
-              <span class="eyebrow" style="color: var(--coral)"
-                >05 — Editorial Board</span
-              >
-              <h2 class="mt-2">AJMSI <em>editorial board.</em></h2>
-            </div>
-            <p style="max-width: 28rem; color: var(--ink-soft)">
-              Scholars and senior practitioners who guide the editorial
-              direction of the AmpliSkill Journal of Management, Strategy &amp;
-              Innovation.
-            </p>
-          </div>
-          <div class="team-grid">
-            <div class="team-card">
-              <div class="avatar v3">E</div>
-              <h4>[ Editor-in-Chief ]</h4>
-              <div class="role">Chair · Editorial Board</div>
-              <p>
-                Placeholder — to be appointed. Professor of strategy or
-                organization behavior at a leading research institution.
-              </p>
-            </div>
-            <div class="team-card">
-              <div class="avatar v4">E</div>
-              <h4>[ Associate Editor ]</h4>
-              <div class="role">Innovation Track</div>
-              <p>
-                Placeholder — leading scholar in innovation management and
-                business model design.
-              </p>
-            </div>
-            <div class="team-card">
-              <div class="avatar v5">E</div>
-              <h4>[ Associate Editor ]</h4>
-              <div class="role">Strategy Track</div>
-              <p>
-                Placeholder — strategy researcher with deep industry experience.
-              </p>
-            </div>
-            <div class="team-card">
-              <div class="avatar v6">E</div>
-              <h4>[ Managing Editor ]</h4>
-              <div class="role">Operations</div>
-              <p>
-                Placeholder — manages peer review, production, and contributor
-                relations.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CTA -->
-      <section class="cta-band">
-        <div class="container">
-          <h2>Join the <em class="italic-accent">bench.</em></h2>
-          <p>
-            We're always looking for practitioners, scholars, and partners who
-            treat management as a craft. If that's you — we should talk.
-          </p>
+        <!-- TAB: ANNOUNCED PROGRAMS -->
+        <div class="tab-panel active" id="announced" style="padding: 3rem 0">
           <div
             style="
               display: flex;
-              justify-content: center;
-              gap: 1rem;
+              justify-content: space-between;
+              align-items: end;
               flex-wrap: wrap;
+              gap: 2rem;
+              margin-bottom: 2rem;
             "
           >
-            <a class="btn-ghost" href="contact.html">Partner with us →</a>
+            <div>
+              <span class="eyebrow" style="color: var(--coral)"
+                >Calendar 2026</span
+              >
+              <h2 class="display-md mt-2">
+                Published cohorts.<br /><em class="italic-accent"
+                  >Reserve your seat.</em
+                >
+              </h2>
+            </div>
+            <p style="max-width: 28rem; color: var(--ink-soft)">
+              Every program below runs on a fixed calendar with published dates,
+              fixed faculty, and capped cohort sizes.
+            </p>
+          </div>
+
+          <div class="filter-row">
+            <button class="filter-chip active">All programs</button>
+            <button class="filter-chip">Leadership</button>
+            <button class="filter-chip">Strategy</button>
+            <button class="filter-chip">Innovation</button>
+            <button class="filter-chip">Governance</button>
+            <button class="filter-chip">Residential</button>
+            <button class="filter-chip">Non-residential</button>
+          </div>
+
+          <div class="cards-grid">
             <a
-              href="contact.html"
-              class="nav-cta"
+              class="card coral"
+              href="program-template.html"
+              style="text-decoration: none; color: inherit"
+            >
+              <div>
+                <div class="card-top">
+                  <span class="tag">Flagship</span>
+                  <span class="duration">08 WEEKS</span>
+                </div>
+                <h3>The Senior Leadership <em>Intensive</em></h3>
+                <p>
+                  A flagship modular programme for leaders stepping into
+                  enterprise-level responsibility.
+                </p>
+              </div>
+              <div class="card-bottom">
+                <div class="next-date">
+                  NEXT COHORT<strong>May 12, 2026</strong>
+                </div>
+                <span class="card-arrow">↗</span>
+              </div>
+            </a>
+
+            <a
+              class="card"
+              href="program-template.html"
+              style="text-decoration: none; color: inherit"
+            >
+              <div>
+                <div class="card-top">
+                  <span class="tag">Leadership</span>
+                  <span class="duration">03 DAYS</span>
+                </div>
+                <h3>Strategic Thinking for <em>New Managers</em></h3>
+                <p>
+                  The essential shift from individual contributor to strategic
+                  operator — compressed into three days.
+                </p>
+              </div>
+              <div class="card-bottom">
+                <div class="next-date">
+                  NEXT COHORT<strong>Jun 03, 2026</strong>
+                </div>
+                <span class="card-arrow">↗</span>
+              </div>
+            </a>
+
+            <a
+              class="card teal"
+              href="program-template.html"
+              style="text-decoration: none; color: inherit"
+            >
+              <div>
+                <div class="card-top">
+                  <span class="tag">Innovation</span>
+                  <span class="duration">05 DAYS</span>
+                </div>
+                <h3>Innovation &amp; <em>Business Model</em> Design</h3>
+                <p>
+                  A hands-on lab for product, strategy, and BD leaders working
+                  on new growth engines.
+                </p>
+              </div>
+              <div class="card-bottom">
+                <div class="next-date">
+                  NEXT COHORT<strong>Jun 17, 2026</strong>
+                </div>
+                <span class="card-arrow">↗</span>
+              </div>
+            </a>
+
+            <a
+              class="card"
+              href="program-template.html"
+              style="text-decoration: none; color: inherit"
+            >
+              <div>
+                <div class="card-top">
+                  <span class="tag">Leadership</span>
+                  <span class="duration">04 DAYS</span>
+                </div>
+                <h3>Leading Through <em>Ambiguity</em></h3>
+                <p>
+                  Decision-making, communication, and team navigation under high
+                  uncertainty.
+                </p>
+              </div>
+              <div class="card-bottom">
+                <div class="next-date">
+                  NEXT COHORT<strong>Jul 08, 2026</strong>
+                </div>
+                <span class="card-arrow">↗</span>
+              </div>
+            </a>
+
+            <a
+              class="card coral"
+              href="program-template.html"
+              style="text-decoration: none; color: inherit"
+            >
+              <div>
+                <div class="card-top">
+                  <span class="tag">Governance</span>
+                  <span class="duration">06 WEEKS</span>
+                </div>
+                <h3>Board Readiness <em>Programme</em></h3>
+                <p>
+                  For senior executives preparing for non-executive director
+                  roles or advisory boards.
+                </p>
+              </div>
+              <div class="card-bottom">
+                <div class="next-date">
+                  NEXT COHORT<strong>Jul 22, 2026</strong>
+                </div>
+                <span class="card-arrow">↗</span>
+              </div>
+            </a>
+
+            <a
+              class="card teal"
+              href="program-template.html"
+              style="text-decoration: none; color: inherit"
+            >
+              <div>
+                <div class="card-top">
+                  <span class="tag">Strategy</span>
+                  <span class="duration">05 DAYS</span>
+                </div>
+                <h3>Strategic Negotiation <em>for Executives</em></h3>
+                <p>
+                  Negotiation as strategy — for leaders shaping deals,
+                  partnerships, and board-level outcomes.
+                </p>
+              </div>
+              <div class="card-bottom">
+                <div class="next-date">
+                  NEXT COHORT<strong>Aug 19, 2026</strong>
+                </div>
+                <span class="card-arrow">↗</span>
+              </div>
+            </a>
+
+            <a
+              class="card"
+              href="program-template.html"
+              style="text-decoration: none; color: inherit"
+            >
+              <div>
+                <div class="card-top">
+                  <span class="tag">Leadership</span>
+                  <span class="duration">07 DAYS</span>
+                </div>
+                <h3>Women in <em>Senior Leadership</em></h3>
+                <p>
+                  A residential programme for senior women leaders building
+                  enterprise capability and presence.
+                </p>
+              </div>
+              <div class="card-bottom">
+                <div class="next-date">
+                  NEXT COHORT<strong>Sep 09, 2026</strong>
+                </div>
+                <span class="card-arrow">↗</span>
+              </div>
+            </a>
+
+            <a
+              class="card coral"
+              href="program-template.html"
+              style="text-decoration: none; color: inherit"
+            >
+              <div>
+                <div class="card-top">
+                  <span class="tag">Innovation</span>
+                  <span class="duration">04 DAYS</span>
+                </div>
+                <h3>AI for <em>Senior Leaders</em></h3>
+                <p>
+                  Strategy, governance, and decision-making for leaders
+                  navigating AI in the enterprise.
+                </p>
+              </div>
+              <div class="card-bottom">
+                <div class="next-date">
+                  NEXT COHORT<strong>Oct 14, 2026</strong>
+                </div>
+                <span class="card-arrow">↗</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- TAB: CUSTOMIZED PROGRAMS -->
+        <div class="tab-panel" id="customized" style="padding: 3rem 0">
+          <div class="custom-hero-block">
+            <div>
+              <span class="eyebrow"
+                >For CHROs, L&amp;D, and enterprise clients</span
+              >
+              <h2 class="mt-1">
+                Programs <em>built</em> around your organization.
+              </h2>
+            </div>
+            <p>
+              Every organization carries its own weight — its own culture,
+              constraints, and ambitions. Our custom programs are designed in
+              close partnership with your team, delivered in the format that
+              fits your leaders.
+            </p>
+          </div>
+
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: end;
+              flex-wrap: wrap;
+              gap: 2rem;
+              margin-top: 4rem;
+              margin-bottom: 1rem;
+            "
+          >
+            <div>
+              <span class="eyebrow" style="color: var(--coral)"
+                >Two delivery formats</span
+              >
+              <h2 class="display-md mt-2">
+                Residential or <em class="italic-accent">non-residential.</em>
+              </h2>
+            </div>
+          </div>
+
+          <div class="format-grid">
+            <div class="format-card">
+              <span class="num">01</span>
+              <h3>On-Campus · Residential</h3>
+              <p style="color: var(--ink-soft)">
+                Immersive, multi-day programs delivered at our partner campuses.
+                Full-day cohort learning with evening reflection, peer learning,
+                and faculty office hours.
+              </p>
+              <ul>
+                <li>3–8 day intensives, 1–8 week modular</li>
+                <li>Accommodation, meals, and facilities included</li>
+                <li>Ideal for strategic offsites and cohort bonding</li>
+                <li>Capacity: 15–35 participants</li>
+              </ul>
+            </div>
+            <div class="format-card">
+              <span class="num">02</span>
+              <h3>Off-Campus · Non-residential</h3>
+              <p style="color: var(--ink-soft)">
+                Programs delivered at your offices, partner venues, or virtually
+                — fitting around the demands of your leaders' day jobs.
+              </p>
+              <ul>
+                <li>Half-day or full-day sessions, spread over weeks</li>
+                <li>Hybrid and virtual options available</li>
+                <li>Ideal for ongoing capability building</li>
+                <li>Capacity: 10–50+ participants</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mou-strip">
+            <div class="container">
+              <h3>Our <em>custom engagement</em> model covers:</h3>
+              <div class="mou-list">
+                <span class="mou-tag">Industry Training / OJT</span>
+                <span class="mou-tag">Research partnerships</span>
+                <span class="mou-tag">Consulting engagements</span>
+                <span class="mou-tag">Workshops &amp; Seminars</span>
+                <span class="mou-tag">Internships</span>
+                <span class="mou-tag">University / Resume sharing</span>
+                <span class="mou-tag">Extended Diploma (future)</span>
+                <span class="mou-tag">Certifications (future)</span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="margin-top: 4rem; text-align: center; padding-bottom: 4rem"
+          >
+            <h3
               style="
-                background: var(--ink);
-                color: var(--cream);
-                padding: 1rem 2rem;
-                font-size: 0.95rem;
+                font-family: &quot;Fraunces&quot;, serif;
+                font-size: 2rem;
+                margin-bottom: 1rem;
               "
-              >Join our faculty</a
+            >
+              Ready to design something for your team?
+            </h3>
+            <p
+              style="
+                color: var(--ink-soft);
+                margin-bottom: 2rem;
+                max-width: 40rem;
+                margin-left: auto;
+                margin-right: auto;
+              "
+            >
+              Tell us about your objectives, audience, and timeline. We'll come
+              back with a working proposal within a week.
+            </p>
+            <a href="contact.html" class="btn-primary"
+              >Start a conversation →</a
             >
           </div>
         </div>
-      </section>
+      </div>
     </div>
 
     <!-- FOOTER -->
@@ -643,7 +712,7 @@
             </p>
           </div>
           <div>
-            <h5>Explore</h5>
+            <h5><i class="fa-solid fa-compass"></i> Explore</h5>
             <ul>
               <li><a href="about.html">About Us</a></li>
               <li><a href="team.html">Team</a></li>
@@ -652,7 +721,7 @@
             </ul>
           </div>
           <div>
-            <h5>Research</h5>
+            <h5><i class="fa-solid fa-flask"></i> Research</h5>
             <ul>
               <li><a href="journal.html">AJMSI Journal</a></li>
               <li><a href="publications.html">Books</a></li>
@@ -661,7 +730,7 @@
             </ul>
           </div>
           <div>
-            <h5>Connect</h5>
+            <h5><i class="fa-solid fa-network-wired"></i> Connect</h5>
             <ul>
               <li><a href="contact.html">Contact</a></li>
               <li><a href="contact.html">Careers</a></li>
@@ -676,6 +745,8 @@
         </div>
       </div>
     </footer>
-    <script src="../JS/script.js"></script>
+
+    <script src="script.js"></script>
+    <script src="programs.js"></script>
   </body>
 </html>
