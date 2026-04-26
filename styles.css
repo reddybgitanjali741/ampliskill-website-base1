@@ -614,7 +614,7 @@ section {
 .masthead-intro h1 {
   margin-top: 4rem;
   font-family: "Fraunces", serif;
-  font-size: clamp(3rem, 8vw, 7rem);
+  font-size: 5rem;
   line-height: 0.9;
   letter-spacing: -0.04em;
   font-weight: 350;
