@@ -63,10 +63,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-<<<<<<< HEAD
-=======
-
-// function goToExplore() {
-//   window.location.href="explorepage.html";
-// }
->>>>>>> 6c8a3c1040ab87da66c6d13bd71d103b3a4353fb
