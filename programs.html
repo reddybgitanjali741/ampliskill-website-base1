@@ -12,12 +12,16 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="programs.css" />
+    <!-- Font Awesome 6 -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
   </head>
   <body>
+    <!-- ═══════════════════════════════════════════════════════
+         HEADER
+    ═══════════════════════════════════════════════════════ -->
     <header class="site-header">
       <!-- Utility bar -->
       <div class="utility-bar">
@@ -42,13 +46,9 @@
       <!-- Main nav -->
       <nav class="main-nav">
         <div class="container">
-          <a href="index.html" class="logo"
-            ><span
-              ><img
-                src="Logo.png"
-                alt="logo"
-                class="logo-img" /></span
-          ></a>
+          <a href="index.html" class="logo">
+            <span><img src="Logo.png" alt="logo" class="logo-img" /></span>
+          </a>
           <ul class="nav-links">
             <li class="has-submenu">
               <a href="programs.html">Programs</a>
@@ -321,6 +321,9 @@
       >
     </div>
 
+    <!-- ═══════════════════════════════════════════════════════
+         PAGE BODY
+    ═══════════════════════════════════════════════════════ -->
     <div class="page-wrap">
       <!-- PAGE HEADER -->
       <section class="page-header">
@@ -338,7 +341,7 @@
       </section>
 
       <div class="container">
-        <!-- TABS -->
+        <!-- ── TABS ────────────────────────────────────────── -->
         <div class="tabs-row">
           <button class="tab-btn active" data-tab="announced">
             Announced Programs
@@ -348,7 +351,9 @@
           </button>
         </div>
 
-        <!-- TAB: ANNOUNCED PROGRAMS -->
+        <!-- ══════════════════════════════════════════════════
+             TAB: ANNOUNCED PROGRAMS
+        ══════════════════════════════════════════════════ -->
         <div class="tab-panel active" id="announced" style="padding: 3rem 0">
           <div
             style="
@@ -376,6 +381,7 @@
             </p>
           </div>
 
+          <!-- Filter chips -->
           <div class="filter-row">
             <button class="filter-chip active">All programs</button>
             <button class="filter-chip">Leadership</button>
@@ -388,14 +394,14 @@
 
           <div class="cards-grid" id="cards-grid">
             <a
-              class="card coral"
+              class="card"
               href="program-template.html"
               style="text-decoration: none; color: inherit"
               data-category="leadership residential"
             >
               <div>
                 <div class="card-top">
-                  <span class="tag">Flagship</span>
+                  <span class="tag">Leadership</span>
                   <span class="duration">08 WEEKS</span>
                 </div>
                 <h3>The Senior Leadership <em>Intensive</em></h3>
@@ -408,10 +414,14 @@
                 <div class="next-date">
                   NEXT COHORT<strong>May 12, 2026</strong>
                 </div>
-                <span class="card-arrow">↗</span>
+                <!-- Font Awesome arrow icon replaces ↗ -->
+                <span class="card-arrow">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </span>
               </div>
             </a>
 
+            <!-- Card 2: Strategic Thinking for New Managers — leadership + non-residential -->
             <a
               class="card"
               href="program-template.html"
@@ -433,10 +443,13 @@
                 <div class="next-date">
                   NEXT COHORT<strong>Jun 03, 2026</strong>
                 </div>
-                <span class="card-arrow">↗</span>
+                <span class="card-arrow">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </span>
               </div>
             </a>
 
+            <!-- Card 3: Innovation & Business Model Design — innovation + residential -->
             <a
               class="card teal"
               href="program-template.html"
@@ -458,10 +471,13 @@
                 <div class="next-date">
                   NEXT COHORT<strong>Jun 17, 2026</strong>
                 </div>
-                <span class="card-arrow">↗</span>
+                <span class="card-arrow">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </span>
               </div>
             </a>
 
+            <!-- Card 4: Leading Through Ambiguity — leadership + non-residential -->
             <a
               class="card"
               href="program-template.html"
@@ -483,12 +499,15 @@
                 <div class="next-date">
                   NEXT COHORT<strong>Jul 08, 2026</strong>
                 </div>
-                <span class="card-arrow">↗</span>
+                <span class="card-arrow">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </span>
               </div>
             </a>
 
+            <!-- Card 5: Board Readiness — governance + residential -->
             <a
-              class="card coral"
+              class="card governance"
               href="program-template.html"
               style="text-decoration: none; color: inherit"
               data-category="governance residential"
@@ -508,10 +527,13 @@
                 <div class="next-date">
                   NEXT COHORT<strong>Jul 22, 2026</strong>
                 </div>
-                <span class="card-arrow">↗</span>
+                <span class="card-arrow">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </span>
               </div>
             </a>
 
+            <!-- Card 6: Strategic Negotiation — strategy + non-residential -->
             <a
               class="card teal"
               href="program-template.html"
@@ -533,10 +555,13 @@
                 <div class="next-date">
                   NEXT COHORT<strong>Aug 19, 2026</strong>
                 </div>
-                <span class="card-arrow">↗</span>
+                <span class="card-arrow">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </span>
               </div>
             </a>
 
+            <!-- Card 7: Women in Senior Leadership — leadership + residential -->
             <a
               class="card"
               href="program-template.html"
@@ -558,12 +583,15 @@
                 <div class="next-date">
                   NEXT COHORT<strong>Sep 09, 2026</strong>
                 </div>
-                <span class="card-arrow">↗</span>
+                <span class="card-arrow">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </span>
               </div>
             </a>
 
+            <!-- Card 8: AI for Senior Leaders — innovation + non-residential -->
             <a
-              class="card coral"
+              class="card teal"
               href="program-template.html"
               style="text-decoration: none; color: inherit"
               data-category="innovation non-residential"
@@ -583,23 +611,43 @@
                 <div class="next-date">
                   NEXT COHORT<strong>Oct 14, 2026</strong>
                 </div>
-                <span class="card-arrow">↗</span>
+                <span class="card-arrow">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </span>
               </div>
             </a>
           </div>
+          <a href="explorepage.html"
+            ><button class="explore-btn">Explore All Programs</button></a
+          >
+          <!-- /.cards-grid -->
 
-          <!-- No results message -->
-          <div class="no-results" id="no-results" style="display:none;">
+          <!-- No results empty state -->
+          <div class="no-results" id="no-results" style="display: none">
             <div class="no-results-inner">
-              <span class="no-results-icon">◎</span>
+              <span class="no-results-icon">
+                <i class="fa-regular fa-circle-dot"></i>
+              </span>
               <h3>No programs found</h3>
-              <p>No programs match this filter right now. Try a different category or view all programs.</p>
-              <button class="filter-chip active" onclick="document.querySelector('[data-tab=\'announced\']').click(); document.querySelector('.filter-chip').click();">View all programs</button>
+              <p>
+                No programs match this filter right now.<br />
+                Try a different category or view all programs.
+              </p>
+              <button
+                id="reset-filter-btn"
+                class="filter-chip"
+                onclick="document.querySelector('.filter-chip').click()"
+              >
+                View all programs
+              </button>
             </div>
           </div>
         </div>
+        <!-- /#announced -->
 
-        <!-- TAB: CUSTOMIZED PROGRAMS -->
+        <!-- ══════════════════════════════════════════════════
+             TAB: CUSTOMIZED PROGRAMS
+        ══════════════════════════════════════════════════ -->
         <div class="tab-panel" id="customized" style="padding: 3rem 0">
           <div class="custom-hero-block">
             <div>
@@ -716,10 +764,15 @@
             >
           </div>
         </div>
+        <!-- /#customized -->
       </div>
+      <!-- /.container -->
     </div>
+    <!-- /.page-wrap -->
 
-    <!-- FOOTER -->
+    <!-- ═══════════════════════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════════════════════ -->
     <footer>
       <div class="container">
         <div class="footer-grid">

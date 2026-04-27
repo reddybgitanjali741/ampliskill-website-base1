@@ -109,7 +109,7 @@ em.accent,
 }
 @media (max-width: 768px) {
   .container {
-    padding: 0 1.25rem;
+    padding: 0 1.25rem !important;
   }
 }
 
@@ -422,7 +422,6 @@ section {
   display: flex;
 }
 .search-box {
-  
   max-width: 800px;
   margin: 0 auto;
   width: 90%;
@@ -1607,8 +1606,6 @@ footer ul li:hover {
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  border-top: 1px solid var(--line-strong);
-  border-left: 1px solid var(--line-strong);
   margin-top: 3rem;
 }
 .card {
@@ -1644,7 +1641,7 @@ footer ul li:hover {
   background: var(--butter);
   border-radius: 4px;
 }
-.card.coral .tag {
+.card.governance .tag {
   background: var(--coral);
   color: white;
 }
@@ -1909,4 +1906,16 @@ footer ul li:hover {
 .reveal.in {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 }

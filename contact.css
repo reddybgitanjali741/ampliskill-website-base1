@@ -260,3 +260,89 @@
 .mobile-toggle.is-open .fa-xmark {
   display: inline-block;
 }
+
+/* ── Global overflow-x fix ── */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* ── Utility bar: hide on very small screens to prevent overflow ── */
+@media (max-width: 480px) {
+  .utility-bar {
+    display: none;
+  }
+  .page-wrap {
+    padding-top: 4.5rem;
+  }
+}
+
+/* ── Nav: prevent overflow on tablet/mobile ── */
+@media (max-width: 1100px) {
+  .main-nav .container {
+    gap: 0.75rem;
+  }
+  .nav-cta span {
+    display: none;
+  }
+}
+
+/* ── Contact grid & form: prevent overflow ── */
+@media (max-width: 600px) {
+  .contact-grid {
+    gap: 2.5rem;
+  }
+  .form-card {
+    padding: 1.5rem 1rem !important;
+    overflow: hidden;
+  }
+  .form-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem;
+  }
+  .field input,
+  .field select,
+  .field textarea {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+  .btn-primary {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .social-icons {
+    gap: 0.5rem;
+  }
+  .social-icon-link {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.68rem;
+  }
+  /* Page header heading: prevent huge text overflowing */
+  .page-header h1 {
+    font-size: clamp(2rem, 11vw, 4rem);
+    word-break: break-word;
+  }
+  .page-header .lead {
+    font-size: 1rem;
+  }
+  /* Success popup: constrain on small screens */
+  .success-popup {
+    padding: 2rem 1.25rem 1.75rem;
+  }
+}
+
+/* ── Footer: prevent overflow on mobile ── */
+@media (max-width: 480px) {
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}

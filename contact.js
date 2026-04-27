@@ -36,28 +36,6 @@
     });
   }
 
-  /* ── Hamburger ↔ X toggle ── */
-  function initMobileToggle() {
-    const toggleBtn = document.querySelector(".mobile-toggle");
-    const mobileMenu = document.querySelector(".mobile-menu");
-    if (!toggleBtn || !mobileMenu) return;
-
-    toggleBtn.addEventListener("click", () => {
-      const isOpen = mobileMenu.classList.toggle("open");
-      toggleBtn.classList.toggle("is-open", isOpen);
-      toggleBtn.setAttribute("aria-label", isOpen ? "Close menu" : "Menu");
-    });
-
-    // Close when a link inside the menu is clicked
-    mobileMenu.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        mobileMenu.classList.remove("open");
-        toggleBtn.classList.remove("is-open");
-        toggleBtn.setAttribute("aria-label", "Menu");
-      });
-    });
-  }
-
   /* ── Live validation (clear errors as the user corrects) ── */
   function attachLiveValidation() {
     /* Full name — alphabets only */
@@ -261,7 +239,6 @@
   /* ── Boot ── */
   document.addEventListener("DOMContentLoaded", () => {
     attachLiveValidation();
-    initMobileToggle();
 
     /* Popup close button */
     const closeBtn = $("successPopupClose");
