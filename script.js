@@ -50,6 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-function goToExplore() {
-  window.location.href="explorepage.html";
-}
+// function goToExplore() {
+//   window.location.href="explorepage.html";
+// }
