@@ -49,3 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+function goToExplore() {
+  window.location.href="explorepage.html";
+}

@@ -386,11 +386,12 @@
             <button class="filter-chip">Non-residential</button>
           </div>
 
-          <div class="cards-grid">
+          <div class="cards-grid" id="cards-grid">
             <a
               class="card coral"
               href="program-template.html"
               style="text-decoration: none; color: inherit"
+              data-category="leadership residential"
             >
               <div>
                 <div class="card-top">
@@ -415,6 +416,7 @@
               class="card"
               href="program-template.html"
               style="text-decoration: none; color: inherit"
+              data-category="leadership non-residential"
             >
               <div>
                 <div class="card-top">
@@ -439,6 +441,7 @@
               class="card teal"
               href="program-template.html"
               style="text-decoration: none; color: inherit"
+              data-category="innovation residential"
             >
               <div>
                 <div class="card-top">
@@ -463,6 +466,7 @@
               class="card"
               href="program-template.html"
               style="text-decoration: none; color: inherit"
+              data-category="leadership non-residential"
             >
               <div>
                 <div class="card-top">
@@ -487,6 +491,7 @@
               class="card coral"
               href="program-template.html"
               style="text-decoration: none; color: inherit"
+              data-category="governance residential"
             >
               <div>
                 <div class="card-top">
@@ -511,6 +516,7 @@
               class="card teal"
               href="program-template.html"
               style="text-decoration: none; color: inherit"
+              data-category="strategy non-residential"
             >
               <div>
                 <div class="card-top">
@@ -535,6 +541,7 @@
               class="card"
               href="program-template.html"
               style="text-decoration: none; color: inherit"
+              data-category="leadership residential"
             >
               <div>
                 <div class="card-top">
@@ -559,6 +566,7 @@
               class="card coral"
               href="program-template.html"
               style="text-decoration: none; color: inherit"
+              data-category="innovation non-residential"
             >
               <div>
                 <div class="card-top">
@@ -578,6 +586,16 @@
                 <span class="card-arrow">↗</span>
               </div>
             </a>
+          </div>
+
+          <!-- No results message -->
+          <div class="no-results" id="no-results" style="display:none;">
+            <div class="no-results-inner">
+              <span class="no-results-icon">◎</span>
+              <h3>No programs found</h3>
+              <p>No programs match this filter right now. Try a different category or view all programs.</p>
+              <button class="filter-chip active" onclick="document.querySelector('[data-tab=\'announced\']').click(); document.querySelector('.filter-chip').click();">View all programs</button>
+            </div>
           </div>
         </div>
 
