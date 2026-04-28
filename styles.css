@@ -608,7 +608,7 @@ section {
   overflow: hidden;
 }
 .masthead-intro {
-  
+  max-width: 1000px;
   margin-bottom: 3rem;
 }
 .masthead-intro h1 {
