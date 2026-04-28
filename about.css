@@ -128,7 +128,6 @@
   margin-top: 5rem;
   border-top: 1px solid var(--line-strong);
   border-bottom: 1px solid var(--line-strong);
-  overflow: hidden;
 }
 .stat-col {
   padding: 2.5rem 2rem;
@@ -154,12 +153,8 @@
   margin-top: 0.75rem;
 }
 
-/* Fix: footer right-side background bleed */
-footer {
-  width: 100%;
-  overflow: hidden;
-}
-.footer-grid {
-  width: 100%;
-  box-sizing: border-box;
+@media (max-width: 321px) {
+  .page-wrapper {
+    overflow-x: hidden;
+  }
 }

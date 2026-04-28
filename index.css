@@ -230,3 +230,7 @@
     padding: 0.6rem 1rem;
   }
 }
+
+.t2-heading {
+ margin-top: -50px !important;
+}

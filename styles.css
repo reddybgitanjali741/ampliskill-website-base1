@@ -151,7 +151,7 @@ section {
 
 /* Top utility bar */
 .utility-bar {
-  background: #0d388e;
+  background: #1a3061;
   color: var(--cream);
   padding: 0.5rem 0;
   font-size: 0.78rem;
@@ -1552,7 +1552,7 @@ section {
 
 /* ============ FOOTER ============ */
 footer {
-  background: var(--ink);
+  background: #1a3061;
   color: var(--cream);
   padding: 5rem 0 2rem;
 }
