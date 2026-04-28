@@ -96,3 +96,9 @@
     text-transform: uppercase;
     margin-top: 0.75rem;
   }
+  
+  @media(max-width: 321px){
+    .page-wrapper{
+    overflow-x:hidden ;
+  }
+  }
