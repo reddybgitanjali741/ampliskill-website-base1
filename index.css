@@ -182,17 +182,6 @@
   justify-content: space-between;
   flex-grow: 1;
 }
-<<<<<<< HEAD
-
-@media (max-width: 1024px) {
-  .three-tiles {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .tile {
-    min-height: 450px;
-  }
-=======
 /* .explore-btn{
   display: inline-flex;
   align-items: center;
@@ -209,7 +198,6 @@
   align-self: flex-start;
   transition: all 0.2s;
   margin-top: 1rem;
->>>>>>> 6c8a3c1040ab87da66c6d13bd71d103b3a4353fb
 }
 
 /* 🔥 FORCE MOBILE FIX */
@@ -249,8 +237,41 @@
     padding: 0.6rem 1rem;
   }
 }
-<<<<<<< HEAD
-=======
 
- */
->>>>>>> 6c8a3c1040ab87da66c6d13bd71d103b3a4353fb
+ 
+/* ✅ Tablet / small laptop fix (768px to 1200px) */
+@media (min-width: 768px) and (max-width: 1200px) {
+  .three-tiles {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .tile {
+    max-height: none; /* remove fixed max-height so content is never clipped */
+    min-height: 420px;
+    padding: 1.5rem;
+  }
+
+  .tile-img img {
+    height: 160px;
+  }
+
+  .tile h3 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .tile p {
+    font-size: 0.95rem;
+  }
+
+  /* Third tile spans full width on tablet for a clean balanced layout */
+  .three-tiles .tile:nth-child(3) {
+    grid-column: 1 / -1;
+    min-height: 360px;
+  }
+
+  .three-tiles .tile:nth-child(3) .tile-img img {
+    height: 200px;
+  }
+}
