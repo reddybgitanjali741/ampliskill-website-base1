@@ -152,7 +152,7 @@ section {
 /* Top utility bar */
 .utility-bar {
   background: #1a3061;
-  color: var(--cream);
+  color: rgb(255, 255, 255);
   padding: 0.5rem 0;
   font-size: 0.78rem;
 }
@@ -1273,7 +1273,7 @@ section {
 
 /* ============ MARQUEE ============ */
 .marquee {
-  background: var(--ink);
+  background: #1a3061;
   color: var(--cream);
   padding: 1.5rem 0;
   overflow: hidden;
@@ -1741,8 +1741,8 @@ footer ul li:hover {
 
 /* ============ CTA BAND ============ */
 .cta-band {
-  background: var(--coral);
-  color: white;
+  background: #fbe9e0;
+  color: black;
   padding: 6rem 0;
   text-align: center;
   position: relative;
@@ -1761,7 +1761,7 @@ footer ul li:hover {
   font-variation-settings:
     "opsz" 144,
     "SOFT" 100;
-  color: var(--butter);
+  color:orange;
 }
 .cta-band p {
   max-width: 540px;
@@ -1769,54 +1769,14 @@ footer ul li:hover {
   font-size: 1.1rem;
 }
 .cta-band .btn-ghost {
-  color: white;
-  border-color: white;
+  color: black;
+  border-color: black;
 }
 .cta-band .btn-ghost:hover {
   background: white;
   color: var(--coral);
 }
 
-/* ============ TESTIMONIAL ============ */
-.testimonial {
-  padding: 8rem 0;
-}
-.testimonial-block {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-.testimonial blockquote {
-  font-family: "Fraunces", serif;
-  font-size: clamp(1.75rem, 4vw, 3.25rem);
-  line-height: 1.1;
-  font-weight: 380;
-  font-style: italic;
-  letter-spacing: -0.02em;
-}
-.testimonial blockquote::before {
-  content: '"';
-  display: block;
-  font-size: 6rem;
-  line-height: 0.5;
-  color: var(--coral);
-  margin-bottom: 1rem;
-}
-.testimonial cite {
-  display: block;
-  margin-top: 2rem;
-  font-style: normal;
-  font-size: 1rem;
-  padding-left: 1.5rem;
-  border-left: 2px solid var(--coral);
-}
-.testimonial cite strong {
-  display: block;
-  font-weight: 600;
-}
-.testimonial cite span {
-  color: var(--ink-soft);
-  font-size: 0.9rem;
-}
 
 /* ============ FORMS ============ */
 .form-grid {
