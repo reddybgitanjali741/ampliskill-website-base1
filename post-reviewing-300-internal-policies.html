@@ -1,0 +1,977 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      What we've learned reviewing 300 internal policies — AmpliSkill
+    </title>
+    <meta
+      name="description"
+      content="Ten years of observation, compressed into five observable patterns. The corporate innovation programs that work don't look like the ones that get written up."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="post-reviewing-300-internal-policies.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- READING PROGRESS BAR -->
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <header class="site-header">
+      <!-- Utility bar -->
+      <div class="utility-bar">
+        <div class="container">
+          <ul class="utility-links">
+            <li><a href="publications.html">Thought Leadership</a></li>
+            <li><a href="events.html">News &amp; Events</a></li>
+            <li><a href="publications.html#blogs">Articles</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <div style="display: flex; gap: 1.5rem">
+            <a href="programs.html" class="utility-action"
+              ><i class="fa-solid fa-graduation-cap"></i> Apply to a Program</a
+            >
+            <a href="journal.html#submit" class="utility-action"
+              ><i class="fa-solid fa-file-pen"></i> Submit to Journal</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Main nav -->
+      <nav class="main-nav">
+        <div class="container">
+          <a href="index.html" class="logo"
+            ><span><img src="Logo.png" alt="logo" class="logo-img" /></span
+          ></a>
+          <ul class="nav-links">
+            <li class="has-submenu">
+              <a href="programs.html">Programs</a>
+              <div class="mega-menu">
+                <div class="container">
+                  <div class="mega-grid">
+                    <div class="mega-col">
+                      <h5>Format</h5>
+                      <ul>
+                        <li>
+                          <a href="programs.html"
+                            >Announced Programs<span class="desc"
+                              >Calendar-based, open enrolment</span
+                            ></a
+                          >
+                        </li>
+                        <li>
+                          <a href="programs.html#customized"
+                            >Customized Programs<span class="desc"
+                              >Designed for your organization</span
+                            ></a
+                          >
+                        </li>
+                        <li>
+                          <a href="program-template.html"
+                            >Flagship Intensive<span class="desc"
+                              >Our 8-week senior leadership programme</span
+                            ></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <h5>By Category</h5>
+                      <ul>
+                        <li><a href="programs.html">Leadership</a></li>
+                        <li><a href="programs.html">Strategy</a></li>
+                        <li><a href="programs.html">Innovation</a></li>
+                        <li>
+                          <a href="programs.html">Governance &amp; Boards</a>
+                        </li>
+                        <li><a href="programs.html">AI for Leaders</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <h5>Delivery</h5>
+                      <ul>
+                        <li>
+                          <a href="programs.html">On-Campus · Residential</a>
+                        </li>
+                        <li>
+                          <a href="programs.html"
+                            >Off-Campus · Non-Residential</a
+                          >
+                        </li>
+                        <li>
+                          <a href="programs.html">Hybrid &amp; Virtual</a>
+                        </li>
+                        <li>
+                          <a href="programs.html">Industry Training / OJT</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <a
+                        href="program-template.html"
+                        class="mega-feature"
+                        style="text-decoration: none"
+                      >
+                        <span class="tag">Featured · May 2026</span>
+                        <h4>Senior Leadership Intensive</h4>
+                        <span class="link"
+                          >Reserve a seat <i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li><a href="consulting.html">Consulting</a></li>
+            <li class="has-submenu">
+              <a href="publications.html">Publications</a>
+              <div class="mega-menu">
+                <div class="container">
+                  <div class="mega-grid">
+                    <div class="mega-col">
+                      <h5>AJMSI Journal</h5>
+                      <ul>
+                        <li>
+                          <a href="journal.html"
+                            >Journal Home<span class="desc"
+                              >Mission and editorial approach</span
+                            ></a
+                          >
+                        </li>
+                        <li>
+                          <a href="journal.html#submit"
+                            >Submission Guidelines</a
+                          >
+                        </li>
+                        <li>
+                          <a href="journal.html#roadmap">Editorial Roadmap</a>
+                        </li>
+                        <li><a href="team.html">Editorial Board</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <h5>Writing</h5>
+                      <ul>
+                        <li>
+                          <a href="publications.html#books"
+                            >Books<span class="desc"
+                              >AmpliSkill Press titles</span
+                            ></a
+                          >
+                        </li>
+                        <li>
+                          <a href="publications.html#blogs"
+                            >Blogs &amp; Essays</a
+                          >
+                        </li>
+                        <li>
+                          <a href="publications.html#cases">Case Studies</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <h5>Contribute</h5>
+                      <ul>
+                        <li>
+                          <a href="journal.html#submit">Submit a Paper</a>
+                        </li>
+                        <li><a href="contact.html">Pitch an Essay</a></li>
+                        <li><a href="contact.html">Propose a Case Study</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <a
+                        href="journal.html"
+                        class="mega-feature"
+                        style="
+                          text-decoration: none;
+                          background: linear-gradient(
+                            135deg,
+                            var(--ink),
+                            var(--coral)
+                          );
+                          color: var(--cream);
+                        "
+                      >
+                        <span class="tag" style="color: var(--butter)"
+                          >Call for Papers · Open</span
+                        >
+                        <h4 style="color: white">
+                          AJMSI Inaugural Issue — Jan 2027
+                        </h4>
+                        <span class="link" style="color: var(--butter)"
+                          >Submit now <i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="has-submenu">
+              <a href="about.html">About</a>
+              <div class="mega-menu">
+                <div class="container">
+                  <div class="mega-grid">
+                    <div class="mega-col">
+                      <h5>About AmpliSkill</h5>
+                      <ul>
+                        <li>
+                          <a href="about.html"
+                            >Who We Are<span class="desc"
+                              >Mission, vision, and approach</span
+                            ></a
+                          >
+                        </li>
+                        <li><a href="about.html">Who We Serve</a></li>
+                        <li><a href="about.html">Our Story</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <h5>People</h5>
+                      <ul>
+                        <li><a href="team.html">Executive Team</a></li>
+                        <li><a href="team.html">Advisory Council</a></li>
+                        <li><a href="team.html">Editorial Board</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <h5>Partnerships</h5>
+                      <ul>
+                        <li><a href="team.html">Academic Partners</a></li>
+                        <li><a href="team.html">Industry Partners</a></li>
+                        <li><a href="contact.html">Become a Partner</a></li>
+                        <li><a href="contact.html">Careers</a></li>
+                        <li><a href="contact.html">Press &amp; Media</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <a
+                        href="events.html"
+                        class="mega-feature"
+                        style="
+                          text-decoration: none;
+                          background: var(--butter);
+                          color: var(--ink);
+                        "
+                      >
+                        <span class="tag">Flagship · Oct 2026</span>
+                        <h4>AmpliSkill Annual Management Summit</h4>
+                        <span class="link"
+                          >Register interest
+                          <i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li><a href="events.html">Events</a></li>
+          </ul>
+          <div class="nav-right">
+            <button
+              class="search-btn"
+              aria-label="Search"
+              onclick="
+                document.querySelector('.search-overlay').classList.add('open');
+                document.querySelector('.search-overlay input').focus();
+              "
+            >
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <a href="contact.html" class="nav-cta"
+              ><i class="fa-solid fa-envelope"></i> Get in touch</a
+            >
+            <button class="mobile-toggle" aria-label="Menu">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Search overlay -->
+    <div class="search-overlay">
+      <button
+        class="search-close"
+        onclick="this.parentElement.classList.remove('open')"
+      >
+        ×
+      </button>
+      <div class="search-box">
+        <input type="text" placeholder="Search programs, articles, people…" />
+        <p class="search-hint">Press ESC to close · Press ↵ to search</p>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu">
+      <a href="about.html">About</a>
+      <a href="team.html">Team</a>
+      <a href="programs.html">Programs</a>
+      <a href="consulting.html">Consulting</a>
+      <a href="publications.html">Publications</a>
+      <a href="journal.html">AJMSI Journal</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html" class="mobile-cta">Get in touch</a>
+    </div>
+
+    <div class="page-wrap">
+      <!-- ARTICLE HERO -->
+      <section class="article-hero">
+        <div class="container">
+          <div class="article-breadcrumb">
+            <a href="publications.html">Publications</a>
+            <span class="sep">/</span>
+            <a href="publications.html#blogs">Blogs &amp; Essays</a>
+            <span class="sep">/</span>
+            <span>Consulting</span>
+          </div>
+
+          <span class="article-category">Consulting</span>
+          <h1>
+            What we've learned<br />reviewing <em>300</em><br />internal
+            policies.
+          </h1>
+          <p class="article-deck">
+            Field notes from two years of policy reviews across banking,
+            manufacturing, and the public sector. Patterns, anti-patterns, and
+            what actually changes behaviour.
+          </p>
+
+          <div class="article-meta">
+            <div class="author-line">
+              <div class="author-avatar">A</div>
+              <div>
+                <div class="author-name">Ashok</div>
+                <div class="author-role">
+                  Co-founder &amp; CEO · Consulting Practice
+                </div>
+              </div>
+            </div>
+            <div class="meta-block">
+              <span class="meta-label">Published</span>
+              <span class="meta-value">11 April 2026</span>
+            </div>
+            <div class="meta-block">
+              <span class="meta-label">Reading time</span>
+              <span class="meta-value">10 min</span>
+            </div>
+            <div class="meta-block">
+              <span class="meta-label">Topic</span>
+              <span class="meta-value">Consulting · Governance</span>
+            </div>
+            <div class="share-row">
+              <button
+                class="share-btn"
+                aria-label="Share on LinkedIn"
+                title="LinkedIn"
+              >
+                in
+              </button>
+              <button class="share-btn" aria-label="Share on X" title="X">
+                𝕏
+              </button>
+              <button
+                class="share-btn"
+                aria-label="Copy link"
+                title="Copy link"
+              >
+                ⎘
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ARTICLE BODY -->
+      <article class="article-body">
+        <div class="container">
+          <!-- READING COLUMN -->
+          <div class="reading-col">
+            <div class="editor-note">
+              <span class="note-label">Editor's Note</span>
+              <p>
+                This piece reflects the practice notes from AmpliSkill's
+                <strong>Internal Policy Review</strong> consulting service
+                &mdash; one of our five focused practices. The patterns
+                described here are anonymized but representative of engagements
+                across banking, manufacturing, and public-sector clients.
+              </p>
+            </div>
+
+            <p>
+              <span class="lead-line">Most</span> internal policies are written
+              under one set of conditions and read, if they are read at all,
+              under another. Between those two moments, a great deal of
+              organizational reality has typically changed. The policy stays
+              where it was. The reality moves on. And a quiet, accumulating gap
+              opens up between what the document says and what the organization
+              actually does.
+            </p>
+
+            <p>
+              Over the last two years, our consulting team has reviewed
+              somewhere north of 300 internal policies across banking,
+              manufacturing, the public sector, and a handful of conglomerates.
+              We have read HR policies, risk policies, procurement policies, IT
+              security policies, governance frameworks, codes of conduct,
+              expense rules, vendor onboarding manuals, whistle-blower
+              protocols, and more committee charters than I would care to count.
+            </p>
+
+            <p>
+              What follows are the patterns we keep seeing &mdash; not framed as
+              a critique of any particular client, but as a working theory of
+              why most policy environments end up where they do, and what it
+              actually takes to fix them.
+            </p>
+
+            <h2 id="s1">
+              <span class="num">Section 01</span>The <em>drift problem</em>
+            </h2>
+
+            <p>
+              The first thing to understand about most large organizations'
+              policy environments is that nobody designed them. They
+              accumulated.
+            </p>
+
+            <p>
+              A regulator issues a circular. Someone in compliance writes a
+              policy in response. A merger happens. Two parallel HR policies get
+              filed side by side, and nobody is brave enough to consolidate
+              them. A new CEO has a strong view about expenses, and a memo
+              becomes a policy becomes a procedure. A near-miss in a regulatory
+              audit produces a hurriedly drafted control document that nobody is
+              willing to remove for fear of repeating the audit. Multiply this
+              by twenty years and you have what most large organizations
+              actually have: a policy estate that has drifted into existence
+              rather than been built.
+            </p>
+
+            <p>
+              The consequences of drift are predictable. Policies contradict
+              each other. The same topic appears in three different documents
+              with three slightly different rules. Documents reference other
+              documents that no longer exist. Approval thresholds are stated in
+              absolute amounts that have been silently eroded by a decade of
+              inflation. And nobody has the time, or the mandate, to do anything
+              about it.
+            </p>
+
+            <div class="pull-quote">
+              <q
+                >The single best predictor of whether a policy is being followed
+                is whether anyone in the organization can find it in under sixty
+                seconds.</q
+              >
+            </div>
+
+            <h2 id="s2">
+              <span class="num">Section 02</span>Three <em>patterns</em> we see
+              everywhere
+            </h2>
+
+            <p>
+              Across the engagements, three structural patterns repeat almost
+              without exception.
+            </p>
+
+            <p>
+              <strong>Pattern one: the document graveyard.</strong> Most
+              organizations we work with have a policy library that is, on
+              paper, comprehensive. They can produce a list of every policy that
+              exists. What they cannot do is tell you which of those policies
+              are actually being applied. Our typical finding is that 30 to 50
+              percent of nominally active policies are dead letters &mdash;
+              either superseded, untaught, or simply unfindable by anyone
+              outside the function that owns them.
+            </p>
+
+            <p>
+              <strong>Pattern two: the function-by-function silo.</strong> Each
+              functional head has built a policy library that makes sense from
+              inside their function. The risk team's policies make sense to risk
+              people. The HR team's policies make sense to HR people. What is
+              missing &mdash; almost always &mdash; is a coherent view across
+              functions of how a single employee is supposed to navigate the
+              whole estate. The result is that frontline managers carry around a
+              private mental model of "the rules" that bears only a partial
+              resemblance to any document.
+            </p>
+
+            <p>
+              <strong>Pattern three: the immortality of policies.</strong>
+              Policies, once written, are extraordinarily hard to retire. Nobody
+              wants to be the person who removed the policy that turns out to
+              have been protecting the organization from something. So policies
+              accumulate. The estate grows. The newest policies layer on top of
+              older ones rather than replacing them.
+            </p>
+
+            <div class="callout">
+              <span class="callout-label">Pattern recognition</span>
+              <h4>The <em>halving</em> rule.</h4>
+              <p>
+                In every engagement we have done, the size of the policy estate
+                that the organization actually needs is approximately half of
+                what currently exists. Not 90%. Not 70%. Half. The other half is
+                duplication, supersession, or accumulated noise. This number is
+                remarkably consistent across industries.
+              </p>
+            </div>
+
+            <h2 id="s3">
+              <span class="num">Section 03</span>The <em>five-line test</em>
+            </h2>
+
+            <p>
+              Early on, we developed a simple diagnostic that has held up well.
+              We call it the five-line test, and it goes like this.
+            </p>
+
+            <p>
+              For any policy in the estate, the policy owner should be able to
+              write, in five lines or fewer:
+            </p>
+
+            <ol>
+              <li>What this policy requires people to do.</li>
+              <li>Who is required to do it.</li>
+              <li>What happens if they don't.</li>
+              <li>How we would know if they aren't.</li>
+              <li>Who reviews and updates this policy, and when.</li>
+            </ol>
+
+            <p>
+              If the policy owner cannot answer all five &mdash; and roughly 60%
+              of the time, they cannot answer at least two &mdash; the policy is
+              probably not doing the work the organization thinks it is doing.
+              It is sitting in the library, taking up cognitive load, and
+              producing very little behavioural change.
+            </p>
+
+            <p>
+              Our experience is that running the five-line test across an entire
+              policy estate is one of the most cathartic exercises a senior
+              leadership team can undertake. It is also one of the most
+              uncomfortable, because the answers it produces are almost always
+              worse than the team expected.
+            </p>
+
+            <h2 id="s4">
+              <span class="num">Section 04</span>What <em>actually</em> changes
+              behaviour
+            </h2>
+
+            <p>
+              If the diagnosis is that most policy estates are bloated,
+              contradictory, and weakly enforced, the natural question is what
+              to do about it. Here, our experience has produced a small number
+              of strong opinions.
+            </p>
+
+            <p>
+              <strong>Consolidate ruthlessly.</strong> A policy estate of 300
+              documents almost always contains a coherent estate of 100 to 150.
+              The work is not deleting policies; it is consolidating them. Three
+              overlapping HR policies become one. Five procurement documents
+              become two. The total surface area shrinks dramatically and the
+              average quality goes up.
+            </p>
+
+            <p>
+              <strong>Make findability the first metric.</strong> A policy that
+              cannot be found is a policy that does not exist. The single most
+              useful intervention we have seen is the introduction of a single,
+              searchable, well-tagged policy portal &mdash; with a search bar
+              that actually works. Organizations that do this well report a
+              step-change in compliance metrics within a year, often without
+              changing the underlying rules.
+            </p>
+
+            <p>
+              <strong>Treat policies as products.</strong> Every policy needs an
+              owner, a version, a review cycle, and a way for users to provide
+              feedback when the policy is unclear or unworkable. The leading
+              organizations we work with run their policy library the way good
+              product teams run software: with releases, deprecation notices,
+              and a backlog of user-reported issues.
+            </p>
+
+            <div class="pull-quote">
+              <q
+                >The organizations that have the best policy environments are
+                not the ones with the most policies. They are the ones that have
+                made the smallest number of clear policies extraordinarily easy
+                to find and apply.</q
+              >
+            </div>
+
+            <h2 id="closing">What policy <em>is for.</em></h2>
+
+            <p>
+              It is worth ending with a reminder of what policies are actually
+              for. They are not, despite appearances, primarily for regulators
+              or auditors &mdash; though those audiences matter. They are for
+              the frontline manager who needs to make a decision today and wants
+              to know whether the organization has thought about it before. They
+              are for the new joiner who is trying to understand how this place
+              works. They are for the ethics officer at 8pm on a Tuesday when
+              something has gone wrong and someone needs to know what the right
+              thing to do is.
+            </p>
+
+            <p>
+              Every policy you write is, at its best, a small gift of clarity to
+              a colleague you may never meet, in a moment you will never see.
+              The estate as a whole is the accumulated stock of those gifts
+              &mdash; or, if poorly maintained, the accumulated debt of
+              confusion, duplication, and quiet disregard.
+            </p>
+
+            <div class="takeaways">
+              <span class="takeaways-label">Takeaways</span>
+              <h4>What we've learned reviewing 300 policies</h4>
+              <ul>
+                <li>
+                  <strong
+                    >Most policy estates have drifted into existence.</strong
+                  >
+                  Nobody designed them; they accumulated. The first step to
+                  fixing them is to acknowledge this honestly.
+                </li>
+                <li>
+                  <strong>The halving rule holds.</strong> Across industries,
+                  the policy estate the organization actually needs is roughly
+                  half what currently exists.
+                </li>
+                <li>
+                  <strong>Apply the five-line test.</strong> If the policy owner
+                  can't answer five basic questions about a policy, that policy
+                  is probably not changing behaviour.
+                </li>
+                <li>
+                  <strong>Findability beats rule changes.</strong> A searchable,
+                  single-source policy portal does more for compliance than most
+                  rule revisions.
+                </li>
+                <li>
+                  <strong>Treat policies as products.</strong> Owners, versions,
+                  review cycles, and a feedback loop. The best teams run their
+                  policy library like a software product.
+                </li>
+              </ul>
+            </div>
+
+            <p>
+              If your organization has not run a serious cross-functional review
+              of its policy estate in the last three to five years, our
+              experience is that there is meaningful improvement waiting. Not in
+              the form of new policies &mdash; but in the form of clearer,
+              fewer, more findable ones, owned by people who could pass the
+              five-line test for each.
+            </p>
+
+            <!-- Newsletter inline -->
+            <div class="newsletter-inline">
+              <h3>Read more <em>like this.</em></h3>
+              <p>
+                The AmpliSkill quarterly newsletter — one essay, two events,
+                three programs. No filler.
+              </p>
+              <form
+                class="nl-form"
+                onsubmit="
+                  event.preventDefault();
+                  this.querySelector('button').textContent = '✓ Subscribed';
+                "
+              >
+                <input type="email" placeholder="you@work.com" required />
+                <button type="submit">Subscribe</button>
+              </form>
+            </div>
+
+            <!-- AUTHOR BIO -->
+            <div class="author-bio">
+              <div class="bio-avatar">A</div>
+              <div class="bio-content">
+                <span class="bio-label">About the author</span>
+                <h4>Ashok</h4>
+                <div class="bio-role">
+                  Co-founder &amp; CEO · Consulting Practice
+                </div>
+                <p>
+                  Ashok is co-founder of AmpliSkill. He has two decades of
+                  general management experience across manufacturing, financial
+                  services, and public-sector advisory, and leads AmpliSkill's
+                  MDP practice and client relationships. He has personally led
+                  or reviewed policy harmonization engagements covering more
+                  than 300 internal policies.
+                </p>
+                <div class="bio-links">
+                  <a href="publications.html#blogs">More by this author →</a>
+                  <a href="contact.html">Get in touch →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SIDE RAIL -->
+          <aside class="side-rail">
+            <div class="rail-block">
+              <span class="rail-label">In this essay</span>
+              <ul class="rail-toc">
+                <li class="active"><a href="#s1">01 — The drift problem</a></li>
+                <li><a href="#s2">02 — Three patterns we see everywhere</a></li>
+                <li><a href="#s3">03 — The five-line test</a></li>
+                <li><a href="#s4">04 — What actually changes behaviour</a></li>
+                <li><a href="#closing">What policy is for</a></li>
+              </ul>
+            </div>
+
+            <div class="rail-block">
+              <span class="rail-label">Topics</span>
+              <div class="rail-tags">
+                <a href="#" class="rail-tag">Consulting</a>
+                <a href="#" class="rail-tag">Policy Review</a>
+                <a href="#" class="rail-tag">Governance</a>
+                <a href="#" class="rail-tag">Risk</a>
+                <a href="#" class="rail-tag">Operations</a>
+              </div>
+            </div>
+
+            <div class="rail-block">
+              <span class="rail-label">Share</span>
+              <div class="rail-share">
+                <button class="share-btn" title="LinkedIn">in</button>
+                <button class="share-btn" title="X">𝕏</button>
+                <button class="share-btn" title="Copy link">⎘</button>
+              </div>
+            </div>
+
+            <div class="rail-block">
+              <span class="rail-label">Related</span>
+              <a
+                href="program-template.html"
+                style="
+                  text-decoration: none;
+                  color: inherit;
+                  display: block;
+                  background: var(--cream-deep);
+                  padding: 1.5rem;
+                  border-radius: 6px;
+                  border: 1px solid var(--line);
+                  transition: all 0.2s;
+                "
+                onmouseover="this.style.borderColor = 'var(--coral)'"
+                onmouseout="this.style.borderColor = 'var(--line)'"
+              >
+                <div
+                  style="
+                    font-family: &quot;JetBrains Mono&quot;, monospace;
+                    font-size: 0.7rem;
+                    letter-spacing: 0.15em;
+                    color: var(--coral);
+                    text-transform: uppercase;
+                    margin-bottom: 0.5rem;
+                  "
+                >
+                  Practice page
+                </div>
+                <div
+                  style="
+                    font-family: &quot;Fraunces&quot;, serif;
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                    line-height: 1.2;
+                    letter-spacing: -0.01em;
+                  "
+                >
+                  Internal Policy Review
+                </div>
+                <div
+                  style="
+                    font-size: 0.8rem;
+                    color: var(--ink-soft);
+                    margin-top: 0.5rem;
+                  "
+                >
+                  One of our five consulting practices
+                </div>
+              </a>
+            </div>
+          </aside>
+        </div>
+      </article>
+
+      <!-- RELATED ARTICLES -->
+      <section class="related-section">
+        <div class="container">
+          <div class="related-header">
+            <div>
+              <span class="eyebrow" style="color: var(--coral)"
+                >More writing</span
+              >
+              <h2
+                class="display-md mt-1"
+                style="
+                  font-family: &quot;Fraunces&quot;, serif;
+                  font-weight: 400;
+                  letter-spacing: -0.025em;
+                "
+              >
+                Continue <em class="italic-accent">reading.</em>
+              </h2>
+            </div>
+            <a class="btn-ghost" href="publications.html#blogs"
+              >View all articles →</a
+            >
+          </div>
+          <div class="related-grid">
+            <a
+              class="related-card"
+              href="post-managing-by-calendar-alone.html"
+              style="text-decoration: none; color: inherit"
+            >
+              <div class="related-thumb"></div>
+              <div class="date">18 Apr 2026 · Leadership</div>
+              <h4>The cost of managing by calendar alone</h4>
+            </a>
+            <a
+              class="related-card"
+              href="post-corporate-innovation-programs.html"
+              style="text-decoration: none; color: inherit"
+            >
+              <div class="related-thumb v3"></div>
+              <div class="date">04 Apr 2026 · Innovation</div>
+              <h4>
+                Why most corporate innovation programs fail (and the few that
+                don't)
+              </h4>
+            </a>
+            <a
+              class="related-card"
+              href="post-tam-in-emerging-markets.html"
+              style="text-decoration: none; color: inherit"
+            >
+              <div class="related-thumb v4"></div>
+              <div class="date">28 Mar 2026 · Strategy</div>
+              <h4>A simpler way to think about TAM in emerging markets</h4>
+            </a>
+            <a
+              class="related-card"
+              href="post-call-for-papers-ajmsi.html"
+              style="text-decoration: none; color: inherit"
+            >
+              <div class="related-thumb"></div>
+              <div class="date">21 Mar 2026 · Research</div>
+              <h4>
+                Call for papers: what we're looking for in AJMSI's inaugural
+                issue
+              </h4>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <h3>AmpliSkill<span style="color: var(--coral)">.</span></h3>
+            <p>
+              Driving excellence through academic and industry collaboration.
+              Management development, strategic consulting, and applied research
+              for the leaders and organizations shaping what's next.
+            </p>
+          </div>
+          <div>
+            <h5><i class="fa-solid fa-compass"></i> Explore</h5>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="team.html">Team</a></li>
+              <li><a href="programs.html">Programs</a></li>
+              <li><a href="consulting.html">Consulting</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5><i class="fa-solid fa-flask"></i> Research</h5>
+            <ul>
+              <li><a href="journal.html">AJMSI Journal</a></li>
+              <li><a href="publications.html">Books</a></li>
+              <li><a href="publications.html">Blogs</a></li>
+              <li><a href="events.html">Events</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5><i class="fa-solid fa-network-wired"></i> Connect</h5>
+            <ul>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="contact.html">Careers</a></li>
+              <li><a href="contact.html">Press</a></li>
+              <li><a href="contact.html">Partners</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 AMPLISKILL · ALL RIGHTS RESERVED</span>
+          <span>PRIVACY · TERMS · COOKIES</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      // Reading progress bar
+      const progressFill = document.getElementById("progressFill");
+      const article = document.querySelector(".article-body");
+      function updateProgress() {
+        if (!article) return;
+        const articleTop = article.offsetTop;
+        const articleHeight = article.offsetHeight;
+        const scrolled = window.scrollY - articleTop + window.innerHeight * 0.3;
+        const progress = Math.max(
+          0,
+          Math.min(100, (scrolled / articleHeight) * 100),
+        );
+        progressFill.style.width = progress + "%";
+      }
+      window.addEventListener("scroll", updateProgress, { passive: true });
+      updateProgress();
+
+      // Active section in TOC
+      const sections = document.querySelectorAll(".article-body h2[id]");
+      const tocLinks = document.querySelectorAll(".rail-toc li");
+      function updateTOC() {
+        let activeIdx = 0;
+        sections.forEach((s, i) => {
+          const rect = s.getBoundingClientRect();
+          if (rect.top < 200) activeIdx = i;
+        });
+        tocLinks.forEach((li, i) => {
+          li.classList.toggle("active", i === activeIdx);
+        });
+      }
+      window.addEventListener("scroll", updateTOC, { passive: true });
+    </script>
+  </body>
+</html>

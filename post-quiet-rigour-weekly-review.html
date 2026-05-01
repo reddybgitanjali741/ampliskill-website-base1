@@ -1,0 +1,959 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>On the quiet rigour of a weekly review — AmpliSkill</title>
+    <meta
+      name="description"
+      content="Ten years of observation, compressed into five observable patterns. The corporate innovation programs that work don't look like the ones that get written up."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="post-quiet-rigour-weekly-review.css" />
+  </head>
+  <body>
+    <!-- READING PROGRESS BAR -->
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <header class="site-header">
+      <!-- Utility bar -->
+      <div class="utility-bar">
+        <div class="container">
+          <ul class="utility-links">
+            <li><a href="publications.html">Thought Leadership</a></li>
+            <li><a href="events.html">News &amp; Events</a></li>
+            <li><a href="publications.html#blogs">Articles</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <div style="display: flex; gap: 1.5rem">
+            <a href="programs.html" class="utility-action"
+              ><i class="fa-solid fa-graduation-cap"></i> Apply to a Program</a
+            >
+            <a href="journal.html#submit" class="utility-action"
+              ><i class="fa-solid fa-file-pen"></i> Submit to Journal</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Main nav -->
+      <nav class="main-nav">
+        <div class="container">
+          <a href="index.html" class="logo"
+            ><span><img src="Logo.png" alt="logo" class="logo-img" /></span
+          ></a>
+          <ul class="nav-links">
+            <li class="has-submenu">
+              <a href="programs.html">Programs</a>
+              <div class="mega-menu">
+                <div class="container">
+                  <div class="mega-grid">
+                    <div class="mega-col">
+                      <h5>Format</h5>
+                      <ul>
+                        <li>
+                          <a href="programs.html"
+                            >Announced Programs<span class="desc"
+                              >Calendar-based, open enrolment</span
+                            ></a
+                          >
+                        </li>
+                        <li>
+                          <a href="programs.html#customized"
+                            >Customized Programs<span class="desc"
+                              >Designed for your organization</span
+                            ></a
+                          >
+                        </li>
+                        <li>
+                          <a href="program-template.html"
+                            >Flagship Intensive<span class="desc"
+                              >Our 8-week senior leadership programme</span
+                            ></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <h5>By Category</h5>
+                      <ul>
+                        <li><a href="programs.html">Leadership</a></li>
+                        <li><a href="programs.html">Strategy</a></li>
+                        <li><a href="programs.html">Innovation</a></li>
+                        <li>
+                          <a href="programs.html">Governance &amp; Boards</a>
+                        </li>
+                        <li><a href="programs.html">AI for Leaders</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <h5>Delivery</h5>
+                      <ul>
+                        <li>
+                          <a href="programs.html">On-Campus · Residential</a>
+                        </li>
+                        <li>
+                          <a href="programs.html"
+                            >Off-Campus · Non-Residential</a
+                          >
+                        </li>
+                        <li>
+                          <a href="programs.html">Hybrid &amp; Virtual</a>
+                        </li>
+                        <li>
+                          <a href="programs.html">Industry Training / OJT</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <a
+                        href="program-template.html"
+                        class="mega-feature"
+                        style="text-decoration: none"
+                      >
+                        <span class="tag">Featured · May 2026</span>
+                        <h4>Senior Leadership Intensive</h4>
+                        <span class="link"
+                          >Reserve a seat <i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li><a href="consulting.html">Consulting</a></li>
+            <li class="has-submenu">
+              <a href="publications.html">Publications</a>
+              <div class="mega-menu">
+                <div class="container">
+                  <div class="mega-grid">
+                    <div class="mega-col">
+                      <h5>AJMSI Journal</h5>
+                      <ul>
+                        <li>
+                          <a href="journal.html"
+                            >Journal Home<span class="desc"
+                              >Mission and editorial approach</span
+                            ></a
+                          >
+                        </li>
+                        <li>
+                          <a href="journal.html#submit"
+                            >Submission Guidelines</a
+                          >
+                        </li>
+                        <li>
+                          <a href="journal.html#roadmap">Editorial Roadmap</a>
+                        </li>
+                        <li><a href="team.html">Editorial Board</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <h5>Writing</h5>
+                      <ul>
+                        <li>
+                          <a href="publications.html#books"
+                            >Books<span class="desc"
+                              >AmpliSkill Press titles</span
+                            ></a
+                          >
+                        </li>
+                        <li>
+                          <a href="publications.html#blogs"
+                            >Blogs &amp; Essays</a
+                          >
+                        </li>
+                        <li>
+                          <a href="publications.html#cases">Case Studies</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <h5>Contribute</h5>
+                      <ul>
+                        <li>
+                          <a href="journal.html#submit">Submit a Paper</a>
+                        </li>
+                        <li><a href="contact.html">Pitch an Essay</a></li>
+                        <li><a href="contact.html">Propose a Case Study</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <a
+                        href="journal.html"
+                        class="mega-feature"
+                        style="
+                          text-decoration: none;
+                          background: linear-gradient(
+                            135deg,
+                            var(--ink),
+                            var(--coral)
+                          );
+                          color: var(--cream);
+                        "
+                      >
+                        <span class="tag" style="color: var(--butter)"
+                          >Call for Papers · Open</span
+                        >
+                        <h4 style="color: white">
+                          AJMSI Inaugural Issue — Jan 2027
+                        </h4>
+                        <span class="link" style="color: var(--butter)"
+                          >Submit now <i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="has-submenu">
+              <a href="about.html">About</a>
+              <div class="mega-menu">
+                <div class="container">
+                  <div class="mega-grid">
+                    <div class="mega-col">
+                      <h5>About AmpliSkill</h5>
+                      <ul>
+                        <li>
+                          <a href="about.html"
+                            >Who We Are<span class="desc"
+                              >Mission, vision, and approach</span
+                            ></a
+                          >
+                        </li>
+                        <li><a href="about.html">Who We Serve</a></li>
+                        <li><a href="about.html">Our Story</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <h5>People</h5>
+                      <ul>
+                        <li><a href="team.html">Executive Team</a></li>
+                        <li><a href="team.html">Advisory Council</a></li>
+                        <li><a href="team.html">Editorial Board</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <h5>Partnerships</h5>
+                      <ul>
+                        <li><a href="team.html">Academic Partners</a></li>
+                        <li><a href="team.html">Industry Partners</a></li>
+                        <li><a href="contact.html">Become a Partner</a></li>
+                        <li><a href="contact.html">Careers</a></li>
+                        <li><a href="contact.html">Press &amp; Media</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <a
+                        href="events.html"
+                        class="mega-feature"
+                        style="
+                          text-decoration: none;
+                          background: var(--butter);
+                          color: var(--ink);
+                        "
+                      >
+                        <span class="tag">Flagship · Oct 2026</span>
+                        <h4>AmpliSkill Annual Management Summit</h4>
+                        <span class="link"
+                          >Register interest
+                          <i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li><a href="events.html">Events</a></li>
+          </ul>
+          <div class="nav-right">
+            <button
+              class="search-btn"
+              aria-label="Search"
+              onclick="
+                document.querySelector('.search-overlay').classList.add('open');
+                document.querySelector('.search-overlay input').focus();
+              "
+            >
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <a href="contact.html" class="nav-cta"
+              ><i class="fa-solid fa-envelope"></i> Get in touch</a
+            >
+            <button class="mobile-toggle" aria-label="Menu">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Search overlay -->
+    <div class="search-overlay">
+      <button
+        class="search-close"
+        onclick="this.parentElement.classList.remove('open')"
+      >
+        ×
+      </button>
+      <div class="search-box">
+        <input type="text" placeholder="Search programs, articles, people…" />
+        <p class="search-hint">Press ESC to close · Press ↵ to search</p>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu">
+      <a href="about.html">About</a>
+      <a href="team.html">Team</a>
+      <a href="programs.html">Programs</a>
+      <a href="consulting.html">Consulting</a>
+      <a href="publications.html">Publications</a>
+      <a href="journal.html">AJMSI Journal</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html" class="mobile-cta">Get in touch</a>
+    </div>
+
+    <div class="page-wrap">
+      <!-- ARTICLE HERO -->
+      <section class="article-hero">
+        <div class="container">
+          <div class="article-breadcrumb">
+            <a href="publications.html">Publications</a>
+            <span class="sep">/</span>
+            <a href="publications.html#blogs">Blogs &amp; Essays</a>
+            <span class="sep">/</span>
+            <span>Practice</span>
+          </div>
+
+          <span class="article-category">Practice</span>
+          <h1>
+            On the quiet<br />rigour of a <em>weekly<br />review.</em>
+          </h1>
+          <p class="article-deck">
+            A short essay on why the most effective senior leaders we work with
+            all keep one discipline in common &mdash; and how it differs from
+            the version most people are taught.
+          </p>
+
+          <div class="article-meta">
+            <div class="author-line">
+              <div class="author-avatar">T</div>
+              <div>
+                <div class="author-name">Trupti</div>
+                <div class="author-role">
+                  Programs &amp; Editorial Lead · AmpliSkill
+                </div>
+              </div>
+            </div>
+            <div class="meta-block">
+              <span class="meta-label">Published</span>
+              <span class="meta-value">14 March 2026</span>
+            </div>
+            <div class="meta-block">
+              <span class="meta-label">Reading time</span>
+              <span class="meta-value">7 min</span>
+            </div>
+            <div class="meta-block">
+              <span class="meta-label">Topic</span>
+              <span class="meta-value">Practice · Leadership</span>
+            </div>
+            <div class="share-row">
+              <button
+                class="share-btn"
+                aria-label="Share on LinkedIn"
+                title="LinkedIn"
+              >
+                in
+              </button>
+              <button class="share-btn" aria-label="Share on X" title="X">
+                𝕏
+              </button>
+              <button
+                class="share-btn"
+                aria-label="Copy link"
+                title="Copy link"
+              >
+                ⎘
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ARTICLE BODY -->
+      <article class="article-body">
+        <div class="container">
+          <!-- READING COLUMN -->
+          <div class="reading-col">
+            <div class="editor-note">
+              <span class="note-label">Editor's Note</span>
+              <p>
+                This essay grew out of an informal pattern observed across
+                cohorts of AmpliSkill's
+                <strong>Senior Leadership Intensive</strong> programme. It is
+                presented as a working observation rather than empirical
+                research; readers interested in the formal study of reflective
+                practice should look to Donald Sch&ouml;n and the wider
+                literature on practitioner reflection.
+              </p>
+            </div>
+
+            <p>
+              <span class="lead-line">In the course</span> of programme
+              operations at AmpliSkill, I get to spend a strange amount of time
+              around senior leaders. I help them through admissions interviews.
+              I sit in on faculty conversations. I read their cohort
+              reflections. I watch how they handle the small organizational
+              frictions of a residential programme &mdash; the room change, the
+              schedule shift, the late session.
+            </p>
+
+            <p>
+              Across this work, I have started to notice something. The leaders
+              who consistently come across as the most composed, the most
+              grounded, the most capable of holding multiple difficult things in
+              mind at once &mdash; they almost all do the same small thing. They
+              keep some version of a weekly review.
+            </p>
+
+            <p>
+              It is not a productivity ritual. It is not a journaling habit. It
+              is not, in the way the term is sometimes used, a system. It is
+              something quieter and more durable than any of those. And the way
+              they describe it bears almost no resemblance to the way the
+              practice is usually written about.
+            </p>
+
+            <h2 id="s1">
+              <span class="num">Section 01</span>A small,
+              <em>recurring</em> observation
+            </h2>
+
+            <p>
+              I started paying attention to this maybe two years ago, almost by
+              accident. We had asked a cohort of programme participants to write
+              a short reflection on a habit or practice they had carried with
+              them through their career. The responses came in. And among the
+              senior-most participants &mdash; the CEOs, the senior partners,
+              the founders &mdash; an unusually large fraction described some
+              version of the same thing.
+            </p>
+
+            <p>
+              One called it her Friday hour. Another called it Sunday morning. A
+              third referred to a notebook he had been keeping for fifteen
+              years. The vocabulary varied. The substance did not.
+            </p>
+
+            <p>
+              Each of them, once a week, for somewhere between thirty minutes
+              and two hours, sat down by themselves with a notebook or a
+              document and quietly reviewed their week.
+            </p>
+
+            <div class="pull-quote">
+              <q
+                >It was not a calendar audit. It was not a to-do list
+                reorganization. It was something closer to a private
+                conversation with themselves about what had actually
+                happened.</q
+              >
+            </div>
+
+            <h2 id="s2">
+              <span class="num">Section 02</span>What it <em>isn't</em>
+            </h2>
+
+            <p>
+              It is worth being precise about what this practice is not, because
+              the genre of writing about "weekly reviews" has, over the last
+              decade, accumulated a great deal of clutter.
+            </p>
+
+            <p>
+              It is not, first, a productivity system. None of the leaders I am
+              describing were running a Getting Things Done methodology, or
+              processing inboxes to zero, or moving items between contexts. The
+              version they describe is much less concerned with task management
+              and much more concerned with sense-making. Their tasks were
+              handled in the normal flow of the week.
+            </p>
+
+            <p>
+              It is not, second, journaling. The journaling tradition emphasizes
+              emotional processing, gratitude, and self-discovery. The leaders I
+              am describing were not, for the most part, doing this. Their
+              reviews were focused outward, on the work and the organization,
+              more than inward, on the self.
+            </p>
+
+            <p>
+              And it is not, third, an optimization exercise. The leaders did
+              not seem to be looking for ways to do next week better. They were,
+              more simply, looking at what had happened and trying to understand
+              it.
+            </p>
+
+            <h2 id="s3">
+              <span class="num">Section 03</span>What it <em>actually</em> looks
+              like
+            </h2>
+
+            <p>
+              When I have asked them to describe what they actually do during
+              the hour, the answers have been remarkably consistent. There is a
+              structure that recurs.
+            </p>
+
+            <p>
+              <strong>They start with a quick narrative of the week.</strong>
+              Not a calendar walk-through, but a paragraph or two summarizing
+              what actually happened &mdash; what was decided, what shifted,
+              what surprised them, who they spoke to that mattered. Several of
+              them write this in past tense, as if narrating it to a future
+              reader. One described it as "writing the week down so I have
+              somewhere to put it."
+            </p>
+
+            <p>
+              <strong>They then look for patterns.</strong> Reading back over
+              the previous three or four weeks, they look for things that have
+              been quietly recurring. The same person mentioning the same
+              concern. The same kind of decision arriving in slightly different
+              costumes. A theme that has been showing up at the edges. Most of
+              them say the patterns are easier to see at a four-week distance
+              than a one-week distance &mdash; and that they would not see them
+              at all if they did not write them down.
+            </p>
+
+            <p>
+              <strong
+                >They identify, at most, two things they want to do something
+                about.</strong
+              >
+              Not a long list of resolutions. One or two things, often quite
+              specific. A conversation that has been deferred for three weeks
+              and needs to happen. A decision that has been drifting and needs a
+              closing date. A question that needs to be put on the next
+              executive agenda.
+            </p>
+
+            <p>
+              <strong>They close with a short, almost private note.</strong>
+              Several of them describe writing a sentence or two in the first
+              person about something they got wrong, something they want to
+              remember, or something they are uncertain about. This is the most
+              personal part of the practice and the one they describe with the
+              most reluctance &mdash; but several of them said it was the part
+              that made the rest of the hour worth it.
+            </p>
+
+            <div class="callout">
+              <span class="callout-label">If you want to try this</span>
+              <h4>A four-line <em>starter</em> structure.</h4>
+              <p>
+                (1) What actually happened this week, in a paragraph. (2) What
+                patterns are showing up across the last few weeks. (3) One or
+                two things I will do something about. (4) Something I want to
+                remember. Thirty minutes, once a week, in the same place. Resist
+                the urge to make it more elaborate.
+              </p>
+            </div>
+
+            <h2 id="s4">
+              <span class="num">Section 04</span>Why it <em>works</em>
+            </h2>
+
+            <p>
+              I am not the right person to write a definitive theory of why this
+              practice works as well as it seems to. I have not done the
+              research. What I can offer is what the leaders themselves have
+              said, when I have asked them.
+            </p>
+
+            <p>
+              The most common answer is some version of:
+              <em>it makes me less reactive.</em> The discipline of pausing once
+              a week, in writing, to notice what is happening seems to give them
+              a layer of distance from the daily flow of work that they would
+              not otherwise have. Several have described it as the difference
+              between being inside the week and watching the week.
+            </p>
+
+            <p>
+              The second most common answer is:
+              <em>it surfaces things I would have missed.</em> The slow
+              accumulation of a recurring concern, the quiet drift of a
+              decision, the small change in someone's tone &mdash; these are
+              easy to miss in the flood of normal work and surprisingly easy to
+              see when you sit down once a week to look for them.
+            </p>
+
+            <p>
+              The third answer, more rarely, is:
+              <em>it reminds me what I am here to do.</em> Several of the most
+              senior leaders I have asked described their weekly hour as a
+              private re-orientation. They sit down with the week, look at the
+              four-line note from a year ago, and remember &mdash; sometimes
+              with mild embarrassment &mdash; what they had been trying to build
+              at that point. They reconnect with the longer arc.
+            </p>
+
+            <h2 id="closing">A <em>modest</em> practice.</h2>
+
+            <p>
+              I find it striking, in writing this, how unremarkable the practice
+              is. Thirty minutes once a week with a notebook. Four lines of
+              structure. No system, no app, no productivity philosophy. Nothing
+              that would survive being turned into a book.
+            </p>
+
+            <p>
+              And yet the leaders who do it consistently come across, in our
+              work with them, as more grounded, more deliberate, and more in
+              command of the long arc than the leaders who do not. The
+              correlation is not perfect, of course. There are excellent leaders
+              who do nothing of the kind. But it is striking enough that it has
+              changed how I think about my own week.
+            </p>
+
+            <div class="takeaways">
+              <span class="takeaways-label">Takeaways</span>
+              <h4>The quiet rigour of a weekly review</h4>
+              <ul>
+                <li>
+                  <strong>It is not a productivity system.</strong> Or a
+                  journaling practice. Or an optimization exercise. It is closer
+                  to a private conversation about what actually happened.
+                </li>
+                <li>
+                  <strong>The structure is small and stable.</strong> A
+                  narrative of the week, a look for patterns, one or two things
+                  to act on, a personal note. That is it.
+                </li>
+                <li>
+                  <strong>The four-week view matters.</strong> Patterns are
+                  visible at a four-week distance that are invisible at a
+                  one-week distance. The notebook is what makes them visible.
+                </li>
+                <li>
+                  <strong>It produces less reactivity.</strong> The most common
+                  benefit leaders describe is the small layer of distance the
+                  practice puts between them and the daily flow.
+                </li>
+                <li>
+                  <strong>The format does not need to be elaborate.</strong>
+                  Resisting the urge to systematize it is, paradoxically, what
+                  allows the practice to last.
+                </li>
+              </ul>
+            </div>
+
+            <p>
+              If you have been considering some version of this and have been
+              put off by the genre's tendency toward over-engineering, take
+              heart. The leaders I am describing are not running a system. They
+              are sitting down once a week with a notebook and writing down what
+              happened. That, evidently, is enough.
+            </p>
+
+            <!-- Newsletter inline -->
+            <div class="newsletter-inline">
+              <h3>Read more <em>like this.</em></h3>
+              <p>
+                The AmpliSkill quarterly newsletter — one essay, two events,
+                three programs. No filler.
+              </p>
+              <form
+                class="nl-form"
+                onsubmit="
+                  event.preventDefault();
+                  this.querySelector('button').textContent = '✓ Subscribed';
+                "
+              >
+                <input type="email" placeholder="you@work.com" required />
+                <button type="submit">Subscribe</button>
+              </form>
+            </div>
+
+            <!-- AUTHOR BIO -->
+            <div class="author-bio">
+              <div class="bio-avatar">T</div>
+              <div class="bio-content">
+                <span class="bio-label">About the author</span>
+                <h4>Trupti</h4>
+                <div class="bio-role">
+                  Programs &amp; Editorial Lead · AmpliSkill
+                </div>
+                <p>
+                  Trupti is Programs &amp; Editorial Lead at AmpliSkill. She has
+                  spent a decade in programme operations and editorial work
+                  across executive education and academic publishing. She writes
+                  for the AmpliSkill blog and coordinates editorial production
+                  for AJMSI.
+                </p>
+                <div class="bio-links">
+                  <a href="publications.html#blogs">More by this author →</a>
+                  <a href="contact.html">Get in touch →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SIDE RAIL -->
+          <aside class="side-rail">
+            <div class="rail-block">
+              <span class="rail-label">In this essay</span>
+              <ul class="rail-toc">
+                <li class="active">
+                  <a href="#s1">01 — A small, recurring observation</a>
+                </li>
+                <li><a href="#s2">02 — What it isn't</a></li>
+                <li><a href="#s3">03 — What it actually looks like</a></li>
+                <li><a href="#s4">04 — Why it works</a></li>
+                <li><a href="#closing">A modest practice</a></li>
+              </ul>
+            </div>
+
+            <div class="rail-block">
+              <span class="rail-label">Topics</span>
+              <div class="rail-tags">
+                <a href="#" class="rail-tag">Practice</a>
+                <a href="#" class="rail-tag">Leadership</a>
+                <a href="#" class="rail-tag">Habits</a>
+                <a href="#" class="rail-tag">Reflection</a>
+                <a href="#" class="rail-tag">Personal Effectiveness</a>
+              </div>
+            </div>
+
+            <div class="rail-block">
+              <span class="rail-label">Share</span>
+              <div class="rail-share">
+                <button class="share-btn" title="LinkedIn">in</button>
+                <button class="share-btn" title="X">𝕏</button>
+                <button class="share-btn" title="Copy link">⎘</button>
+              </div>
+            </div>
+
+            <div class="rail-block">
+              <span class="rail-label">Related</span>
+              <a
+                href="program-template.html"
+                style="
+                  text-decoration: none;
+                  color: inherit;
+                  display: block;
+                  background: var(--cream-deep);
+                  padding: 1.5rem;
+                  border-radius: 6px;
+                  border: 1px solid var(--line);
+                  transition: all 0.2s;
+                "
+                onmouseover="this.style.borderColor = 'var(--coral)'"
+                onmouseout="this.style.borderColor = 'var(--line)'"
+              >
+                <div
+                  style="
+                    font-family: &quot;JetBrains Mono&quot;, monospace;
+                    font-size: 0.7rem;
+                    letter-spacing: 0.15em;
+                    color: var(--coral);
+                    text-transform: uppercase;
+                    margin-bottom: 0.5rem;
+                  "
+                >
+                  Jul 08, 2026
+                </div>
+                <div
+                  style="
+                    font-family: &quot;Fraunces&quot;, serif;
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                    line-height: 1.2;
+                    letter-spacing: -0.01em;
+                  "
+                >
+                  Leading Through Ambiguity
+                </div>
+                <div
+                  style="
+                    font-size: 0.8rem;
+                    color: var(--ink-soft);
+                    margin-top: 0.5rem;
+                  "
+                >
+                  4 days · Residential · Cap 24
+                </div>
+              </a>
+            </div>
+          </aside>
+        </div>
+      </article>
+
+      <!-- RELATED ARTICLES -->
+      <section class="related-section">
+        <div class="container">
+          <div class="related-header">
+            <div>
+              <span class="eyebrow" style="color: var(--coral)"
+                >More writing</span
+              >
+              <h2
+                class="display-md mt-1"
+                style="
+                  font-family: &quot;Fraunces&quot;, serif;
+                  font-weight: 400;
+                  letter-spacing: -0.025em;
+                "
+              >
+                Continue <em class="italic-accent">reading.</em>
+              </h2>
+            </div>
+            <a class="btn-ghost" href="publications.html#blogs"
+              >View all articles →</a
+            >
+          </div>
+          <div class="related-grid">
+            <a
+              class="related-card"
+              href="post-managing-by-calendar-alone.html"
+              style="text-decoration: none; color: inherit"
+            >
+              <div class="related-thumb"></div>
+              <div class="date">18 Apr 2026 · Leadership</div>
+              <h4>The cost of managing by calendar alone</h4>
+            </a>
+            <a
+              class="related-card"
+              href="post-reviewing-300-internal-policies.html"
+              style="text-decoration: none; color: inherit"
+            >
+              <div class="related-thumb v2"></div>
+              <div class="date">11 Apr 2026 · Consulting</div>
+              <h4>What we've learned reviewing 300 internal policies</h4>
+            </a>
+            <a
+              class="related-card"
+              href="post-corporate-innovation-programs.html"
+              style="text-decoration: none; color: inherit"
+            >
+              <div class="related-thumb v3"></div>
+              <div class="date">04 Apr 2026 · Innovation</div>
+              <h4>
+                Why most corporate innovation programs fail (and the few that
+                don't)
+              </h4>
+            </a>
+            <a
+              class="related-card"
+              href="post-tam-in-emerging-markets.html"
+              style="text-decoration: none; color: inherit"
+            >
+              <div class="related-thumb v4"></div>
+              <div class="date">28 Mar 2026 · Strategy</div>
+              <h4>A simpler way to think about TAM in emerging markets</h4>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <h3>AmpliSkill<span style="color: var(--coral)">.</span></h3>
+            <p>
+              Driving excellence through academic and industry collaboration.
+              Management development, strategic consulting, and applied research
+              for the leaders and organizations shaping what's next.
+            </p>
+          </div>
+          <div>
+            <h5><i class="fa-solid fa-compass"></i> Explore</h5>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="team.html">Team</a></li>
+              <li><a href="programs.html">Programs</a></li>
+              <li><a href="consulting.html">Consulting</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5><i class="fa-solid fa-flask"></i> Research</h5>
+            <ul>
+              <li><a href="journal.html">AJMSI Journal</a></li>
+              <li><a href="publications.html">Books</a></li>
+              <li><a href="publications.html">Blogs</a></li>
+              <li><a href="events.html">Events</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5><i class="fa-solid fa-network-wired"></i> Connect</h5>
+            <ul>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="contact.html">Careers</a></li>
+              <li><a href="contact.html">Press</a></li>
+              <li><a href="contact.html">Partners</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 AMPLISKILL · ALL RIGHTS RESERVED</span>
+          <span>PRIVACY · TERMS · COOKIES</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      // Reading progress bar
+      const progressFill = document.getElementById("progressFill");
+      const article = document.querySelector(".article-body");
+      function updateProgress() {
+        if (!article) return;
+        const articleTop = article.offsetTop;
+        const articleHeight = article.offsetHeight;
+        const scrolled = window.scrollY - articleTop + window.innerHeight * 0.3;
+        const progress = Math.max(
+          0,
+          Math.min(100, (scrolled / articleHeight) * 100),
+        );
+        progressFill.style.width = progress + "%";
+      }
+      window.addEventListener("scroll", updateProgress, { passive: true });
+      updateProgress();
+
+      // Active section in TOC
+      const sections = document.querySelectorAll(".article-body h2[id]");
+      const tocLinks = document.querySelectorAll(".rail-toc li");
+      function updateTOC() {
+        let activeIdx = 0;
+        sections.forEach((s, i) => {
+          const rect = s.getBoundingClientRect();
+          if (rect.top < 200) activeIdx = i;
+        });
+        tocLinks.forEach((li, i) => {
+          li.classList.toggle("active", i === activeIdx);
+        });
+      }
+      window.addEventListener("scroll", updateTOC, { passive: true });
+    </script>
+  </body>
+</html>

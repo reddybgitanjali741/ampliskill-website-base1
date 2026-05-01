@@ -1,0 +1,950 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The cost of managing by calendar alone — AmpliSkill</title>
+    <meta
+      name="description"
+      content="Ten years of observation, compressed into five observable patterns. The corporate innovation programs that work don't look like the ones that get written up."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="post-managing-by-calendar-alone.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- READING PROGRESS BAR -->
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <header class="site-header">
+      <!-- Utility bar -->
+      <div class="utility-bar">
+        <div class="container">
+          <ul class="utility-links">
+            <li><a href="publications.html">Thought Leadership</a></li>
+            <li><a href="events.html">News &amp; Events</a></li>
+            <li><a href="publications.html#blogs">Articles</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <div style="display: flex; gap: 1.5rem">
+            <a href="programs.html" class="utility-action"
+              ><i class="fa-solid fa-graduation-cap"></i> Apply to a Program</a
+            >
+            <a href="journal.html#submit" class="utility-action"
+              ><i class="fa-solid fa-file-pen"></i> Submit to Journal</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Main nav -->
+      <nav class="main-nav">
+        <div class="container">
+          <a href="index.html" class="logo"
+            ><span><img src="Logo.png" alt="logo" class="logo-img" /></span
+          ></a>
+          <ul class="nav-links">
+            <li class="has-submenu">
+              <a href="programs.html">Programs</a>
+              <div class="mega-menu">
+                <div class="container">
+                  <div class="mega-grid">
+                    <div class="mega-col">
+                      <h5>Format</h5>
+                      <ul>
+                        <li>
+                          <a href="programs.html"
+                            >Announced Programs<span class="desc"
+                              >Calendar-based, open enrolment</span
+                            ></a
+                          >
+                        </li>
+                        <li>
+                          <a href="programs.html#customized"
+                            >Customized Programs<span class="desc"
+                              >Designed for your organization</span
+                            ></a
+                          >
+                        </li>
+                        <li>
+                          <a href="program-template.html"
+                            >Flagship Intensive<span class="desc"
+                              >Our 8-week senior leadership programme</span
+                            ></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <h5>By Category</h5>
+                      <ul>
+                        <li><a href="programs.html">Leadership</a></li>
+                        <li><a href="programs.html">Strategy</a></li>
+                        <li><a href="programs.html">Innovation</a></li>
+                        <li>
+                          <a href="programs.html">Governance &amp; Boards</a>
+                        </li>
+                        <li><a href="programs.html">AI for Leaders</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <h5>Delivery</h5>
+                      <ul>
+                        <li>
+                          <a href="programs.html">On-Campus · Residential</a>
+                        </li>
+                        <li>
+                          <a href="programs.html"
+                            >Off-Campus · Non-Residential</a
+                          >
+                        </li>
+                        <li>
+                          <a href="programs.html">Hybrid &amp; Virtual</a>
+                        </li>
+                        <li>
+                          <a href="programs.html">Industry Training / OJT</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <a
+                        href="program-template.html"
+                        class="mega-feature"
+                        style="text-decoration: none"
+                      >
+                        <span class="tag">Featured · May 2026</span>
+                        <h4>Senior Leadership Intensive</h4>
+                        <span class="link"
+                          >Reserve a seat <i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li><a href="consulting.html">Consulting</a></li>
+            <li class="has-submenu">
+              <a href="publications.html">Publications</a>
+              <div class="mega-menu">
+                <div class="container">
+                  <div class="mega-grid">
+                    <div class="mega-col">
+                      <h5>AJMSI Journal</h5>
+                      <ul>
+                        <li>
+                          <a href="journal.html"
+                            >Journal Home<span class="desc"
+                              >Mission and editorial approach</span
+                            ></a
+                          >
+                        </li>
+                        <li>
+                          <a href="journal.html#submit"
+                            >Submission Guidelines</a
+                          >
+                        </li>
+                        <li>
+                          <a href="journal.html#roadmap">Editorial Roadmap</a>
+                        </li>
+                        <li><a href="team.html">Editorial Board</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <h5>Writing</h5>
+                      <ul>
+                        <li>
+                          <a href="publications.html#books"
+                            >Books<span class="desc"
+                              >AmpliSkill Press titles</span
+                            ></a
+                          >
+                        </li>
+                        <li>
+                          <a href="publications.html#blogs"
+                            >Blogs &amp; Essays</a
+                          >
+                        </li>
+                        <li>
+                          <a href="publications.html#cases">Case Studies</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <h5>Contribute</h5>
+                      <ul>
+                        <li>
+                          <a href="journal.html#submit">Submit a Paper</a>
+                        </li>
+                        <li><a href="contact.html">Pitch an Essay</a></li>
+                        <li><a href="contact.html">Propose a Case Study</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <a
+                        href="journal.html"
+                        class="mega-feature"
+                        style="
+                          text-decoration: none;
+                          background: linear-gradient(
+                            135deg,
+                            var(--ink),
+                            var(--coral)
+                          );
+                          color: var(--cream);
+                        "
+                      >
+                        <span class="tag" style="color: var(--butter)"
+                          >Call for Papers · Open</span
+                        >
+                        <h4 style="color: white">
+                          AJMSI Inaugural Issue — Jan 2027
+                        </h4>
+                        <span class="link" style="color: var(--butter)"
+                          >Submit now <i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="has-submenu">
+              <a href="about.html">About</a>
+              <div class="mega-menu">
+                <div class="container">
+                  <div class="mega-grid">
+                    <div class="mega-col">
+                      <h5>About AmpliSkill</h5>
+                      <ul>
+                        <li>
+                          <a href="about.html"
+                            >Who We Are<span class="desc"
+                              >Mission, vision, and approach</span
+                            ></a
+                          >
+                        </li>
+                        <li><a href="about.html">Who We Serve</a></li>
+                        <li><a href="about.html">Our Story</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <h5>People</h5>
+                      <ul>
+                        <li><a href="team.html">Executive Team</a></li>
+                        <li><a href="team.html">Advisory Council</a></li>
+                        <li><a href="team.html">Editorial Board</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <h5>Partnerships</h5>
+                      <ul>
+                        <li><a href="team.html">Academic Partners</a></li>
+                        <li><a href="team.html">Industry Partners</a></li>
+                        <li><a href="contact.html">Become a Partner</a></li>
+                        <li><a href="contact.html">Careers</a></li>
+                        <li><a href="contact.html">Press &amp; Media</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <a
+                        href="events.html"
+                        class="mega-feature"
+                        style="
+                          text-decoration: none;
+                          background: var(--butter);
+                          color: var(--ink);
+                        "
+                      >
+                        <span class="tag">Flagship · Oct 2026</span>
+                        <h4>AmpliSkill Annual Management Summit</h4>
+                        <span class="link"
+                          >Register interest
+                          <i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li><a href="events.html">Events</a></li>
+          </ul>
+          <div class="nav-right">
+            <button
+              class="search-btn"
+              aria-label="Search"
+              onclick="
+                document.querySelector('.search-overlay').classList.add('open');
+                document.querySelector('.search-overlay input').focus();
+              "
+            >
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <a href="contact.html" class="nav-cta"
+              ><i class="fa-solid fa-envelope"></i> Get in touch</a
+            >
+            <button class="mobile-toggle" aria-label="Menu">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Search overlay -->
+    <div class="search-overlay">
+      <button
+        class="search-close"
+        onclick="this.parentElement.classList.remove('open')"
+      >
+        ×
+      </button>
+      <div class="search-box">
+        <input type="text" placeholder="Search programs, articles, people…" />
+        <p class="search-hint">Press ESC to close · Press ↵ to search</p>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu">
+      <a href="about.html">About</a>
+      <a href="team.html">Team</a>
+      <a href="programs.html">Programs</a>
+      <a href="consulting.html">Consulting</a>
+      <a href="publications.html">Publications</a>
+      <a href="journal.html">AJMSI Journal</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html" class="mobile-cta">Get in touch</a>
+    </div>
+
+    <div class="page-wrap">
+      <!-- ARTICLE HERO -->
+      <section class="article-hero">
+        <div class="container">
+          <div class="article-breadcrumb">
+            <a href="publications.html">Publications</a>
+            <span class="sep">/</span>
+            <a href="publications.html#blogs">Blogs &amp; Essays</a>
+            <span class="sep">/</span>
+            <span>Leadership</span>
+          </div>
+
+          <span class="article-category">Leadership</span>
+          <h1>The cost of managing<br />by <em>calendar</em> alone.</h1>
+          <p class="article-deck">
+            Why the best senior operators build two clocks &mdash; one for the
+            month, one for the decade &mdash; and how to hold both at once.
+          </p>
+
+          <div class="article-meta">
+            <div class="author-line">
+              <div class="author-avatar">B</div>
+              <div>
+                <div class="author-name">Barendra</div>
+                <div class="author-role">
+                  Co-founder &amp; Managing Director · Strategy Track
+                </div>
+              </div>
+            </div>
+            <div class="meta-block">
+              <span class="meta-label">Published</span>
+              <span class="meta-value">18 April 2026</span>
+            </div>
+            <div class="meta-block">
+              <span class="meta-label">Reading time</span>
+              <span class="meta-value">9 min</span>
+            </div>
+            <div class="meta-block">
+              <span class="meta-label">Topic</span>
+              <span class="meta-value">Leadership · Strategy</span>
+            </div>
+            <div class="share-row">
+              <button
+                class="share-btn"
+                aria-label="Share on LinkedIn"
+                title="LinkedIn"
+              >
+                in
+              </button>
+              <button class="share-btn" aria-label="Share on X" title="X">
+                𝕏
+              </button>
+              <button
+                class="share-btn"
+                aria-label="Copy link"
+                title="Copy link"
+              >
+                ⎘
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ARTICLE BODY -->
+      <article class="article-body">
+        <div class="container">
+          <!-- READING COLUMN -->
+          <div class="reading-col">
+            <div class="editor-note">
+              <span class="note-label">Editor's Note</span>
+              <p>
+                This essay accompanies the
+                <strong>Senior Leadership Intensive</strong>'s opening module on
+                decision-making and strategic thinking, where this two-clock
+                framework is introduced and put to work.
+              </p>
+            </div>
+
+            <p>
+              <span class="lead-line">There is</span> a particular kind of
+              senior leader I have come to recognize. Their calendar is full
+              from 8am to 7pm. Every fifteen-minute block has a label. They are,
+              by any reasonable measure, in extraordinary demand. They will tell
+              you, with some pride, that they cannot remember the last time they
+              had an unscheduled hour.
+            </p>
+
+            <p>And they are quietly, slowly, losing.</p>
+
+            <p>
+              Not in any obvious way. The quarterly numbers come in. The team is
+              delivering. The board is satisfied. But if you sit with them long
+              enough, a pattern emerges. They are reactive on every decision
+              that matters beyond the next quarter. They cannot tell you, in any
+              detail, what their organization will look like in three years
+              &mdash; not because they don't care, but because they have not had
+              the time to think about it. They are, in the most literal sense,
+              being managed by their calendar rather than managing through it.
+            </p>
+
+            <p>
+              This essay is about that pattern, and about what to do instead.
+            </p>
+
+            <h2 id="s1">
+              <span class="num">Section 01</span>The tyranny of
+              <em>the next meeting</em>
+            </h2>
+
+            <p>
+              The first thing to notice about a senior leader's calendar is that
+              almost everything on it is short-horizon. The 1:1, the operating
+              review, the customer call, the press interview, the regulator
+              update, the board sub-committee. Each of these meetings serves an
+              immediate purpose. Each one has consequences if missed. Each one
+              feels, in the moment, important.
+            </p>
+
+            <p>
+              And the rational response to a flood of important short-horizon
+              work is to keep doing it &mdash; because the cost of not doing it
+              is visible, immediate, and personal, while the cost of
+              <em>only</em> doing it is invisible, gradual, and shared across
+              the whole organization.
+            </p>
+
+            <div class="pull-quote">
+              <q
+                >The calendar is exquisitely sensitive to urgency and almost
+                completely blind to importance. It rewards the leader who
+                answers the phone and punishes the leader who thinks.</q
+              >
+            </div>
+
+            <p>
+              This is not a new observation. Eisenhower wrote about it in the
+              1950s. Stephen Covey turned it into a 2&times;2 grid. Every
+              executive coach since has had some version of the same
+              conversation with their clients. And yet the pattern persists, in
+              part because the modern senior role has structurally tilted toward
+              more meetings, more inputs, more channels of urgent demand &mdash;
+              and because the leaders themselves, having reached the top by
+              being responsive, find responsiveness very hard to switch off.
+            </p>
+
+            <h2 id="s2">
+              <span class="num">Section 02</span>What the calendar
+              <em>can't see</em>
+            </h2>
+
+            <p>
+              If you ask a calendar what your job is, it will tell you that your
+              job is to attend the meetings that are on it. This is not, of
+              course, your actual job. Your actual job is to make a small number
+              of consequential decisions well, build a team that can make most
+              decisions without you, and position the organization for the long
+              arc you alone are paid to see.
+            </p>
+
+            <p>
+              None of those activities show up on the calendar in any natural
+              way. They show up, if at all, as the residue: the half-hour
+              between meetings when you stare at the wall, the unexpected gap
+              when something is cancelled, the long-haul flight where nobody can
+              reach you. This is when senior leaders actually think. And it is
+              the smallest part of their week.
+            </p>
+
+            <div class="callout">
+              <span class="callout-label">Diagnostic</span>
+              <h4>Pull up your last <em>three months</em>.</h4>
+              <p>
+                Print your calendar for the last quarter. Highlight, in one
+                colour, every block that was reactive — meetings someone else
+                asked for. In another colour, highlight every block that was
+                proactive — work you scheduled because it advanced the
+                organization's three-year position. If the second colour is less
+                than 15% of your time, you are managing by calendar alone.
+              </p>
+            </div>
+
+            <p>
+              The diagnostic almost always lands the same way. The senior leader
+              looks at the printout, looks at the colours, and says some version
+              of: <em>I knew it was bad. I did not know it was this bad.</em>
+            </p>
+
+            <h2 id="s3">
+              <span class="num">Section 03</span>The <em>two clocks</em>
+            </h2>
+
+            <p>
+              The senior operators I have worked with who do this best all share
+              a common mental model. They run on two clocks at once.
+            </p>
+
+            <p>
+              The first clock is the operating clock. It runs in days, weeks,
+              and months. It is responsive, fast-moving, granular. It is, more
+              or less, what the calendar shows you. The first clock is the work
+              of running the business as it currently exists.
+            </p>
+
+            <p>
+              The second clock is the strategic clock. It runs in years and
+              decades. It is slow, deliberate, and almost entirely invisible to
+              anyone outside the leader's own head. The second clock is the work
+              of building the business that doesn't exist yet &mdash; the next
+              product line, the next leadership generation, the next geographic
+              market, the next defensive moat.
+            </p>
+
+            <p>
+              Most senior leaders have a perfectly functional first clock. The
+              crisis is that they have no second clock at all. They are running
+              on the operating tempo of the business and assuming that strategic
+              time will somehow take care of itself. It will not.
+            </p>
+
+            <h2 id="s4">
+              <span class="num">Section 04</span>Building the
+              <em>second clock</em>
+            </h2>
+
+            <p>
+              The good news is that building a second clock is not particularly
+              difficult, once you accept that it must be done deliberately.
+              Three things tend to be necessary.
+            </p>
+
+            <p>
+              <strong>First, a standing block.</strong> A weekly or bi-weekly
+              block of two to four hours, on the calendar, in the same slot
+              every time, with a label that does not include the word "meeting."
+              The most common label I have seen is simply <em>Think</em>. The
+              block is sacred. It is moved only for genuine emergencies. The
+              leader's assistant is empowered to decline meeting requests that
+              conflict with it, by name.
+            </p>
+
+            <p>
+              <strong>Second, a thinking artefact.</strong> The standing block
+              is wasted if the leader sits in it and stares at email. The
+              leaders who use the second clock well always have a written
+              artefact they are working on &mdash; a one-page strategy memo, a
+              long-form note to the board, a personal essay about the next three
+              years. The artefact is what gives the time its shape. Without it,
+              the time evaporates.
+            </p>
+
+            <p>
+              <strong>Third, a different physical location.</strong> This sounds
+              trivial and is not. The first clock and the second clock require
+              different kinds of attention, and most leaders find that they
+              cannot switch between them in the same chair. The leaders I know
+              who do this best have a ritual &mdash; a different desk, a coffee
+              shop, a walk before they sit down, a particular notebook. The
+              ritual is a signal to themselves that they are now on the second
+              clock, and the operating tempo no longer applies.
+            </p>
+
+            <div class="pull-quote">
+              <q
+                >None of this is exotic. What is exotic is the discipline to
+                actually do it &mdash; week after week, while the first clock is
+                screaming at you to come back.</q
+              >
+            </div>
+
+            <h2 id="closing">Holding both <em>at once.</em></h2>
+
+            <p>
+              The point is not to escape the calendar. The calendar is, for a
+              senior leader, mostly correct about the day-to-day. The point is
+              to refuse the assumption that the calendar is a complete
+              description of your job &mdash; and to build a second, parallel
+              system that handles the part of your work the calendar cannot see.
+            </p>
+
+            <p>
+              The leaders who do this best do not feel less busy. They feel, if
+              anything, more demanded of, because the second clock adds work
+              rather than subtracting it. But they do feel something else: a
+              sense that they are no longer being run by the week, that the
+              organization is being moved somewhere on purpose, that they have a
+              view of the long arc and not just the next inbox.
+            </p>
+
+            <div class="takeaways">
+              <span class="takeaways-label">Takeaways</span>
+              <h4>Building the second clock</h4>
+              <ul>
+                <li>
+                  <strong>The calendar is blind to importance.</strong> It
+                  rewards urgency and punishes thinking. It is a necessary but
+                  incomplete description of a senior leader's job.
+                </li>
+                <li>
+                  <strong>Most leaders run only the first clock.</strong> The
+                  operating tempo is functional; the strategic tempo is missing.
+                </li>
+                <li>
+                  <strong>Build a standing block.</strong> Weekly or bi-weekly,
+                  two to four hours, same slot, sacred. Label it <em>Think</em>.
+                </li>
+                <li>
+                  <strong>Anchor the block to an artefact.</strong> A memo, a
+                  strategy note, an essay. Without an artefact, the time
+                  evaporates.
+                </li>
+                <li>
+                  <strong>Change physical context.</strong> A different desk, a
+                  different room, a different ritual. The cue matters more than
+                  it should.
+                </li>
+              </ul>
+            </div>
+
+            <p>
+              If your last three months were spent entirely on the first clock,
+              the question to ask yourself is not
+              <em>where did the time go.</em> It is the harder one:
+              <em
+                >what am I no longer thinking about, that only I can think
+                about?</em
+              >
+            </p>
+
+            <p>That, in the end, is the cost of managing by calendar alone.</p>
+
+            <!-- Newsletter inline -->
+            <div class="newsletter-inline">
+              <h3>Read more <em>like this.</em></h3>
+              <p>
+                The AmpliSkill quarterly newsletter — one essay, two events,
+                three programs. No filler.
+              </p>
+              <form
+                class="nl-form"
+                onsubmit="
+                  event.preventDefault();
+                  this.querySelector('button').textContent = '✓ Subscribed';
+                "
+              >
+                <input type="email" placeholder="you@work.com" required />
+                <button type="submit">Subscribe</button>
+              </form>
+            </div>
+
+            <!-- AUTHOR BIO -->
+            <div class="author-bio">
+              <div class="bio-avatar">B</div>
+              <div class="bio-content">
+                <span class="bio-label">About the author</span>
+                <h4>Barendra</h4>
+                <div class="bio-role">
+                  Co-founder &amp; Managing Director · Strategy Track
+                </div>
+                <p>
+                  Barendra is co-founder of AmpliSkill. His career spans
+                  banking, risk &amp; compliance, and executive education, and
+                  he leads AmpliSkill's consulting practice and institutional
+                  partnerships. He teaches modules on strategy, organization
+                  design, and finance for enterprise leaders on the Senior
+                  Leadership Intensive.
+                </p>
+                <div class="bio-links">
+                  <a href="publications.html#blogs">More by this author →</a>
+                  <a href="contact.html">Get in touch →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SIDE RAIL -->
+          <aside class="side-rail">
+            <div class="rail-block">
+              <span class="rail-label">In this essay</span>
+              <ul class="rail-toc">
+                <li class="active">
+                  <a href="#s1">01 — The tyranny of the next meeting</a>
+                </li>
+                <li><a href="#s2">02 — What the calendar can't see</a></li>
+                <li><a href="#s3">03 — The two clocks</a></li>
+                <li><a href="#s4">04 — Building the second clock</a></li>
+                <li><a href="#closing">Holding both at once</a></li>
+              </ul>
+            </div>
+
+            <div class="rail-block">
+              <span class="rail-label">Topics</span>
+              <div class="rail-tags">
+                <a href="#" class="rail-tag">Leadership</a>
+                <a href="#" class="rail-tag">Strategy</a>
+                <a href="#" class="rail-tag">Time Management</a>
+                <a href="#" class="rail-tag">Senior Leadership</a>
+                <a href="#" class="rail-tag">Decision-Making</a>
+              </div>
+            </div>
+
+            <div class="rail-block">
+              <span class="rail-label">Share</span>
+              <div class="rail-share">
+                <button class="share-btn" title="LinkedIn">in</button>
+                <button class="share-btn" title="X">𝕏</button>
+                <button class="share-btn" title="Copy link">⎘</button>
+              </div>
+            </div>
+
+            <div class="rail-block">
+              <span class="rail-label">Related</span>
+              <a
+                href="program-template.html"
+                style="
+                  text-decoration: none;
+                  color: inherit;
+                  display: block;
+                  background: var(--cream-deep);
+                  padding: 1.5rem;
+                  border-radius: 6px;
+                  border: 1px solid var(--line);
+                  transition: all 0.2s;
+                "
+                onmouseover="this.style.borderColor = 'var(--coral)'"
+                onmouseout="this.style.borderColor = 'var(--line)'"
+              >
+                <div
+                  style="
+                    font-family: &quot;JetBrains Mono&quot;, monospace;
+                    font-size: 0.7rem;
+                    letter-spacing: 0.15em;
+                    color: var(--coral);
+                    text-transform: uppercase;
+                    margin-bottom: 0.5rem;
+                  "
+                >
+                  May 12, 2026
+                </div>
+                <div
+                  style="
+                    font-family: &quot;Fraunces&quot;, serif;
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                    line-height: 1.2;
+                    letter-spacing: -0.01em;
+                  "
+                >
+                  Senior Leadership Intensive
+                </div>
+                <div
+                  style="
+                    font-size: 0.8rem;
+                    color: var(--ink-soft);
+                    margin-top: 0.5rem;
+                  "
+                >
+                  8 weeks · Residential · Cap 24
+                </div>
+              </a>
+            </div>
+          </aside>
+        </div>
+      </article>
+
+      <!-- RELATED ARTICLES -->
+      <section class="related-section">
+        <div class="container">
+          <div class="related-header">
+            <div>
+              <span class="eyebrow" style="color: var(--coral)"
+                >More writing</span
+              >
+              <h2
+                class="display-md mt-1"
+                style="
+                  font-family: &quot;Fraunces&quot;, serif;
+                  font-weight: 400;
+                  letter-spacing: -0.025em;
+                "
+              >
+                Continue <em class="italic-accent">reading.</em>
+              </h2>
+            </div>
+            <a class="btn-ghost" href="publications.html#blogs"
+              >View all articles →</a
+            >
+          </div>
+          <div class="related-grid">
+            <a
+              class="related-card"
+              href="post-reviewing-300-internal-policies.html"
+              style="text-decoration: none; color: inherit"
+            >
+              <div class="related-thumb v2"></div>
+              <div class="date">11 Apr 2026 · Consulting</div>
+              <h4>What we've learned reviewing 300 internal policies</h4>
+            </a>
+            <a
+              class="related-card"
+              href="post-corporate-innovation-programs.html"
+              style="text-decoration: none; color: inherit"
+            >
+              <div class="related-thumb v3"></div>
+              <div class="date">04 Apr 2026 · Innovation</div>
+              <h4>
+                Why most corporate innovation programs fail (and the few that
+                don't)
+              </h4>
+            </a>
+            <a
+              class="related-card"
+              href="post-tam-in-emerging-markets.html"
+              style="text-decoration: none; color: inherit"
+            >
+              <div class="related-thumb v4"></div>
+              <div class="date">28 Mar 2026 · Strategy</div>
+              <h4>A simpler way to think about TAM in emerging markets</h4>
+            </a>
+            <a
+              class="related-card"
+              href="post-call-for-papers-ajmsi.html"
+              style="text-decoration: none; color: inherit"
+            >
+              <div class="related-thumb"></div>
+              <div class="date">21 Mar 2026 · Research</div>
+              <h4>
+                Call for papers: what we're looking for in AJMSI's inaugural
+                issue
+              </h4>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <h3>AmpliSkill<span style="color: var(--coral)">.</span></h3>
+            <p>
+              Driving excellence through academic and industry collaboration.
+              Management development, strategic consulting, and applied research
+              for the leaders and organizations shaping what's next.
+            </p>
+          </div>
+          <div>
+            <h5><i class="fa-solid fa-compass"></i> Explore</h5>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="team.html">Team</a></li>
+              <li><a href="programs.html">Programs</a></li>
+              <li><a href="consulting.html">Consulting</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5><i class="fa-solid fa-flask"></i> Research</h5>
+            <ul>
+              <li><a href="journal.html">AJMSI Journal</a></li>
+              <li><a href="publications.html">Books</a></li>
+              <li><a href="publications.html">Blogs</a></li>
+              <li><a href="events.html">Events</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5><i class="fa-solid fa-network-wired"></i> Connect</h5>
+            <ul>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="contact.html">Careers</a></li>
+              <li><a href="contact.html">Press</a></li>
+              <li><a href="contact.html">Partners</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 AMPLISKILL · ALL RIGHTS RESERVED</span>
+          <span>PRIVACY · TERMS · COOKIES</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      // Reading progress bar
+      const progressFill = document.getElementById("progressFill");
+      const article = document.querySelector(".article-body");
+      function updateProgress() {
+        if (!article) return;
+        const articleTop = article.offsetTop;
+        const articleHeight = article.offsetHeight;
+        const scrolled = window.scrollY - articleTop + window.innerHeight * 0.3;
+        const progress = Math.max(
+          0,
+          Math.min(100, (scrolled / articleHeight) * 100),
+        );
+        progressFill.style.width = progress + "%";
+      }
+      window.addEventListener("scroll", updateProgress, { passive: true });
+      updateProgress();
+
+      // Active section in TOC
+      const sections = document.querySelectorAll(".article-body h2[id]");
+      const tocLinks = document.querySelectorAll(".rail-toc li");
+      function updateTOC() {
+        let activeIdx = 0;
+        sections.forEach((s, i) => {
+          const rect = s.getBoundingClientRect();
+          if (rect.top < 200) activeIdx = i;
+        });
+        tocLinks.forEach((li, i) => {
+          li.classList.toggle("active", i === activeIdx);
+        });
+      }
+      window.addEventListener("scroll", updateTOC, { passive: true });
+    </script>
+  </body>
+</html>

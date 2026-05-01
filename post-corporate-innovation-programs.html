@@ -1,0 +1,1078 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Why most corporate innovation programs fail (and the few that don't) —
+      AmpliSkill
+    </title>
+    <meta
+      name="description"
+      content="Ten years of observation, compressed into five observable patterns. The corporate innovation programs that work don't look like the ones that get written up."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="post-corporate-innovation-programs.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- READING PROGRESS BAR -->
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <header class="site-header">
+      <!-- Utility bar -->
+      <div class="utility-bar">
+        <div class="container">
+          <ul class="utility-links">
+            <li><a href="publications.html">Thought Leadership</a></li>
+            <li><a href="events.html">News &amp; Events</a></li>
+            <li><a href="publications.html#blogs">Articles</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <div style="display: flex; gap: 1.5rem">
+            <a href="programs.html" class="utility-action"
+              ><i class="fa-solid fa-graduation-cap"></i> Apply to a Program</a
+            >
+            <a href="journal.html#submit" class="utility-action"
+              ><i class="fa-solid fa-file-pen"></i> Submit to Journal</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Main nav -->
+      <nav class="main-nav">
+        <div class="container">
+          <a href="index.html" class="logo"
+            ><span><img src="Logo.png" alt="logo" class="logo-img" /></span
+          ></a>
+          <ul class="nav-links">
+            <li class="has-submenu">
+              <a href="programs.html">Programs</a>
+              <div class="mega-menu">
+                <div class="container">
+                  <div class="mega-grid">
+                    <div class="mega-col">
+                      <h5>Format</h5>
+                      <ul>
+                        <li>
+                          <a href="programs.html"
+                            >Announced Programs<span class="desc"
+                              >Calendar-based, open enrolment</span
+                            ></a
+                          >
+                        </li>
+                        <li>
+                          <a href="programs.html#customized"
+                            >Customized Programs<span class="desc"
+                              >Designed for your organization</span
+                            ></a
+                          >
+                        </li>
+                        <li>
+                          <a href="program-template.html"
+                            >Flagship Intensive<span class="desc"
+                              >Our 8-week senior leadership programme</span
+                            ></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <h5>By Category</h5>
+                      <ul>
+                        <li><a href="programs.html">Leadership</a></li>
+                        <li><a href="programs.html">Strategy</a></li>
+                        <li><a href="programs.html">Innovation</a></li>
+                        <li>
+                          <a href="programs.html">Governance &amp; Boards</a>
+                        </li>
+                        <li><a href="programs.html">AI for Leaders</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <h5>Delivery</h5>
+                      <ul>
+                        <li>
+                          <a href="programs.html">On-Campus · Residential</a>
+                        </li>
+                        <li>
+                          <a href="programs.html"
+                            >Off-Campus · Non-Residential</a
+                          >
+                        </li>
+                        <li>
+                          <a href="programs.html">Hybrid &amp; Virtual</a>
+                        </li>
+                        <li>
+                          <a href="programs.html">Industry Training / OJT</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <a
+                        href="program-template.html"
+                        class="mega-feature"
+                        style="text-decoration: none"
+                      >
+                        <span class="tag">Featured · May 2026</span>
+                        <h4>Senior Leadership Intensive</h4>
+                        <span class="link"
+                          >Reserve a seat <i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li><a href="consulting.html">Consulting</a></li>
+            <li class="has-submenu">
+              <a href="publications.html">Publications</a>
+              <div class="mega-menu">
+                <div class="container">
+                  <div class="mega-grid">
+                    <div class="mega-col">
+                      <h5>AJMSI Journal</h5>
+                      <ul>
+                        <li>
+                          <a href="journal.html"
+                            >Journal Home<span class="desc"
+                              >Mission and editorial approach</span
+                            ></a
+                          >
+                        </li>
+                        <li>
+                          <a href="journal.html#submit"
+                            >Submission Guidelines</a
+                          >
+                        </li>
+                        <li>
+                          <a href="journal.html#roadmap">Editorial Roadmap</a>
+                        </li>
+                        <li><a href="team.html">Editorial Board</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <h5>Writing</h5>
+                      <ul>
+                        <li>
+                          <a href="publications.html#books"
+                            >Books<span class="desc"
+                              >AmpliSkill Press titles</span
+                            ></a
+                          >
+                        </li>
+                        <li>
+                          <a href="publications.html#blogs"
+                            >Blogs &amp; Essays</a
+                          >
+                        </li>
+                        <li>
+                          <a href="publications.html#cases">Case Studies</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <h5>Contribute</h5>
+                      <ul>
+                        <li>
+                          <a href="journal.html#submit">Submit a Paper</a>
+                        </li>
+                        <li><a href="contact.html">Pitch an Essay</a></li>
+                        <li><a href="contact.html">Propose a Case Study</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <a
+                        href="journal.html"
+                        class="mega-feature"
+                        style="
+                          text-decoration: none;
+                          background: linear-gradient(
+                            135deg,
+                            var(--ink),
+                            var(--coral)
+                          );
+                          color: var(--cream);
+                        "
+                      >
+                        <span class="tag" style="color: var(--butter)"
+                          >Call for Papers · Open</span
+                        >
+                        <h4 style="color: white">
+                          AJMSI Inaugural Issue — Jan 2027
+                        </h4>
+                        <span class="link" style="color: var(--butter)"
+                          >Submit now <i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="has-submenu">
+              <a href="about.html">About</a>
+              <div class="mega-menu">
+                <div class="container">
+                  <div class="mega-grid">
+                    <div class="mega-col">
+                      <h5>About AmpliSkill</h5>
+                      <ul>
+                        <li>
+                          <a href="about.html"
+                            >Who We Are<span class="desc"
+                              >Mission, vision, and approach</span
+                            ></a
+                          >
+                        </li>
+                        <li><a href="about.html">Who We Serve</a></li>
+                        <li><a href="about.html">Our Story</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <h5>People</h5>
+                      <ul>
+                        <li><a href="team.html">Executive Team</a></li>
+                        <li><a href="team.html">Advisory Council</a></li>
+                        <li><a href="team.html">Editorial Board</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <h5>Partnerships</h5>
+                      <ul>
+                        <li><a href="team.html">Academic Partners</a></li>
+                        <li><a href="team.html">Industry Partners</a></li>
+                        <li><a href="contact.html">Become a Partner</a></li>
+                        <li><a href="contact.html">Careers</a></li>
+                        <li><a href="contact.html">Press &amp; Media</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <a
+                        href="events.html"
+                        class="mega-feature"
+                        style="
+                          text-decoration: none;
+                          background: var(--butter);
+                          color: var(--ink);
+                        "
+                      >
+                        <span class="tag">Flagship · Oct 2026</span>
+                        <h4>AmpliSkill Annual Management Summit</h4>
+                        <span class="link"
+                          >Register interest
+                          <i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li><a href="events.html">Events</a></li>
+          </ul>
+          <div class="nav-right">
+            <button
+              class="search-btn"
+              aria-label="Search"
+              onclick="
+                document.querySelector('.search-overlay').classList.add('open');
+                document.querySelector('.search-overlay input').focus();
+              "
+            >
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <a href="contact.html" class="nav-cta"
+              ><i class="fa-solid fa-envelope"></i> Get in touch</a
+            >
+            <button class="mobile-toggle" aria-label="Menu">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Search overlay -->
+    <div class="search-overlay">
+      <button
+        class="search-close"
+        onclick="this.parentElement.classList.remove('open')"
+      >
+        ×
+      </button>
+      <div class="search-box">
+        <input type="text" placeholder="Search programs, articles, people…" />
+        <p class="search-hint">Press ESC to close · Press ↵ to search</p>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu">
+      <a href="about.html">About</a>
+      <a href="team.html">Team</a>
+      <a href="programs.html">Programs</a>
+      <a href="consulting.html">Consulting</a>
+      <a href="publications.html">Publications</a>
+      <a href="journal.html">AJMSI Journal</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html" class="mobile-cta">Get in touch</a>
+    </div>
+
+    <div class="page-wrap">
+      <!-- ARTICLE HERO -->
+      <section class="article-hero">
+        <div class="container">
+          <div class="article-breadcrumb">
+            <a href="publications.html">Publications</a>
+            <span class="sep">/</span>
+            <a href="publications.html#blogs">Blogs &amp; Essays</a>
+            <span class="sep">/</span>
+            <span>Innovation</span>
+          </div>
+
+          <span class="article-category">Innovation</span>
+          <h1>
+            Why most corporate innovation programs <em>fail</em> &mdash; and the
+            few that <em>don't.</em>
+          </h1>
+          <p class="article-deck">
+            Ten years of observation, compressed into five patterns. The
+            programs that work don't look like the ones that get written up.
+          </p>
+
+          <div class="article-meta">
+            <div class="author-line">
+              <div class="author-avatar">G</div>
+              <div>
+                <div class="author-name">Guest Contributor</div>
+                <div class="author-role">
+                  Practitioner-in-Residence · Innovation Track
+                </div>
+              </div>
+            </div>
+            <div class="meta-block">
+              <span class="meta-label">Published</span>
+              <span class="meta-value">04 April 2026</span>
+            </div>
+            <div class="meta-block">
+              <span class="meta-label">Reading time</span>
+              <span class="meta-value">12 min</span>
+            </div>
+            <div class="meta-block">
+              <span class="meta-label">Topic</span>
+              <span class="meta-value">Innovation · Strategy</span>
+            </div>
+            <div class="share-row">
+              <button
+                class="share-btn"
+                aria-label="Share on LinkedIn"
+                title="LinkedIn"
+              >
+                in
+              </button>
+              <button class="share-btn" aria-label="Share on X" title="X">
+                𝕏
+              </button>
+              <button
+                class="share-btn"
+                aria-label="Copy link"
+                title="Copy link"
+              >
+                ⎘
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ARTICLE BODY -->
+      <article class="article-body">
+        <div class="container">
+          <!-- READING COLUMN -->
+          <div class="reading-col">
+            <div class="editor-note">
+              <span class="note-label">Editor's Note</span>
+              <p>
+                This piece kicks off our Innovation track for 2026, ahead of the
+                <strong>Innovation &amp; Business Model Design</strong>
+                programme in June. The author has spent a decade as a chief
+                innovation officer, advisor, and program designer across
+                financial services, manufacturing, and the public sector.
+              </p>
+            </div>
+
+            <p>
+              <span class="lead-line">If you have</span> spent any time inside a
+              large organization in the last decade, you have probably seen at
+              least one corporate innovation program. They tend to look
+              impressive on launch. There is a name. There is a logo. There is,
+              almost without exception, a colourful poster pinned somewhere near
+              the lifts. There is often a dedicated team, a refurbished room
+              with movable furniture, and a senior sponsor who speaks about it
+              at the all-hands.
+            </p>
+
+            <p>
+              And then, eighteen months later, the program is quietly wound
+              down, the team is reabsorbed into the business, and nobody
+              mentions the poster again.
+            </p>
+
+            <p>
+              This is not an unusual outcome. It is, in fact, the most common
+              outcome. After ten years of designing, leading, and reviewing such
+              programs across financial services, manufacturing, and the public
+              sector, I would estimate that
+              <strong
+                >roughly four in five corporate innovation programs end this
+                way</strong
+              >
+              &mdash; not in failure, exactly, but in a kind of slow,
+              embarrassed dissolution.
+            </p>
+
+            <p>
+              The interesting question is not why so many fail. The interesting
+              question is why the small minority succeed. Because when you look
+              at the programs that actually shipped a meaningful new business or
+              capability, they look almost nothing like the ones that get
+              written up in the business press. They are smaller, less branded,
+              often invisible to anyone outside the executive team &mdash; and
+              they share a small set of structural traits that the loud ones do
+              not.
+            </p>
+
+            <p>
+              What follows is my attempt to compress those observations into
+              five patterns.
+            </p>
+
+            <!-- ========================================================== -->
+            <h2 id="s1">
+              <span class="num">Pattern 01</span>Innovation as <em>theatre</em>,
+              not function
+            </h2>
+
+            <p>
+              The single most reliable signal that a corporate innovation
+              program will fail is when it is launched as a piece of
+              <em>communication</em> rather than a piece of <em>operations</em>.
+            </p>
+
+            <p>
+              You can spot this pattern early. The launch is announced
+              internally before the team has been hired. There is a brand, a
+              tagline, and an aspirational metric ("we will launch three new
+              businesses by 2027"). There may be a hackathon. There is, at some
+              point, a reference to Steve Jobs.
+            </p>
+
+            <p>
+              What is almost never present is a clear theory of where new growth
+              is supposed to come from, why the existing business cannot pursue
+              it, and what specifically the program will be permitted to do that
+              the rest of the organization cannot.
+            </p>
+
+            <div class="pull-quote">
+              <q
+                >Theatre programs do not need answers to those questions because
+                they are not really there to produce new businesses. They are
+                there to produce a feeling of momentum.</q
+              >
+            </div>
+
+            <p>
+              And to be fair to the people who run them &mdash; that feeling is
+              genuinely valuable. It can buy a CEO time with the board, energize
+              a workforce that has been doing the same thing for a decade, and
+              signal to the market that the company is not asleep. These are not
+              nothing.
+            </p>
+
+            <p>
+              But they are not innovation. They are a substitute for it. And
+              they almost always end the same way: when the share price wobbles
+              or the budget tightens, the program is the first thing cut,
+              because nobody can quite point to what it actually <em>did</em>.
+            </p>
+
+            <!-- ========================================================== -->
+            <h2 id="s2">
+              <span class="num">Pattern 02</span>The wrong <em>charter</em>
+            </h2>
+
+            <p>
+              The second failure mode is more subtle. The program is genuine,
+              the team is competent, the budget is real &mdash; and the charter
+              is wrong.
+            </p>
+
+            <p>
+              By "charter," I mean the answer to the question:
+              <em>what is this program actually for?</em> In the failed programs
+              I have observed, the charter is usually some combination of three
+              things, all of which sound reasonable and none of which work:
+            </p>
+
+            <ul>
+              <li>
+                <strong>Build new businesses adjacent to the core.</strong> The
+                team is asked to find growth that is "close enough to be
+                relevant, far enough to be different." In practice this means
+                anything they propose either looks too much like the existing
+                business (and gets rejected as not innovative) or too far from
+                it (and gets rejected as a distraction).
+              </li>
+              <li>
+                <strong>Bring outside ideas inside.</strong> The team runs
+                scouting trips, accelerator partnerships, and corporate VC.
+                Ideas come in. Almost none survive contact with the existing
+                P&amp;L owners, who have their own targets and no incentive to
+                help.
+              </li>
+              <li>
+                <strong
+                  >Drive cultural change through innovation activity.</strong
+                >
+                The team is funded to "build innovation muscle" across the
+                organization. They run workshops, design sprints, and capability
+                programs. Three years later, there is no muscle and no business.
+              </li>
+            </ul>
+
+            <p>
+              None of these charters is bad in isolation. The problem is that
+              all three are fundamentally <em>indirect</em>. They ask the
+              innovation team to influence other people to do things, rather
+              than to do things themselves. And in any large organization, an
+              indirect charter is a charter to be slowly de-prioritized by
+              everyone who matters.
+            </p>
+
+            <div class="callout">
+              <span class="callout-label">Diagnostic</span>
+              <h4>Apply the <em>direct charter</em> test.</h4>
+              <p>
+                Ask the innovation team this: "If everyone outside this team
+                refuses to help you for the next 18 months, what can you still
+                ship?" If the honest answer is "nothing," the charter is
+                indirect — and the program will fail. The successful programs I
+                have seen all have a charter that survives that test.
+              </p>
+            </div>
+
+            <!-- ========================================================== -->
+            <h2 id="s3">
+              <span class="num">Pattern 03</span>The <em>distance</em> problem
+            </h2>
+
+            <p>
+              There is a well-known argument in the strategy literature that
+              innovation teams should be kept structurally separate from the
+              core business &mdash; their own P&amp;L, their own reporting line,
+              sometimes their own physical space. The argument is that the core
+              business will otherwise crush them under its own incentives.
+            </p>
+
+            <p>This is correct. It is also incomplete.</p>
+
+            <p>
+              Because the same separation that protects the innovation team from
+              the core business also
+              <em
+                >cuts them off from the assets that make corporate innovation
+                worth doing in the first place</em
+              >
+              &mdash; the customer base, the brand, the supply chain, the
+              capital, the regulatory licences, the operational know-how. A
+              standalone innovation team without access to these assets is just
+              a poorly funded startup with a worse hiring market.
+            </p>
+
+            <figure class="figure">
+              <div class="figure-img v2">
+                [ Figure 01 — The corporate innovation distance curve ]
+              </div>
+              <figcaption>
+                Programs too close to the core get crushed by P&amp;L
+                incentives. Programs too far away lose access to the corporate
+                assets that justified the program in the first place. The
+                successful programs I have seen sit in a narrow band — close
+                enough to use the assets, far enough not to be co-opted by the
+                quarter.
+              </figcaption>
+            </figure>
+
+            <p>
+              The successful programs I have seen all solve this trade-off in
+              the same way: they are <strong>structurally separate</strong> on
+              reporting and incentives, but
+              <strong>operationally embedded</strong> on access. The team has
+              its own P&amp;L. But they have a standing right of access to the
+              customer file, to the supply chain, to legal review, and to a
+              small standing budget that does not require quarterly approval.
+            </p>
+
+            <p>
+              That second half &mdash; the standing right of access &mdash; is
+              what almost every failed program is missing. Without it, the team
+              is not really inside the corporation; it is just camped out on the
+              lawn.
+            </p>
+
+            <!-- ========================================================== -->
+            <h2 id="s4">
+              <span class="num">Pattern 04</span>Mistaking <em>activity</em> for
+              output
+            </h2>
+
+            <p>
+              If you ask a struggling innovation program what they have done in
+              the last quarter, you will hear about hackathons, partnerships,
+              scouting trips, idea funnels, lab visits, and design sprints. You
+              will see a presentation with a lot of numbers in it.
+            </p>
+
+            <p>
+              If you ask a successful one the same question, you will hear about
+              <em>one or two specific things they shipped</em>. A new product
+              line in market. A signed regulatory licence in a new geography. A
+              working prototype that has been bought and paid for by a real
+              customer.
+            </p>
+
+            <p>
+              This is not a small distinction. The reason most innovation
+              programs default to activity-as-output is that activity is much
+              easier to measure, much easier to defend in front of a board, and
+              much easier to keep a team busy with. <em>Shipping</em> is hard.
+              Shipping is also the only thing that justifies the program's
+              existence in the long run.
+            </p>
+
+            <p>
+              The successful programs I have seen are obsessive about a small
+              number of measurable shipped outcomes per year &mdash; usually two
+              or three, sometimes one. Everything else &mdash; the workshops,
+              the scouting, the partnerships &mdash; is treated as input, not
+              output. Useful, perhaps necessary, but not what the program is
+              judged on.
+            </p>
+
+            <!-- ========================================================== -->
+            <h2 id="s5">
+              <span class="num">Pattern 05</span>The <em>sponsor</em> who isn't
+              really a sponsor
+            </h2>
+
+            <p>
+              The fifth pattern is the most personal, and probably the most
+              decisive.
+            </p>
+
+            <p>
+              Every corporate innovation program has a senior sponsor. The
+              poster on the wall almost always carries a quote from them. They
+              speak at the launch and probably at the first all-hands. After
+              that, they vary enormously in how much they actually
+              <em>sponsor</em> &mdash; in the operational sense of "spend their
+              political capital to defend this team when it is inconvenient to
+              do so."
+            </p>
+
+            <p>
+              In the failed programs I have observed, the sponsor is reliably
+              enthusiastic in the launch phase and reliably absent in the
+              defence phase. When a P&amp;L owner objects to the innovation
+              team's access to a customer segment, when finance wants to claw
+              back unspent budget, when HR wants the high-performing director
+              back &mdash; the sponsor is in another meeting.
+            </p>
+
+            <p>
+              In the successful programs, the sponsor is operationally engaged
+              on a roughly monthly cadence, has explicitly told the team they
+              will spend political capital to protect it, and &mdash; this is
+              the part nobody writes about &mdash; has visibly done so at least
+              once in the first year, in a way the rest of the organization saw.
+            </p>
+
+            <div class="pull-quote">
+              <q
+                >Sponsorship without political capital expended is just
+                enthusiasm. And enthusiasm is the cheapest form of corporate
+                support.</q
+              >
+            </div>
+
+            <!-- ========================================================== -->
+            <h2 id="closing">So what <em>does</em> work?</h2>
+
+            <p>
+              If the five patterns above describe what fails, then the inverse
+              describes what succeeds. The corporate innovation programs I have
+              seen actually ship something tend to share most of these traits:
+            </p>
+
+            <div class="takeaways">
+              <span class="takeaways-label"
+                >Five traits of programs that ship</span
+              >
+              <h4>The common structure of programs that succeed</h4>
+              <ul>
+                <li>
+                  <strong>Operational, not theatrical.</strong> Launched
+                  quietly, judged on output, willing to be invisible until they
+                  have something to show.
+                </li>
+                <li>
+                  <strong>A direct charter.</strong> The team can ship something
+                  even if nobody outside the team helps them for 18 months.
+                </li>
+                <li>
+                  <strong
+                    >Structurally separate, operationally embedded.</strong
+                  >
+                  Their own P&amp;L and reporting line, but a standing right of
+                  access to corporate assets.
+                </li>
+                <li>
+                  <strong>Obsessed with shipping.</strong> Two or three
+                  measurable outcomes per year, treated as the only thing that
+                  counts.
+                </li>
+                <li>
+                  <strong
+                    >A sponsor who has actually spent political capital.</strong
+                  >
+                  Visibly, in the first year, in a way the organization saw.
+                </li>
+              </ul>
+            </div>
+
+            <p>
+              None of this is novel. Most of it has been written about
+              elsewhere, by people who have thought longer and more carefully
+              about innovation than I have. What I have tried to do here is
+              simply describe what I have seen actually work, and what I have
+              seen reliably not.
+            </p>
+
+            <p>
+              The pattern that runs through all five is, I think, a refusal to
+              treat innovation as a separate category of corporate activity
+              &mdash; something handled by a special team in a special room with
+              special words. The programs that work treat innovation as
+              something fairly ordinary: a specific team, with a specific
+              charter, a specific budget, and specific outcomes they are
+              accountable for shipping.
+            </p>
+
+            <p>
+              That is, of course, the kind of thing a well-run business unit
+              looks like. Which is probably the point.
+            </p>
+
+            <!-- ========================================================== -->
+            <div class="newsletter-inline">
+              <h3>Read more <em>like this.</em></h3>
+              <p>
+                The AmpliSkill quarterly newsletter — one essay, two events,
+                three programs. No filler.
+              </p>
+              <form
+                class="nl-form"
+                onsubmit="
+                  event.preventDefault();
+                  this.querySelector('button').textContent = '✓ Subscribed';
+                "
+              >
+                <input type="email" placeholder="you@work.com" required />
+                <button type="submit">Subscribe</button>
+              </form>
+            </div>
+
+            <!-- AUTHOR BIO -->
+            <div class="author-bio">
+              <div class="bio-avatar">G</div>
+              <div class="bio-content">
+                <span class="bio-label">About the author</span>
+                <h4>Guest Contributor</h4>
+                <div class="bio-role">
+                  Practitioner-in-Residence · Innovation Track, AmpliSkill
+                </div>
+                <p>
+                  The author is a former chief innovation officer who has led,
+                  advised on, and reviewed corporate innovation programs across
+                  financial services, manufacturing, and the public sector for
+                  over a decade. They lead the Innovation track on AmpliSkill's
+                  <a
+                    href="program-template.html"
+                    style="color: var(--coral); font-weight: 600"
+                    >Senior Leadership Intensive</a
+                  >
+                  and the standalone
+                  <em>Innovation &amp; Business Model Design</em> programme.
+                </p>
+                <div class="bio-links">
+                  <a href="publications.html#blogs">More by this author →</a>
+                  <a href="contact.html">Get in touch →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SIDE RAIL -->
+          <aside class="side-rail">
+            <div class="rail-block">
+              <span class="rail-label">In this essay</span>
+              <ul class="rail-toc">
+                <li class="active">
+                  <a href="#s1">01 — Innovation as theatre</a>
+                </li>
+                <li><a href="#s2">02 — The wrong charter</a></li>
+                <li><a href="#s3">03 — The distance problem</a></li>
+                <li><a href="#s4">04 — Activity vs output</a></li>
+                <li><a href="#s5">05 — The sponsor problem</a></li>
+                <li><a href="#closing">So what does work?</a></li>
+              </ul>
+            </div>
+
+            <div class="rail-block">
+              <span class="rail-label">Topics</span>
+              <div class="rail-tags">
+                <a href="#" class="rail-tag">Innovation</a>
+                <a href="#" class="rail-tag">Strategy</a>
+                <a href="#" class="rail-tag">Corporate Programs</a>
+                <a href="#" class="rail-tag">Leadership</a>
+                <a href="#" class="rail-tag">Organization Design</a>
+              </div>
+            </div>
+
+            <div class="rail-block">
+              <span class="rail-label">Share</span>
+              <div class="rail-share">
+                <button class="share-btn" title="LinkedIn">in</button>
+                <button class="share-btn" title="X">𝕏</button>
+                <button class="share-btn" title="Copy link">⎘</button>
+              </div>
+            </div>
+
+            <div class="rail-block">
+              <span class="rail-label">Related Program</span>
+              <a
+                href="program-template.html"
+                style="
+                  text-decoration: none;
+                  color: inherit;
+                  display: block;
+                  background: var(--cream-deep);
+                  padding: 1.5rem;
+                  border-radius: 6px;
+                  border: 1px solid var(--line);
+                  transition: all 0.2s;
+                "
+                onmouseover="this.style.borderColor = 'var(--coral)'"
+                onmouseout="this.style.borderColor = 'var(--line)'"
+              >
+                <div
+                  style="
+                    font-family: &quot;JetBrains Mono&quot;, monospace;
+                    font-size: 0.7rem;
+                    letter-spacing: 0.15em;
+                    color: var(--coral);
+                    text-transform: uppercase;
+                    margin-bottom: 0.5rem;
+                  "
+                >
+                  Jun 17, 2026
+                </div>
+                <div
+                  style="
+                    font-family: &quot;Fraunces&quot;, serif;
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                    line-height: 1.2;
+                    letter-spacing: -0.01em;
+                  "
+                >
+                  Innovation &amp; Business Model Design
+                </div>
+                <div
+                  style="
+                    font-size: 0.8rem;
+                    color: var(--ink-soft);
+                    margin-top: 0.5rem;
+                  "
+                >
+                  5 days · Residential · Cap 28
+                </div>
+              </a>
+            </div>
+          </aside>
+        </div>
+      </article>
+
+      <!-- RELATED ARTICLES -->
+      <section class="related-section">
+        <div class="container">
+          <div class="related-header">
+            <div>
+              <span class="eyebrow" style="color: var(--coral)"
+                >More writing</span
+              >
+              <h2
+                class="display-md mt-1"
+                style="
+                  font-family: &quot;Fraunces&quot;, serif;
+                  font-weight: 400;
+                  letter-spacing: -0.025em;
+                "
+              >
+                Continue <em class="italic-accent">reading.</em>
+              </h2>
+            </div>
+            <a class="btn-ghost" href="publications.html#blogs"
+              >View all articles →</a
+            >
+          </div>
+          <div class="related-grid">
+            <a
+              class="related-card"
+              href="#"
+              style="text-decoration: none; color: inherit"
+            >
+              <div class="related-thumb"></div>
+              <div class="date">18 Apr 2026 · Leadership</div>
+              <h4>The cost of managing by calendar alone</h4>
+            </a>
+            <a
+              class="related-card"
+              href="#"
+              style="text-decoration: none; color: inherit"
+            >
+              <div class="related-thumb v2"></div>
+              <div class="date">11 Apr 2026 · Consulting</div>
+              <h4>What we've learned reviewing 300 internal policies</h4>
+            </a>
+            <a
+              class="related-card"
+              href="#"
+              style="text-decoration: none; color: inherit"
+            >
+              <div class="related-thumb v3"></div>
+              <div class="date">28 Mar 2026 · Strategy</div>
+              <h4>A simpler way to think about TAM in emerging markets</h4>
+            </a>
+            <a
+              class="related-card"
+              href="#"
+              style="text-decoration: none; color: inherit"
+            >
+              <div class="related-thumb v4"></div>
+              <div class="date">14 Mar 2026 · Practice</div>
+              <h4>On the quiet rigour of a weekly review</h4>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <h3>AmpliSkill<span style="color: var(--coral)">.</span></h3>
+            <p>
+              Driving excellence through academic and industry collaboration.
+              Management development, strategic consulting, and applied research
+              for the leaders and organizations shaping what's next.
+            </p>
+          </div>
+          <div>
+            <h5><i class="fa-solid fa-compass"></i> Explore</h5>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="team.html">Team</a></li>
+              <li><a href="programs.html">Programs</a></li>
+              <li><a href="consulting.html">Consulting</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5><i class="fa-solid fa-flask"></i> Research</h5>
+            <ul>
+              <li><a href="journal.html">AJMSI Journal</a></li>
+              <li><a href="publications.html">Books</a></li>
+              <li><a href="publications.html">Blogs</a></li>
+              <li><a href="events.html">Events</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5><i class="fa-solid fa-network-wired"></i> Connect</h5>
+            <ul>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="contact.html">Careers</a></li>
+              <li><a href="contact.html">Press</a></li>
+              <li><a href="contact.html">Partners</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 AMPLISKILL · ALL RIGHTS RESERVED</span>
+          <span>PRIVACY · TERMS · COOKIES</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      // Reading progress bar
+      const progressFill = document.getElementById("progressFill");
+      const article = document.querySelector(".article-body");
+      function updateProgress() {
+        if (!article) return;
+        const articleTop = article.offsetTop;
+        const articleHeight = article.offsetHeight;
+        const scrolled = window.scrollY - articleTop + window.innerHeight * 0.3;
+        const progress = Math.max(
+          0,
+          Math.min(100, (scrolled / articleHeight) * 100),
+        );
+        progressFill.style.width = progress + "%";
+      }
+      window.addEventListener("scroll", updateProgress, { passive: true });
+      updateProgress();
+
+      // Active section in TOC
+      const sections = document.querySelectorAll(".article-body h2[id]");
+      const tocLinks = document.querySelectorAll(".rail-toc li");
+      function updateTOC() {
+        let activeIdx = 0;
+        sections.forEach((s, i) => {
+          const rect = s.getBoundingClientRect();
+          if (rect.top < 200) activeIdx = i;
+        });
+        tocLinks.forEach((li, i) => {
+          li.classList.toggle("active", i === activeIdx);
+        });
+      }
+      window.addEventListener("scroll", updateTOC, { passive: true });
+    </script>
+  </body>
+</html>
