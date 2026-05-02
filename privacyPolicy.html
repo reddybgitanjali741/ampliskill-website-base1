@@ -1,0 +1,1636 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy — AmpliSkill</title>
+    <meta
+      name="description"
+      content="AmpliSkill's Privacy Policy — how we collect, use, and protect your personal information."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <style>
+      /* ── Privacy Policy Page Styles ───────────────────────── */
+      .pp-hero {
+        background: var(--ink);
+        color: var(--cream);
+        padding: 5rem 0 4rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .pp-hero .eyebrow {
+        color: var(--coral);
+        margin-bottom: 1rem;
+        display: block;
+      }
+      .pp-hero h1 {
+        font-family: "Fraunces", serif;
+        font-size: clamp(2.8rem, 5vw, 4.5rem);
+        font-weight: 400;
+        font-style: italic;
+        line-height: 1.05;
+        letter-spacing: -0.03em;
+        color: var(--cream);
+        margin-bottom: 1.5rem;
+      }
+      .pp-hero p {
+        font-size: 1.1rem;
+        line-height: 1.65;
+        opacity: 0.75;
+        max-width: 640px;
+      }
+      .pp-meta {
+        display: flex;
+        gap: 2rem;
+        margin-top: 2.5rem;
+        flex-wrap: wrap;
+      }
+      .pp-meta-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        opacity: 0.6;
+      }
+      .pp-meta-item i {
+        color: var(--coral);
+        opacity: 1;
+      }
+
+      /* ── Layout ── */
+      .pp-layout {
+        display: grid;
+        grid-template-columns: 260px 1fr;
+        gap: 5rem;
+        align-items: start;
+        padding: 5rem 0 6rem;
+      }
+      @media (max-width: 900px) {
+        .pp-layout {
+          grid-template-columns: 1fr;
+          gap: 2.5rem;
+          padding: 3rem 0 4rem;
+        }
+      }
+
+      /* ── Sidebar TOC ── */
+      .pp-toc {
+        position: sticky;
+        top: 6rem;
+      }
+      .pp-toc .toc-label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.7rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        margin-bottom: 1.2rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .pp-toc ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        border-left: 2px solid var(--line);
+      }
+      .pp-toc ul li a {
+        display: block;
+        padding: 0.45rem 1rem;
+        font-size: 0.85rem;
+        color: var(--ink-soft);
+        text-decoration: none;
+        transition:
+          color 0.2s,
+          border-color 0.2s;
+        border-left: 2px solid transparent;
+        margin-left: -2px;
+        line-height: 1.4;
+      }
+      .pp-toc ul li a:hover {
+        color: var(--coral);
+        border-left-color: var(--coral);
+      }
+      @media (max-width: 900px) {
+        .pp-toc {
+          position: static;
+          background: var(--butter-soft);
+          border: 1px solid var(--line-strong);
+          border-radius: 8px;
+          padding: 1.5rem;
+        }
+        .pp-toc ul {
+          columns: 2;
+          column-gap: 1rem;
+        }
+        .pp-toc ul li {
+          break-inside: avoid;
+        }
+      }
+      @media (max-width: 500px) {
+        .pp-toc ul {
+          columns: 1;
+        }
+      }
+
+      /* ── Content ── */
+      .pp-content {
+        max-width: 760px;
+      }
+      .pp-section {
+        padding-bottom: 3.5rem;
+        margin-bottom: 3.5rem;
+        border-bottom: 1px solid var(--line);
+      }
+      .pp-section:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      .pp-section-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+      .pp-section-icon {
+        width: 44px;
+        height: 44px;
+        background: var(--coral);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-top: 0.15rem;
+      }
+      .pp-section-icon i {
+        color: white;
+        font-size: 1rem;
+      }
+      .pp-section-num {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.7rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--coral);
+        display: block;
+        margin-bottom: 0.35rem;
+      }
+      .pp-section h2 {
+        font-family: "Fraunces", serif;
+        font-size: 1.75rem;
+        font-weight: 500;
+        letter-spacing: -0.02em;
+        margin: 0;
+        line-height: 1.2;
+        color: var(--ink);
+      }
+      .pp-section p {
+        font-size: 1rem;
+        line-height: 1.75;
+        color: var(--ink-soft);
+        margin-bottom: 1rem;
+      }
+      .pp-section p:last-child {
+        margin-bottom: 0;
+      }
+      .pp-section a {
+        color: var(--coral);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      .pp-section a:hover {
+        opacity: 0.8;
+      }
+
+      /* ── Lists ── */
+      .pp-list {
+        list-style: none;
+        padding: 0;
+        margin: 1.25rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.9rem;
+      }
+      .pp-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.85rem;
+        font-size: 1rem;
+        line-height: 1.65;
+        color: var(--ink-soft);
+      }
+      .pp-list li .li-icon {
+        width: 22px;
+        height: 22px;
+        background: var(--butter);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-top: 0.18rem;
+      }
+      .pp-list li .li-icon i {
+        font-size: 0.6rem;
+        color: var(--ink);
+      }
+      .pp-list li strong {
+        color: var(--ink);
+        font-weight: 600;
+      }
+
+      /* ── Rights grid ── */
+      .pp-rights-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 0;
+        margin-top: 1.5rem;
+        border-top: 1px solid var(--line-strong);
+        border-left: 1px solid var(--line-strong);
+      }
+      .pp-right-card {
+        padding: 1.5rem;
+        border-right: 1px solid var(--line-strong);
+        border-bottom: 1px solid var(--line-strong);
+        background: var(--paper);
+        transition: background 0.25s;
+      }
+      .pp-right-card:hover {
+        background: var(--butter-soft);
+      }
+      .pp-right-card i {
+        font-size: 1.1rem;
+        color: var(--coral);
+        margin-bottom: 0.6rem;
+        display: block;
+      }
+      .pp-right-card h4 {
+        font-family: "Fraunces", serif;
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 0.35rem;
+        color: var(--ink);
+      }
+      .pp-right-card p {
+        font-size: 0.82rem;
+        line-height: 1.5;
+        margin: 0;
+        color: var(--ink-soft);
+      }
+
+      /* ── Retention table ── */
+      .pp-retention-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1.5rem;
+        font-size: 0.9rem;
+      }
+      .pp-retention-table th {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.68rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        text-align: left;
+        padding: 0.75rem 1rem;
+        border-bottom: 2px solid var(--line-strong);
+        background: var(--butter-soft);
+      }
+      .pp-retention-table td {
+        padding: 0.85rem 1rem;
+        border-bottom: 1px solid var(--line);
+        color: var(--ink-soft);
+        line-height: 1.5;
+        vertical-align: top;
+      }
+      .pp-retention-table td:first-child {
+        color: var(--ink);
+        font-weight: 500;
+      }
+      .pp-retention-table tr:last-child td {
+        border-bottom: none;
+      }
+      .pp-retention-table .retention-num {
+        font-family: "Fraunces", serif;
+        font-size: 1.3rem;
+        font-style: italic;
+        color: var(--coral);
+        font-weight: 400;
+      }
+
+      /* ── Contact card ── */
+      .pp-contact-card {
+        background: var(--ink);
+        color: var(--cream);
+        border-radius: 12px;
+        padding: 2.5rem;
+        margin-top: 2rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+      .pp-contact-card i.card-icon {
+        font-size: 2rem;
+        color: var(--coral);
+        flex-shrink: 0;
+        margin-top: 0.2rem;
+      }
+      .pp-contact-card h3 {
+        font-family: "Fraunces", serif;
+        font-size: 1.5rem;
+        font-weight: 400;
+        font-style: italic;
+        color: var(--cream);
+        margin-bottom: 0.5rem;
+      }
+      .pp-contact-card p {
+        font-size: 0.95rem;
+        opacity: 0.75;
+        margin-bottom: 1rem;
+        color: var(--cream);
+      }
+      .pp-contact-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .pp-contact-links a {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        color: var(--butter);
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: opacity 0.2s;
+      }
+      .pp-contact-links a:hover {
+        opacity: 0.75;
+      }
+      .pp-contact-links a i {
+        width: 16px;
+        text-align: center;
+      }
+
+      /* ── Notice banner ── */
+      .pp-notice {
+        background: var(--butter-soft);
+        border: 1px solid var(--butter);
+        border-left: 4px solid var(--coral);
+        border-radius: 6px;
+        padding: 1.2rem 1.5rem;
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: var(--ink-soft);
+      }
+      .pp-notice i {
+        color: var(--coral);
+        font-size: 1rem;
+        flex-shrink: 0;
+        margin-top: 0.1rem;
+      }
+
+      /* ── Legal basis pills ── */
+      .pp-basis-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1.25rem;
+      }
+      .pp-basis-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.2rem 1.5rem;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--paper);
+        transition: border-color 0.2s;
+      }
+      .pp-basis-item:hover {
+        border-color: var(--coral);
+      }
+      .pp-basis-item i {
+        font-size: 1.1rem;
+        color: var(--coral);
+        flex-shrink: 0;
+        margin-top: 0.2rem;
+      }
+      .pp-basis-item h5 {
+        font-family: "Fraunces", serif;
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 0.2rem;
+        color: var(--ink);
+      }
+      .pp-basis-item p {
+        font-size: 0.88rem;
+        line-height: 1.55;
+        margin: 0;
+        color: var(--ink-soft);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="utility-bar">
+        <div class="container">
+          <ul class="utility-links">
+            <li><a href="publications.html">Thought Leadership</a></li>
+            <li><a href="events.html">News &amp; Events</a></li>
+            <li><a href="publications.html#blogs">Articles</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <div style="display: flex; gap: 1.5rem">
+            <a href="programs.html" class="utility-action"
+              ><i class="fa-solid fa-graduation-cap"></i> Apply to a Program</a
+            >
+            <a href="journal.html#submit" class="utility-action"
+              ><i class="fa-solid fa-file-pen"></i> Submit to Journal</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <nav class="main-nav">
+        <div class="container">
+          <a href="index.html" class="logo"
+            ><span><img src="Logo.png" alt="logo" class="logo-img" /></span
+          ></a>
+          <ul class="nav-links">
+            <li class="has-submenu">
+              <a href="programs.html">Programs</a>
+              <div class="mega-menu">
+                <div class="container">
+                  <div class="mega-grid">
+                    <div class="mega-col">
+                      <h5>Format</h5>
+                      <ul>
+                        <li>
+                          <a href="programs.html"
+                            >Announced Programs<span class="desc"
+                              >Calendar-based, open enrolment</span
+                            ></a
+                          >
+                        </li>
+                        <li>
+                          <a href="programs.html#customized"
+                            >Customized Programs<span class="desc"
+                              >Designed for your organization</span
+                            ></a
+                          >
+                        </li>
+                        <li>
+                          <a href="program-template.html"
+                            >Flagship Intensive<span class="desc"
+                              >Our 8-week senior leadership programme</span
+                            ></a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <h5>By Category</h5>
+                      <ul>
+                        <li><a href="programs.html">Leadership</a></li>
+                        <li><a href="programs.html">Strategy</a></li>
+                        <li><a href="programs.html">Innovation</a></li>
+                        <li>
+                          <a href="programs.html">Governance &amp; Boards</a>
+                        </li>
+                        <li><a href="programs.html">AI for Leaders</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <h5>Delivery</h5>
+                      <ul>
+                        <li>
+                          <a href="programs.html">On-Campus · Residential</a>
+                        </li>
+                        <li>
+                          <a href="programs.html"
+                            >Off-Campus · Non-Residential</a
+                          >
+                        </li>
+                        <li>
+                          <a href="programs.html">Hybrid &amp; Virtual</a>
+                        </li>
+                        <li>
+                          <a href="programs.html">Industry Training / OJT</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <a
+                        href="program-template.html"
+                        class="mega-feature"
+                        style="text-decoration: none"
+                      >
+                        <span class="tag">Featured · May 2026</span>
+                        <h4>Senior Leadership Intensive</h4>
+                        <span class="link"
+                          >Reserve a seat <i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li><a href="consulting.html">Consulting</a></li>
+            <li class="has-submenu">
+              <a href="publications.html">Publications</a>
+              <div class="mega-menu">
+                <div class="container">
+                  <div class="mega-grid">
+                    <div class="mega-col">
+                      <h5>AJMSI Journal</h5>
+                      <ul>
+                        <li>
+                          <a href="journal.html"
+                            >Journal Home<span class="desc"
+                              >Mission and editorial approach</span
+                            ></a
+                          >
+                        </li>
+                        <li>
+                          <a href="journal.html#submit"
+                            >Submission Guidelines</a
+                          >
+                        </li>
+                        <li>
+                          <a href="journal.html#roadmap">Editorial Roadmap</a>
+                        </li>
+                        <li><a href="team.html">Editorial Board</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <h5>Writing</h5>
+                      <ul>
+                        <li>
+                          <a href="publications.html#books"
+                            >Books<span class="desc"
+                              >AmpliSkill Press titles</span
+                            ></a
+                          >
+                        </li>
+                        <li>
+                          <a href="publications.html#blogs"
+                            >Blogs &amp; Essays</a
+                          >
+                        </li>
+                        <li>
+                          <a href="publications.html#cases">Case Studies</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <h5>Contribute</h5>
+                      <ul>
+                        <li>
+                          <a href="journal.html#submit">Submit a Paper</a>
+                        </li>
+                        <li><a href="contact.html">Pitch an Essay</a></li>
+                        <li><a href="contact.html">Propose a Case Study</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <a
+                        href="journal.html"
+                        class="mega-feature"
+                        style="
+                          text-decoration: none;
+                          background: linear-gradient(
+                            135deg,
+                            var(--ink),
+                            var(--coral)
+                          );
+                          color: var(--cream);
+                        "
+                      >
+                        <span class="tag" style="color: var(--butter)"
+                          >Call for Papers · Open</span
+                        >
+                        <h4 style="color: white">
+                          AJMSI Inaugural Issue — Jan 2027
+                        </h4>
+                        <span class="link" style="color: var(--butter)"
+                          >Submit now <i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="has-submenu">
+              <a href="about.html">About</a>
+              <div class="mega-menu">
+                <div class="container">
+                  <div class="mega-grid">
+                    <div class="mega-col">
+                      <h5>About AmpliSkill</h5>
+                      <ul>
+                        <li>
+                          <a href="about.html"
+                            >Who We Are<span class="desc"
+                              >Mission, vision, and approach</span
+                            ></a
+                          >
+                        </li>
+                        <li><a href="about.html">Who We Serve</a></li>
+                        <li><a href="about.html">Our Story</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <h5>People</h5>
+                      <ul>
+                        <li><a href="team.html">Executive Team</a></li>
+                        <li><a href="team.html">Advisory Council</a></li>
+                        <li><a href="team.html">Editorial Board</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <h5>Partnerships</h5>
+                      <ul>
+                        <li><a href="team.html">Academic Partners</a></li>
+                        <li><a href="team.html">Industry Partners</a></li>
+                        <li><a href="contact.html">Become a Partner</a></li>
+                        <li><a href="contact.html">Careers</a></li>
+                        <li><a href="contact.html">Press &amp; Media</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-col">
+                      <a
+                        href="events.html"
+                        class="mega-feature"
+                        style="
+                          text-decoration: none;
+                          background: var(--butter);
+                          color: var(--ink);
+                        "
+                      >
+                        <span class="tag">Flagship · Oct 2026</span>
+                        <h4>AmpliSkill Annual Management Summit</h4>
+                        <span class="link"
+                          >Register interest
+                          <i class="fa-solid fa-arrow-right"></i
+                        ></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li><a href="events.html">Events</a></li>
+          </ul>
+          <div class="nav-right">
+            <button
+              class="search-btn"
+              aria-label="Search"
+              onclick="
+                document.querySelector('.search-overlay').classList.add('open');
+                document.querySelector('.search-overlay input').focus();
+              "
+            >
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <a href="contact.html" class="nav-cta"
+              ><i class="fa-solid fa-envelope"></i> Get in touch</a
+            >
+            <button class="mobile-toggle" aria-label="Menu">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Search overlay -->
+    <div class="search-overlay">
+      <button
+        class="search-close"
+        onclick="this.parentElement.classList.remove('open')"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="search-box">
+        <input type="text" placeholder="Search programs, articles, people…" />
+        <p class="search-hint">Press ESC to close · Press ↵ to search</p>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu">
+      <a href="about.html">About</a>
+      <a href="team.html">Team</a>
+      <a href="programs.html">Programs</a>
+      <a href="consulting.html">Consulting</a>
+      <a href="publications.html">Publications</a>
+      <a href="journal.html">AJMSI Journal</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html" class="mobile-cta"
+        ><i class="fa-solid fa-envelope"></i> Get in touch</a
+      >
+    </div>
+
+    <!-- HERO -->
+    <section class="pp-hero">
+      <div class="container">
+        <span class="eyebrow"
+          ><i class="fa-solid fa-shield-halved"></i> &nbsp;Legal</span
+        >
+        <h1>Privacy Policy</h1>
+        <p>
+          AmpliSkill is committed to protecting your personal information and
+          your right to privacy. This policy explains how we collect, use, and
+          safeguard your data across our programs, consulting services, and
+          publications.
+        </p>
+        <div class="pp-meta">
+          <div class="pp-meta-item">
+            <i class="fa-solid fa-calendar-check"></i>
+            Effective: 1 January 2026
+          </div>
+          <div class="pp-meta-item">
+            <i class="fa-solid fa-rotate"></i>
+            Last Updated: 1 January 2026
+          </div>
+          <div class="pp-meta-item">
+            <i class="fa-solid fa-list-ol"></i>
+            14 Sections
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <section style="background: var(--paper)">
+      <div class="container">
+        <div class="pp-layout">
+          <!-- SIDEBAR TOC -->
+          <aside class="pp-toc">
+            <div class="toc-label">
+              <i class="fa-solid fa-list"></i> Contents
+            </div>
+            <ul>
+              <li>
+                <a href="#s1"
+                  ><i
+                    class="fa-solid fa-circle-dot"
+                    style="font-size: 0.5rem; margin-right: 0.3rem"
+                  ></i>
+                  1. Introduction</a
+                >
+              </li>
+              <li>
+                <a href="#s2"
+                  ><i
+                    class="fa-solid fa-circle-dot"
+                    style="font-size: 0.5rem; margin-right: 0.3rem"
+                  ></i>
+                  2. Information We Collect</a
+                >
+              </li>
+              <li>
+                <a href="#s3"
+                  ><i
+                    class="fa-solid fa-circle-dot"
+                    style="font-size: 0.5rem; margin-right: 0.3rem"
+                  ></i>
+                  3. How We Collect</a
+                >
+              </li>
+              <li>
+                <a href="#s4"
+                  ><i
+                    class="fa-solid fa-circle-dot"
+                    style="font-size: 0.5rem; margin-right: 0.3rem"
+                  ></i>
+                  4. How We Use It</a
+                >
+              </li>
+              <li>
+                <a href="#s5"
+                  ><i
+                    class="fa-solid fa-circle-dot"
+                    style="font-size: 0.5rem; margin-right: 0.3rem"
+                  ></i>
+                  5. Legal Basis (GDPR)</a
+                >
+              </li>
+              <li>
+                <a href="#s6"
+                  ><i
+                    class="fa-solid fa-circle-dot"
+                    style="font-size: 0.5rem; margin-right: 0.3rem"
+                  ></i>
+                  6. Data Sharing</a
+                >
+              </li>
+              <li>
+                <a href="#s7"
+                  ><i
+                    class="fa-solid fa-circle-dot"
+                    style="font-size: 0.5rem; margin-right: 0.3rem"
+                  ></i>
+                  7. International Transfers</a
+                >
+              </li>
+              <li>
+                <a href="#s8"
+                  ><i
+                    class="fa-solid fa-circle-dot"
+                    style="font-size: 0.5rem; margin-right: 0.3rem"
+                  ></i>
+                  8. Data Retention</a
+                >
+              </li>
+              <li>
+                <a href="#s9"
+                  ><i
+                    class="fa-solid fa-circle-dot"
+                    style="font-size: 0.5rem; margin-right: 0.3rem"
+                  ></i>
+                  9. Your Rights</a
+                >
+              </li>
+              <li>
+                <a href="#s10"
+                  ><i
+                    class="fa-solid fa-circle-dot"
+                    style="font-size: 0.5rem; margin-right: 0.3rem"
+                  ></i>
+                  10. Security</a
+                >
+              </li>
+              <li>
+                <a href="#s11"
+                  ><i
+                    class="fa-solid fa-circle-dot"
+                    style="font-size: 0.5rem; margin-right: 0.3rem"
+                  ></i>
+                  11. Children's Privacy</a
+                >
+              </li>
+              <li>
+                <a href="#s12"
+                  ><i
+                    class="fa-solid fa-circle-dot"
+                    style="font-size: 0.5rem; margin-right: 0.3rem"
+                  ></i>
+                  12. Third-Party Links</a
+                >
+              </li>
+              <li>
+                <a href="#s13"
+                  ><i
+                    class="fa-solid fa-circle-dot"
+                    style="font-size: 0.5rem; margin-right: 0.3rem"
+                  ></i>
+                  13. Policy Changes</a
+                >
+              </li>
+              <li>
+                <a href="#s14"
+                  ><i
+                    class="fa-solid fa-circle-dot"
+                    style="font-size: 0.5rem; margin-right: 0.3rem"
+                  ></i>
+                  14. Contact Us</a
+                >
+              </li>
+            </ul>
+          </aside>
+
+          <!-- CONTENT BODY -->
+          <div class="pp-content">
+            <div class="pp-notice">
+              <i class="fa-solid fa-circle-info"></i>
+              <span>
+                Please read this policy carefully. If you disagree with its
+                terms, please discontinue use of our Site and services.
+              </span>
+            </div>
+
+            <!-- 1. Introduction -->
+            <div class="pp-section" id="s1">
+              <div class="pp-section-header">
+                <div class="pp-section-icon">
+                  <i class="fa-solid fa-handshake"></i>
+                </div>
+                <div>
+                  <span class="pp-section-num">Section 01</span>
+                  <h2>Introduction</h2>
+                </div>
+              </div>
+              <p>
+                AmpliSkill ("we", "our", or "us") is committed to protecting
+                your personal information and your right to privacy. This
+                Privacy Policy explains how we collect, use, disclose, and
+                safeguard your information when you visit our website, enrol in
+                our programs, engage our consulting services, or interact with
+                our publications and journal.
+              </p>
+            </div>
+
+            <!-- 2. Information We Collect -->
+            <div class="pp-section" id="s2">
+              <div class="pp-section-header">
+                <div class="pp-section-icon">
+                  <i class="fa-solid fa-database"></i>
+                </div>
+                <div>
+                  <span class="pp-section-num">Section 02</span>
+                  <h2>Information We Collect</h2>
+                </div>
+              </div>
+              <p>
+                We may collect the following categories of personal information:
+              </p>
+              <ul class="pp-list">
+                <li>
+                  <span class="li-icon"><i class="fa-solid fa-user"></i></span>
+                  <span
+                    ><strong>Identity Data:</strong> Full name, job title,
+                    organisation, and professional background provided during
+                    program registration or journal submissions.</span
+                  >
+                </li>
+                <li>
+                  <span class="li-icon"
+                    ><i class="fa-solid fa-address-card"></i
+                  ></span>
+                  <span
+                    ><strong>Contact Data:</strong> Email address, telephone
+                    number, and postal address.</span
+                  >
+                </li>
+                <li>
+                  <span class="li-icon"
+                    ><i class="fa-solid fa-briefcase"></i
+                  ></span>
+                  <span
+                    ><strong>Professional Data:</strong> Industry, career level,
+                    areas of expertise, and learning objectives.</span
+                  >
+                </li>
+                <li>
+                  <span class="li-icon"
+                    ><i class="fa-solid fa-credit-card"></i
+                  ></span>
+                  <span
+                    ><strong>Financial Data:</strong> Payment details collected
+                    securely for program enrolment and consulting
+                    engagements.</span
+                  >
+                </li>
+                <li>
+                  <span class="li-icon"
+                    ><i class="fa-solid fa-chart-line"></i
+                  ></span>
+                  <span
+                    ><strong>Usage Data:</strong> IP address, browser type and
+                    version, pages visited, time spent on pages, and referring
+                    URLs.</span
+                  >
+                </li>
+                <li>
+                  <span class="li-icon"
+                    ><i class="fa-solid fa-comments"></i
+                  ></span>
+                  <span
+                    ><strong>Communications Data:</strong> Records of
+                    correspondence when you contact us, submit to the AJMSI
+                    journal, or apply to our editorial board.</span
+                  >
+                </li>
+                <li>
+                  <span class="li-icon"
+                    ><i class="fa-solid fa-microscope"></i
+                  ></span>
+                  <span
+                    ><strong>Research Data:</strong> Manuscripts, abstracts,
+                    case studies, and supporting materials submitted for peer
+                    review.</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- 3. How We Collect -->
+            <div class="pp-section" id="s3">
+              <div class="pp-section-header">
+                <div class="pp-section-icon">
+                  <i class="fa-solid fa-arrows-to-circle"></i>
+                </div>
+                <div>
+                  <span class="pp-section-num">Section 03</span>
+                  <h2>How We Collect Your Information</h2>
+                </div>
+              </div>
+              <p>We collect information through:</p>
+              <ul class="pp-list">
+                <li>
+                  <span class="li-icon"
+                    ><i class="fa-solid fa-pen-to-square"></i
+                  ></span>
+                  <span
+                    ><strong>Direct interactions:</strong> Forms on our Site
+                    including program applications, consulting enquiries,
+                    journal submissions, and contact requests.</span
+                  >
+                </li>
+                <li>
+                  <span class="li-icon"
+                    ><i class="fa-solid fa-cookie-bite"></i
+                  ></span>
+                  <span
+                    ><strong>Automated technologies:</strong> Cookies, web
+                    beacons, and similar tracking technologies when you browse
+                    our Site (see our Cookies Policy for details).</span
+                  >
+                </li>
+                <li>
+                  <span class="li-icon"
+                    ><i class="fa-solid fa-people-group"></i
+                  ></span>
+                  <span
+                    ><strong>Third parties:</strong> Publicly available
+                    professional profiles (e.g., LinkedIn) where relevant to
+                    editorial board or speaker engagements.</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- 4. How We Use It -->
+            <div class="pp-section" id="s4">
+              <div class="pp-section-header">
+                <div class="pp-section-icon">
+                  <i class="fa-solid fa-gears"></i>
+                </div>
+                <div>
+                  <span class="pp-section-num">Section 04</span>
+                  <h2>How We Use Your Information</h2>
+                </div>
+              </div>
+              <p>
+                We use your personal information for the following purposes:
+              </p>
+              <ul class="pp-list">
+                <li>
+                  <span class="li-icon"><i class="fa-solid fa-check"></i></span>
+                  <span
+                    >To process program enrolments, issue confirmations, and
+                    communicate pre-programme materials.</span
+                  >
+                </li>
+                <li>
+                  <span class="li-icon"><i class="fa-solid fa-check"></i></span>
+                  <span
+                    >To deliver consulting services and manage client
+                    engagements.</span
+                  >
+                </li>
+                <li>
+                  <span class="li-icon"><i class="fa-solid fa-check"></i></span>
+                  <span
+                    >To manage the AJMSI journal submission, peer-review, and
+                    publication process.</span
+                  >
+                </li>
+                <li>
+                  <span class="li-icon"><i class="fa-solid fa-check"></i></span>
+                  <span
+                    >To send you newsletters, thought leadership content, and
+                    event notifications where you have opted in.</span
+                  >
+                </li>
+                <li>
+                  <span class="li-icon"><i class="fa-solid fa-check"></i></span>
+                  <span
+                    >To improve our Site, programs, and services through usage
+                    analytics.</span
+                  >
+                </li>
+                <li>
+                  <span class="li-icon"><i class="fa-solid fa-check"></i></span>
+                  <span
+                    >To comply with legal obligations and enforce our
+                    terms.</span
+                  >
+                </li>
+                <li>
+                  <span class="li-icon"><i class="fa-solid fa-check"></i></span>
+                  <span
+                    >To respond to your enquiries and provide customer
+                    support.</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- 5. Legal Basis -->
+            <div class="pp-section" id="s5">
+              <div class="pp-section-header">
+                <div class="pp-section-icon">
+                  <i class="fa-solid fa-scale-balanced"></i>
+                </div>
+                <div>
+                  <span class="pp-section-num">Section 05</span>
+                  <h2>Legal Basis for Processing</h2>
+                </div>
+              </div>
+              <p>
+                Where applicable data protection law requires a legal basis, we
+                rely on:
+              </p>
+              <div class="pp-basis-list">
+                <div class="pp-basis-item">
+                  <i class="fa-solid fa-file-contract"></i>
+                  <div>
+                    <h5>Contract Performance</h5>
+                    <p>
+                      Processing necessary to fulfil your program enrolment or
+                      consulting agreement.
+                    </p>
+                  </div>
+                </div>
+                <div class="pp-basis-item">
+                  <i class="fa-solid fa-lightbulb"></i>
+                  <div>
+                    <h5>Legitimate Interests</h5>
+                    <p>
+                      Analytics, service improvement, and direct marketing to
+                      existing contacts.
+                    </p>
+                  </div>
+                </div>
+                <div class="pp-basis-item">
+                  <i class="fa-solid fa-circle-check"></i>
+                  <div>
+                    <h5>Consent</h5>
+                    <p>
+                      Email marketing to new contacts; cookie-based tracking
+                      beyond strictly necessary cookies.
+                    </p>
+                  </div>
+                </div>
+                <div class="pp-basis-item">
+                  <i class="fa-solid fa-gavel"></i>
+                  <div>
+                    <h5>Legal Obligation</h5>
+                    <p>
+                      Compliance with tax, accounting, and regulatory
+                      requirements.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 6. Data Sharing -->
+            <div class="pp-section" id="s6">
+              <div class="pp-section-header">
+                <div class="pp-section-icon">
+                  <i class="fa-solid fa-share-nodes"></i>
+                </div>
+                <div>
+                  <span class="pp-section-num">Section 06</span>
+                  <h2>Data Sharing &amp; Disclosure</h2>
+                </div>
+              </div>
+              <p>
+                <strong>We do not sell your personal data.</strong> We may share
+                your information with:
+              </p>
+              <ul class="pp-list">
+                <li>
+                  <span class="li-icon"
+                    ><i class="fa-solid fa-server"></i
+                  ></span>
+                  <span
+                    ><strong>Service providers:</strong> Payment processors,
+                    email delivery platforms, event management tools, and
+                    hosting providers acting on our behalf under data processing
+                    agreements.</span
+                  >
+                </li>
+                <li>
+                  <span class="li-icon"
+                    ><i class="fa-solid fa-building-columns"></i
+                  ></span>
+                  <span
+                    ><strong>Academic and industry partners:</strong> Only where
+                    you have enrolled in a jointly delivered programme and
+                    disclosure is necessary for delivery.</span
+                  >
+                </li>
+                <li>
+                  <span class="li-icon"
+                    ><i class="fa-solid fa-magnifying-glass"></i
+                  ></span>
+                  <span
+                    ><strong>AJMSI reviewers:</strong> Anonymised manuscripts
+                    shared with peer reviewers; author identities disclosed only
+                    upon acceptance and consent.</span
+                  >
+                </li>
+                <li>
+                  <span class="li-icon"
+                    ><i class="fa-solid fa-landmark"></i
+                  ></span>
+                  <span
+                    ><strong>Regulators and law enforcement:</strong> Where
+                    required by applicable law or court order.</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- 7. International Transfers -->
+            <div class="pp-section" id="s7">
+              <div class="pp-section-header">
+                <div class="pp-section-icon">
+                  <i class="fa-solid fa-earth-americas"></i>
+                </div>
+                <div>
+                  <span class="pp-section-num">Section 07</span>
+                  <h2>International Transfers</h2>
+                </div>
+              </div>
+              <p>
+                AmpliSkill operates globally and may transfer your data to
+                countries outside your jurisdiction, including countries that
+                may not provide the same level of data protection as your home
+                country. Where such transfers occur, we apply appropriate
+                safeguards including standard contractual clauses or equivalent
+                mechanisms.
+              </p>
+            </div>
+
+            <!-- 8. Data Retention -->
+            <div class="pp-section" id="s8">
+              <div class="pp-section-header">
+                <div class="pp-section-icon">
+                  <i class="fa-solid fa-clock-rotate-left"></i>
+                </div>
+                <div>
+                  <span class="pp-section-num">Section 08</span>
+                  <h2>Data Retention</h2>
+                </div>
+              </div>
+              <p>
+                We retain personal data only as long as necessary for the
+                purposes described in this policy, or as required by law.
+                Specifically:
+              </p>
+              <table class="pp-retention-table">
+                <thead>
+                  <tr>
+                    <th>
+                      <i class="fa-solid fa-folder-open"></i> &nbsp;Record Type
+                    </th>
+                    <th>
+                      <i class="fa-solid fa-hourglass-half"></i> &nbsp;Retention
+                      Period
+                    </th>
+                    <th>
+                      <i class="fa-solid fa-circle-question"></i> &nbsp;Purpose
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Program Participant Records</td>
+                    <td>
+                      <span class="retention-num">7 yrs</span> post-completion
+                    </td>
+                    <td>Accreditation &amp; alumni purposes</td>
+                  </tr>
+                  <tr>
+                    <td>Consulting Engagement Records</td>
+                    <td>
+                      <span class="retention-num">7 yrs</span> post-closure
+                    </td>
+                    <td>Project documentation &amp; compliance</td>
+                  </tr>
+                  <tr>
+                    <td>Journal Submission Records</td>
+                    <td><span class="retention-num">10 yrs</span></td>
+                    <td>Academic integrity &amp; audit trail</td>
+                  </tr>
+                  <tr>
+                    <td>Marketing Contact Records</td>
+                    <td>Until unsubscribe / deletion request</td>
+                    <td>Consent-based marketing</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- 9. Your Rights -->
+            <div class="pp-section" id="s9">
+              <div class="pp-section-header">
+                <div class="pp-section-icon">
+                  <i class="fa-solid fa-person-circle-check"></i>
+                </div>
+                <div>
+                  <span class="pp-section-num">Section 09</span>
+                  <h2>Your Rights</h2>
+                </div>
+              </div>
+              <p>
+                Depending on your jurisdiction, you may have the following
+                rights regarding your personal data. To exercise any of these
+                rights, please contact us at
+                <a href="mailto:privacy@ampliskill.com"
+                  >privacy@ampliskill.com</a
+                >. We will respond within <strong>30 days</strong>.
+              </p>
+              <div class="pp-rights-grid">
+                <div class="pp-right-card">
+                  <i class="fa-solid fa-eye"></i>
+                  <h4>Access</h4>
+                  <p>Request a copy of the personal data we hold about you.</p>
+                </div>
+                <div class="pp-right-card">
+                  <i class="fa-solid fa-pen"></i>
+                  <h4>Rectification</h4>
+                  <p>Request correction of inaccurate or incomplete data.</p>
+                </div>
+                <div class="pp-right-card">
+                  <i class="fa-solid fa-trash-can"></i>
+                  <h4>Erasure</h4>
+                  <p>
+                    Request deletion where there is no legitimate reason for
+                    continued processing.
+                  </p>
+                </div>
+                <div class="pp-right-card">
+                  <i class="fa-solid fa-hand"></i>
+                  <h4>Restriction</h4>
+                  <p>
+                    Request that we restrict processing of your data in certain
+                    circumstances.
+                  </p>
+                </div>
+                <div class="pp-right-card">
+                  <i class="fa-solid fa-file-export"></i>
+                  <h4>Portability</h4>
+                  <p>
+                    Receive your data in a structured, machine-readable format.
+                  </p>
+                </div>
+                <div class="pp-right-card">
+                  <i class="fa-solid fa-ban"></i>
+                  <h4>Objection</h4>
+                  <p>
+                    Object to processing based on legitimate interests or for
+                    direct marketing.
+                  </p>
+                </div>
+                <div class="pp-right-card">
+                  <i class="fa-solid fa-rotate-left"></i>
+                  <h4>Withdraw Consent</h4>
+                  <p>
+                    Withdraw consent at any time without affecting prior lawful
+                    processing.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 10. Security -->
+            <div class="pp-section" id="s10">
+              <div class="pp-section-header">
+                <div class="pp-section-icon">
+                  <i class="fa-solid fa-lock"></i>
+                </div>
+                <div>
+                  <span class="pp-section-num">Section 10</span>
+                  <h2>Security</h2>
+                </div>
+              </div>
+              <p>
+                We implement appropriate technical and organisational measures
+                to protect your personal data against unauthorised access, loss,
+                or destruction. However, no method of transmission over the
+                Internet is 100% secure, and we cannot guarantee absolute
+                security.
+              </p>
+            </div>
+
+            <!-- 11. Children's Privacy -->
+            <div class="pp-section" id="s11">
+              <div class="pp-section-header">
+                <div class="pp-section-icon">
+                  <i class="fa-solid fa-child-reaching"></i>
+                </div>
+                <div>
+                  <span class="pp-section-num">Section 11</span>
+                  <h2>Children's Privacy</h2>
+                </div>
+              </div>
+              <p>
+                Our Site and services are directed at professionals and are not
+                intended for individuals under the age of 18. We do not
+                knowingly collect personal data from minors. If you believe we
+                have inadvertently collected such data, please contact us
+                immediately.
+              </p>
+            </div>
+
+            <!-- 12. Third-Party Links -->
+            <div class="pp-section" id="s12">
+              <div class="pp-section-header">
+                <div class="pp-section-icon">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </div>
+                <div>
+                  <span class="pp-section-num">Section 12</span>
+                  <h2>Third-Party Links</h2>
+                </div>
+              </div>
+              <p>
+                Our Site may contain links to third-party websites, including
+                academic institutions and partner organisations. We are not
+                responsible for the privacy practices of those sites and
+                encourage you to review their privacy policies independently.
+              </p>
+            </div>
+
+            <!-- 13. Changes -->
+            <div class="pp-section" id="s13">
+              <div class="pp-section-header">
+                <div class="pp-section-icon">
+                  <i class="fa-solid fa-rotate"></i>
+                </div>
+                <div>
+                  <span class="pp-section-num">Section 13</span>
+                  <h2>Changes to This Policy</h2>
+                </div>
+              </div>
+              <p>
+                We may update this Privacy Policy from time to time. We will
+                notify you of material changes by posting the revised policy on
+                our Site with an updated effective date. Continued use of our
+                services following such changes constitutes acceptance of the
+                revised policy.
+              </p>
+            </div>
+
+            <!-- 14. Contact Us -->
+            <div class="pp-section" id="s14">
+              <div class="pp-section-header">
+                <div class="pp-section-icon">
+                  <i class="fa-solid fa-envelope-open-text"></i>
+                </div>
+                <div>
+                  <span class="pp-section-num">Section 14</span>
+                  <h2>Contact Us</h2>
+                </div>
+              </div>
+              <p>
+                If you have questions, concerns, or requests regarding this
+                Privacy Policy, please reach out to our Privacy Officer:
+              </p>
+              <div class="pp-contact-card">
+                <i class="fa-solid fa-shield-halved card-icon"></i>
+                <div>
+                  <h3>AmpliSkill Privacy Officer</h3>
+                  <p>
+                    We are committed to responding to all privacy-related
+                    enquiries within 30 days.
+                  </p>
+                  <div class="pp-contact-links">
+                    <a href="mailto:privacy@ampliskill.com">
+                      <i class="fa-solid fa-envelope"></i>
+                      privacy@ampliskill.com
+                    </a>
+                    <a href="contact.html">
+                      <i class="fa-solid fa-globe"></i>
+                      Visit our Contact page
+                      <i
+                        class="fa-solid fa-arrow-right"
+                        style="font-size: 0.75rem"
+                      ></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /pp-content -->
+        </div>
+        <!-- /pp-layout -->
+      </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="cta-band">
+      <div class="container">
+        <h2>Have a question about <em class="italic-accent">your data?</em></h2>
+        <p>
+          Our Privacy Officer is happy to assist with access requests, data
+          corrections, or any other privacy-related enquiry.
+        </p>
+        <div
+          style="
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+          "
+        >
+          <a class="btn-ghost" href="mailto:privacy@ampliskill.com">
+            <i class="fa-solid fa-envelope"></i> Email our Privacy Officer
+          </a>
+          <a
+            href="contact.html"
+            class="nav-cta"
+            style="
+              background: var(--ink);
+              color: var(--cream);
+              padding: 1rem 2rem;
+              font-size: 0.95rem;
+            "
+            >Contact us</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <h3>AmpliSkill<span style="color: var(--coral)">.</span></h3>
+            <p>
+              Driving excellence through academic and industry collaboration.
+              Management development, strategic consulting, and applied research
+              for the leaders and organizations shaping what's next.
+            </p>
+          </div>
+          <div>
+            <h5><i class="fa-solid fa-compass"></i> Explore</h5>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="team.html">Team</a></li>
+              <li><a href="programs.html">Programs</a></li>
+              <li><a href="consulting.html">Consulting</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5><i class="fa-solid fa-flask"></i> Research</h5>
+            <ul>
+              <li><a href="journal.html">AJMSI Journal</a></li>
+              <li><a href="publications.html">Books</a></li>
+              <li><a href="publications.html">Blogs</a></li>
+              <li><a href="events.html">Events</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5><i class="fa-solid fa-network-wired"></i> Connect</h5>
+            <ul>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="contact.html">Careers</a></li>
+              <li><a href="contact.html">Press</a></li>
+              <li><a href="contact.html">Partners</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 AMPLISKILL · ALL RIGHTS RESERVED</span>
+          <span>PRIVACY · TERMS · COOKIES</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
