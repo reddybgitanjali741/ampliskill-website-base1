@@ -1833,3 +1833,35 @@ footer ul li:hover {
     text-align: center;
   }
 }
+
+/* TOAST */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--ink);
+  color: var(--cream);
+  padding: 0.9rem 1.4rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-family: "JetBrains Mono", monospace;
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 10px 30px rgba(11, 18, 32, 0.2);
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast i {
+  color: var(--coral);
+}

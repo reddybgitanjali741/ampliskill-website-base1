@@ -1,14 +1,9 @@
-/* ================================================================
-   contact.js — Form validation + submission (demo — no backend)
-   ================================================================ */
-
 (function () {
   "use strict";
 
-  /* ── Helpers ── */
   const $ = (id) => document.getElementById(id);
-  const ALPHA_RE = /^[A-Za-z\s\-']+$/; // letters, spaces, hyphens, apostrophes
-  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // simple RFC-like check
+  const ALPHA_RE = /^[A-Za-z\s\-']+$/;
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   function setError(fieldId, errId, msg) {
     const field = $(fieldId);
@@ -22,12 +17,10 @@
     setError(fieldId, errId, "");
   }
 
-  /* ── Success popup ── */
   function showSuccessPopup() {
     const overlay = $("successPopupOverlay");
     if (!overlay) return;
     overlay.classList.add("show");
-    // close on overlay click (outside popup)
     overlay.addEventListener("click", function handler(e) {
       if (e.target === overlay) {
         overlay.classList.remove("show");
@@ -36,9 +29,7 @@
     });
   }
 
-  /* ── Live validation (clear errors as the user corrects) ── */
   function attachLiveValidation() {
-    /* Full name — alphabets only */
     const nameInput = $("inp-name");
     if (nameInput) {
       nameInput.addEventListener("input", () => {
@@ -59,7 +50,6 @@
       });
     }
 
-    /* Work email */
     const emailInput = $("inp-email");
     if (emailInput) {
       emailInput.addEventListener("input", () => {
@@ -77,7 +67,6 @@
       });
     }
 
-    /* Organization — alphabets only (optional, validate if filled) */
     const orgInput = $("inp-org");
     if (orgInput) {
       orgInput.addEventListener("input", () => {
@@ -98,7 +87,6 @@
       });
     }
 
-    /* Role — alphabets only (optional, validate if filled) */
     const roleInput = $("inp-role");
     if (roleInput) {
       roleInput.addEventListener("input", () => {
@@ -119,7 +107,6 @@
       });
     }
 
-    /* Topic */
     const topicInput = $("inp-topic");
     if (topicInput) {
       topicInput.addEventListener("change", () => {
@@ -127,7 +114,6 @@
       });
     }
 
-    /* Tell us more — min 20 chars */
     const msgInput = $("inp-message");
     if (msgInput) {
       msgInput.addEventListener("input", () => {
@@ -146,11 +132,9 @@
     }
   }
 
-  /* ── Full validation on submit ── */
   function validateAll() {
     let valid = true;
 
-    /* Full name */
     const name = $("inp-name") ? $("inp-name").value.trim() : "";
     if (!name) {
       setError("field-name", "err-name", "Full name is required.");
@@ -166,7 +150,6 @@
       clearError("field-name", "err-name");
     }
 
-    /* Email */
     const email = $("inp-email") ? $("inp-email").value.trim() : "";
     if (!email) {
       setError("field-email", "err-email", "Work email is required.");
@@ -182,7 +165,6 @@
       clearError("field-email", "err-email");
     }
 
-    /* Organization (optional, alpha if provided) */
     const org = $("inp-org") ? $("inp-org").value.trim() : "";
     if (org && !ALPHA_RE.test(org)) {
       setError("field-org", "err-org", "Only letters and spaces are allowed.");
@@ -191,7 +173,6 @@
       clearError("field-org", "err-org");
     }
 
-    /* Role (optional, alpha if provided) */
     const role = $("inp-role") ? $("inp-role").value.trim() : "";
     if (role && !ALPHA_RE.test(role)) {
       setError(
@@ -204,7 +185,6 @@
       clearError("field-role", "err-role");
     }
 
-    /* Topic */
     const topic = $("inp-topic") ? $("inp-topic").value : "";
     if (!topic) {
       setError("field-topic", "err-topic", "Please select a topic.");
@@ -213,7 +193,6 @@
       clearError("field-topic", "err-topic");
     }
 
-    /* Message */
     const msg = $("inp-message") ? $("inp-message").value.trim() : "";
     if (!msg) {
       setError(
@@ -236,11 +215,9 @@
     return valid;
   }
 
-  /* ── Boot ── */
   document.addEventListener("DOMContentLoaded", () => {
     attachLiveValidation();
 
-    /* Popup close button */
     const closeBtn = $("successPopupClose");
     if (closeBtn) {
       closeBtn.addEventListener("click", () => {
@@ -248,7 +225,6 @@
       });
     }
 
-    /* ESC key closes popup */
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
         const overlay = $("successPopupOverlay");
@@ -268,9 +244,26 @@
         return;
       }
 
-      /* All valid — show popup */
-      showSuccessPopup();
-      form.reset();
+      const templateParams = {
+        from_name: $("inp-name").value.trim(),
+        from_email: $("inp-email").value.trim(),
+        organization: $("inp-org").value.trim(),
+        role: $("inp-role").value.trim(),
+        topic: $("inp-topic").value,
+        message: $("inp-message").value.trim(),
+      };
+
+      emailjs.send("service_yhnzrws", "template_0i1g3z6", templateParams).then(
+        function () {
+          console.log("Email sent successfully");
+          showSuccessPopup();
+          form.reset();
+        },
+        function (error) {
+          console.error("Email failed:", error);
+          alert("Failed to send message");
+        },
+      );
     });
   });
 })();

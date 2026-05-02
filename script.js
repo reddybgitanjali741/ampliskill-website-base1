@@ -63,3 +63,51 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+// ================== SHARE FUNCTIONALITY ==================
+const url = window.location.href;
+const title = document.title;
+
+// TOAST
+function showToast(message) {
+  let toast = document.createElement("div");
+  toast.className = "toast";
+  toast.innerHTML = `<i class="fa-solid fa-check"></i> ${message}`;
+  document.body.appendChild(toast);
+
+  setTimeout(() => toast.classList.add("show"), 50);
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+    setTimeout(() => toast.remove(), 300);
+  }, 2000);
+}
+
+// LINKEDIN
+document.querySelectorAll(".share-linkedin").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    window.open(
+      `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,
+      "_blank",
+    );
+  });
+});
+
+// X (TWITTER)
+document.querySelectorAll(".share-x").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    window.open(
+      `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`,
+      "_blank",
+    );
+  });
+});
+
+// COPY LINK
+document.querySelectorAll(".share-copy").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    navigator.clipboard.writeText(url).then(() => {
+      showToast("Link copied");
+    });
+  });
+});
