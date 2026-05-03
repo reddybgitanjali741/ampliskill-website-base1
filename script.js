@@ -86,10 +86,7 @@ function showToast(message) {
 // LINKEDIN
 document.querySelectorAll(".share-linkedin").forEach((btn) => {
   btn.addEventListener("click", () => {
-    window.open(
-      `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,
-      "_blank",
-    );
+    window.open("https://www.linkedin.com/company/ampliskill/", "_blank");
   });
 });
 

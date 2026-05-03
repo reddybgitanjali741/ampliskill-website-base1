@@ -253,7 +253,7 @@
         message: $("inp-message").value.trim(),
       };
 
-      emailjs.send("service_yhnzrws", "template_0i1g3z6", templateParams).then(
+      emailjs.send("service_0nv1iyt", "template_4eoyzio", templateParams).then(
         function () {
           console.log("Email sent successfully");
           showSuccessPopup();
