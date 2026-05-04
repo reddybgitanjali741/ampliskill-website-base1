@@ -1866,14 +1866,15 @@ footer ul li:hover {
   color: var(--coral);
 }
 
+/* Mobile toggle icon swap — uses !important to override Font Awesome's inline-block */
 .mobile-toggle .fa-xmark {
-  display: none;
+  display: none !important;
 }
 
 .mobile-toggle.is-open .fa-bars {
-  display: none;
+  display: none !important;
 }
 
 .mobile-toggle.is-open .fa-xmark {
-  display: inline-block;
+  display: inline-block !important;
 }
