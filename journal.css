@@ -1,176 +1,245 @@
-
-  .journal-hero {
-    background: var(--butter);
-    padding: 5rem 0 6rem;
-    position: relative; overflow: hidden;
-  }
-  .journal-hero::before {
-    content: 'AJMSI';
-    position: absolute;
-    bottom: -3rem; right: -2rem;
-    font-family: 'Fraunces', serif;
-    font-size: clamp(8rem, 22vw, 22rem);
-    font-style: italic;
-    font-weight: 300;
-    color: rgba(11, 18, 32, 0.06);
-    letter-spacing: 0.1em;
-    pointer-events: none;
-  }
+.journal-hero {
+  background: var(--butter);
+  padding: 5rem 0 6rem;
+  position: relative;
+  overflow: hidden;
+}
+.journal-hero::before {
+  content: "AJMSI";
+  position: absolute;
+  bottom: -3rem;
+  right: -2rem;
+  font-family: "Fraunces", serif;
+  font-size: clamp(8rem, 22vw, 22rem);
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(11, 18, 32, 0.06);
+  letter-spacing: 0.1em;
+  pointer-events: none;
+}
+.journal-hero .container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+}
+@media (min-width: 900px) {
   .journal-hero .container {
-    display: grid; grid-template-columns: 1fr;
-    gap: 4rem; align-items: center;
-    position: relative;
+    grid-template-columns: 1fr 1.1fr;
   }
-  @media (min-width: 900px) { .journal-hero .container { grid-template-columns: 1fr 1.1fr; } }
-  .journal-hero h1 {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(2.5rem, 6vw, 5rem);
-    line-height: 0.95; font-weight: 400;
-    letter-spacing: -0.03em;
-  }
-  .journal-hero h1 em {
-    font-style: italic; color: var(--coral);
-    font-variation-settings: "opsz" 144, "SOFT" 100;
-  }
-  .journal-hero p { font-size: 1.15rem; line-height: 1.55; margin-top: 1.5rem; max-width: 38rem; }
+}
+.journal-hero h1 {
+  font-family: "Fraunces", serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 0.95;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+}
+.journal-hero h1 em {
+  font-style: italic;
+  color: var(--coral);
+  font-variation-settings:
+    "opsz" 144,
+    "SOFT" 100;
+}
+.journal-hero p {
+  font-size: 1.15rem;
+  line-height: 1.55;
+  margin-top: 1.5rem;
+  max-width: 38rem;
+}
 
-  .big-issue-card {
-    background: var(--ink); color: var(--cream);
-    padding: 3rem 2.5rem;
-    border-radius: 4px;
-    aspect-ratio: 3/4;
-    max-width: 440px;
-    margin-left: auto;
-    display: flex; flex-direction: column; justify-content: space-between;
-    box-shadow: 25px 25px 0 var(--coral);
-    position: relative;
-  }
-  .big-issue-card .top-row {
-    display: flex; justify-content: space-between;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem; letter-spacing: 0.18em;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid rgba(248,243,231,0.2);
-    opacity: 0.8;
-  }
-  .big-issue-card .issue-title {
-    font-family: 'Fraunces', serif;
-    font-size: 2.3rem; line-height: 1;
-    font-weight: 400; font-style: italic;
-    color: var(--butter);
-  }
-  .big-issue-card .issue-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem; letter-spacing: 0.2em;
-    opacity: 0.6; text-transform: uppercase;
-    margin-bottom: 0.5rem;
-  }
-  .big-issue-card ul {
-    list-style: none;
-    font-size: 0.75rem;
-    font-family: 'JetBrains Mono', monospace;
-    line-height: 2; opacity: 0.8;
-  }
-  .big-issue-card .bottom-meta {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem; letter-spacing: 0.15em;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(248,243,231,0.2);
-    opacity: 0.7;
-  }
+.big-issue-card {
+  background: var(--ink);
+  color: var(--cream);
+  padding: 3rem 2.5rem;
+  border-radius: 4px;
+  aspect-ratio: 3/4;
+  max-width: 440px;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 25px 25px 0 var(--coral);
+  position: relative;
+}
+.big-issue-card .top-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(248, 243, 231, 0.2);
+  opacity: 0.8;
+}
+.big-issue-card .issue-title {
+  font-family: "Fraunces", serif;
+  font-size: 2.3rem;
+  line-height: 1;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--butter);
+}
+.big-issue-card .issue-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  opacity: 0.6;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.big-issue-card ul {
+  list-style: none;
+  font-size: 0.75rem;
+  font-family: "JetBrains Mono", monospace;
+  line-height: 2;
+  opacity: 0.8;
+}
+.big-issue-card .bottom-meta {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(248, 243, 231, 0.2);
+  opacity: 0.7;
+}
 
-  /* Roadmap timeline */
-  .roadmap-section { background: var(--paper); padding: 6rem 0; border-top: 1px solid var(--line); }
-  .roadmap {
-    position: relative;
-    margin-top: 4rem;
-  }
-  .roadmap::before {
-    content: '';
-    position: absolute;
-    left: 30px; top: 20px; bottom: 20px;
-    width: 2px; background: var(--ink);
-  }
-  .roadmap-item {
-    position: relative;
-    padding: 1.5rem 0 1.5rem 90px;
-    display: grid; grid-template-columns: 1fr auto; gap: 1rem;
-    align-items: start;
-  }
-  .roadmap-item::before {
-    content: '';
-    position: absolute;
-    left: 22px; top: 28px;
-    width: 18px; height: 18px;
-    background: var(--cream);
-    border: 3px solid var(--coral);
-    border-radius: 50%;
-  }
-  .roadmap-item.done::before { background: var(--coral); }
-  .roadmap-item.highlight::before { background: var(--butter); border-color: var(--ink); transform: scale(1.2); }
-  .roadmap-date {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem; letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--coral);
-    margin-bottom: 0.3rem;
-  }
-  .roadmap-item h4 {
-    font-family: 'Fraunces', serif;
-    font-size: 1.3rem; font-weight: 500;
-    letter-spacing: -0.01em;
-  }
-  .roadmap-item p {
-    font-size: 0.95rem; color: var(--ink-soft);
-    line-height: 1.5;
-    margin-top: 0.3rem;
-  }
-  .roadmap-tag {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem; letter-spacing: 0.1em;
-    padding: 0.3rem 0.8rem;
-    background: var(--butter); border-radius: 999px;
-    white-space: nowrap;
-  }
+/* Roadmap timeline */
+.roadmap-section {
+  background: var(--paper);
+  padding: 6rem 0;
+  border-top: 1px solid var(--line);
+}
+.roadmap {
+  position: relative;
+  margin-top: 4rem;
+}
+.roadmap::before {
+  content: "";
+  position: absolute;
+  left: 30px;
+  top: 20px;
+  bottom: 20px;
+  width: 2px;
+  background: var(--ink);
+}
+.roadmap-item {
+  position: relative;
+  padding: 1.5rem 0 1.5rem 90px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: start;
+}
+.roadmap-item::before {
+  content: "";
+  position: absolute;
+  left: 19px;
+  top: 28px;
+  width: 18px;
+  height: 18px;
+  background: var(--cream);
+  border: 3px solid var(--coral);
+  border-radius: 50%;
+}
+.roadmap-item.done::before {
+  background: var(--coral);
+}
+.roadmap-item.highlight::before {
+  background: var(--butter);
+  border-color: var(--ink);
+  transform: scale(1.2);
+}
+.roadmap-date {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 0.3rem;
+}
+.roadmap-item h4 {
+  font-family: "Fraunces", serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.roadmap-item p {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  margin-top: 0.3rem;
+}
+.roadmap-tag {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  padding: 0.3rem 0.8rem;
+  background: var(--butter);
+  border-radius: 999px;
+  white-space: nowrap;
+}
 
-  /* Submission section */
+/* Submission section */
+.submission-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+@media (min-width: 900px) {
   .submission-grid {
-    display: grid; grid-template-columns: 1fr;
-    gap: 3rem;
+    grid-template-columns: 1fr 1fr;
   }
-  @media (min-width: 900px) { .submission-grid { grid-template-columns: 1fr 1fr; } }
-  .submission-col h3 {
-    font-family: 'Fraunces', serif;
-    font-size: 2rem; line-height: 1.05;
-    font-weight: 500; letter-spacing: -0.02em;
-    margin-bottom: 1.5rem;
-  }
-  .submission-col h3 em { color: var(--coral); font-style: italic; }
-  .submission-col p { font-size: 1.05rem; line-height: 1.6; margin-bottom: 1rem; }
-  .submission-types {
-    background: var(--paper);
-    padding: 2.5rem;
-    border-radius: 4px;
-    border: 1px solid var(--line);
-  }
-  .submission-types li {
-    list-style: none;
-    padding: 1.25rem 0;
-    border-bottom: 1px solid var(--line);
-  }
-  .submission-types li:last-child { border-bottom: none; }
-  .submission-types .type-name {
-    font-family: 'Fraunces', serif;
-    font-size: 1.2rem; font-weight: 500;
-    letter-spacing: -0.01em;
-  }
-  .submission-types .type-spec {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem; letter-spacing: 0.08em;
-    color: var(--coral);
-    margin-top: 0.3rem;
-  }
-  .submission-types .type-desc {
-    font-size: 0.9rem; color: var(--ink-soft);
-    margin-top: 0.4rem; line-height: 1.5;
-  }
+}
+.submission-col h3 {
+  font-family: "Fraunces", serif;
+  font-size: 2rem;
+  line-height: 1.05;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+.submission-col h3 em {
+  color: var(--coral);
+  font-style: italic;
+}
+.submission-col p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.submission-types {
+  background: var(--paper);
+  padding: 2.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--line);
+}
+.submission-types li {
+  list-style: none;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.submission-types li:last-child {
+  border-bottom: none;
+}
+.submission-types .type-name {
+  font-family: "Fraunces", serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.submission-types .type-spec {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--coral);
+  margin-top: 0.3rem;
+}
+.submission-types .type-desc {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin-top: 0.4rem;
+  line-height: 1.5;
+}

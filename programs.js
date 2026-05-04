@@ -1,11 +1,3 @@
-/* ============================================================
-   programs.js — AmpliSkill Programs Page
-   Improvements:
-   - Strict exact-match category filtering (no partial .includes())
-   - Filter chip state management
-   - Tab switching with hash support
-   ============================================================ */
-
 // ── Tab Switching ──────────────────────────────────────────────
 document.querySelectorAll(".tab-btn").forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -20,11 +12,30 @@ document.querySelectorAll(".tab-btn").forEach((btn) => {
   });
 });
 
-// Handle #customized deep-link
+// Handle #customized deep-link (EXISTING — DO NOT REMOVE)
 if (window.location.hash === "#customized") {
   const customBtn = document.querySelector('[data-tab="customized"]');
   if (customBtn) customBtn.click();
 }
+
+// ================== NEW FIX (HASH CHANGE HANDLER) ==================
+window.addEventListener("hashchange", () => {
+  const id = window.location.hash.replace("#", "");
+  const tabBtn = document.querySelector(`[data-tab="${id}"]`);
+
+  if (tabBtn) {
+    tabBtn.click();
+
+    // smooth scroll (optional but recommended)
+    setTimeout(() => {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  }
+});
+// ==================================================================
 
 // ── Filter Chips (Strict Exact-Match) ─────────────────────────
 const filterChips = document.querySelectorAll(".filter-chip");
@@ -32,12 +43,6 @@ const cards = document.querySelectorAll("#cards-grid .card");
 const noResults = document.getElementById("no-results");
 const cardsGrid = document.getElementById("cards-grid");
 
-/**
- * Normalise a filter chip label into a lookup keyword.
- * "All programs" → "all"
- * "Non-residential" → "non-residential"
- * Anything else → lowercase, trimmed
- */
 function chipToKeyword(label) {
   const map = {
     "all programs": "all",
@@ -51,23 +56,15 @@ function chipToKeyword(label) {
   return map[label.trim().toLowerCase()] ?? label.trim().toLowerCase();
 }
 
-/**
- * Strict match: split data-category by spaces, compare each token exactly.
- * "leadership residential".split(' ') → ['leadership', 'residential']
- * keyword 'residential' → match ✓
- * keyword 'leadership' on a card tagged 'leadership residential' → match ✓
- * keyword 'residential' on a card tagged 'non-residential' → NO match ✓
- */
 function cardMatchesKeyword(card, keyword) {
   if (keyword === "all") return true;
   const raw = (card.getAttribute("data-category") || "").toLowerCase();
-  const tokens = raw.split(/\s+/).filter(Boolean); // exact token list
+  const tokens = raw.split(/\s+/).filter(Boolean);
   return tokens.includes(keyword);
 }
 
 filterChips.forEach((chip) => {
   chip.addEventListener("click", () => {
-    // Update active chip state
     filterChips.forEach((c) => c.classList.remove("active"));
     chip.classList.add("active");
 
@@ -80,7 +77,6 @@ filterChips.forEach((chip) => {
       if (show) visibleCount++;
     });
 
-    // Toggle empty state
     if (visibleCount === 0) {
       cardsGrid.style.display = "none";
       noResults.style.display = "flex";
@@ -91,7 +87,7 @@ filterChips.forEach((chip) => {
   });
 });
 
-// ── "View all programs" button inside no-results ───────────────
+// ── Reset Filter Button ───────────────────────────────────────
 const resetBtn = document.getElementById("reset-filter-btn");
 if (resetBtn) {
   resetBtn.addEventListener("click", () => {
