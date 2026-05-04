@@ -1865,3 +1865,15 @@ footer ul li:hover {
 .toast i {
   color: var(--coral);
 }
+
+.mobile-toggle .fa-xmark {
+  display: none;
+}
+
+.mobile-toggle.is-open .fa-bars {
+  display: none;
+}
+
+.mobile-toggle.is-open .fa-xmark {
+  display: inline-block;
+}
