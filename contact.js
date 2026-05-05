@@ -21,12 +21,15 @@
     const overlay = $("successPopupOverlay");
     if (!overlay) return;
     overlay.classList.add("show");
-    overlay.addEventListener("click", function handler(e) {
-      if (e.target === overlay) {
-        overlay.classList.remove("show");
-        overlay.removeEventListener("click", handler);
-      }
-    });
+    overlay.addEventListener(
+      "click",
+      function (e) {
+        if (e.target === overlay) {
+          overlay.classList.remove("show");
+        }
+      },
+      { once: true },
+    );
   }
 
   function attachLiveValidation() {
@@ -45,8 +48,10 @@
           clearError("field-name", "err-name");
         }
       });
-      nameInput.addEventListener("keypress", (e) => {
-        if (!/[A-Za-z\s\-']/.test(e.key)) e.preventDefault();
+      nameInput.addEventListener("keydown", (e) => {
+        if (e.key.length === 1 && !/[A-Za-z\s\-']/.test(e.key)) {
+          e.preventDefault();
+        }
       });
     }
 
@@ -73,17 +78,21 @@
         const v = orgInput.value.trim();
         if (!v) return clearError("field-org", "err-org");
         if (!ALPHA_RE.test(v)) {
+          // FIX: error message now matches what ALPHA_RE actually allows
           setError(
             "field-org",
             "err-org",
-            "Only letters and spaces are allowed.",
+            "Only letters, spaces, hyphens and apostrophes are allowed.",
           );
         } else {
           clearError("field-org", "err-org");
         }
       });
-      orgInput.addEventListener("keypress", (e) => {
-        if (!/[A-Za-z\s\-']/.test(e.key)) e.preventDefault();
+      // FIX: replaced deprecated keypress with keydown
+      orgInput.addEventListener("keydown", (e) => {
+        if (e.key.length === 1 && !/[A-Za-z\s\-']/.test(e.key)) {
+          e.preventDefault();
+        }
       });
     }
 
@@ -93,24 +102,33 @@
         const v = roleInput.value.trim();
         if (!v) return clearError("field-role", "err-role");
         if (!ALPHA_RE.test(v)) {
+          // FIX: error message now matches what ALPHA_RE actually allows
           setError(
             "field-role",
             "err-role",
-            "Only letters and spaces are allowed.",
+            "Only letters, spaces, hyphens and apostrophes are allowed.",
           );
         } else {
           clearError("field-role", "err-role");
         }
       });
-      roleInput.addEventListener("keypress", (e) => {
-        if (!/[A-Za-z\s\-']/.test(e.key)) e.preventDefault();
+      // FIX: replaced deprecated keypress with keydown
+      roleInput.addEventListener("keydown", (e) => {
+        if (e.key.length === 1 && !/[A-Za-z\s\-']/.test(e.key)) {
+          e.preventDefault();
+        }
       });
     }
 
     const topicInput = $("inp-topic");
     if (topicInput) {
       topicInput.addEventListener("change", () => {
-        if (topicInput.value) clearError("field-topic", "err-topic");
+        // FIX: added else branch so error re-appears if user re-selects placeholder
+        if (topicInput.value) {
+          clearError("field-topic", "err-topic");
+        } else {
+          setError("field-topic", "err-topic", "Please select a topic.");
+        }
       });
     }
 
@@ -135,7 +153,9 @@
   function validateAll() {
     let valid = true;
 
-    const name = $("inp-name") ? $("inp-name").value.trim() : "";
+    // FIX: store element in variable to avoid double DOM lookup per field
+    const nameEl = $("inp-name");
+    const name = nameEl ? nameEl.value.trim() : "";
     if (!name) {
       setError("field-name", "err-name", "Full name is required.");
       valid = false;
@@ -150,7 +170,8 @@
       clearError("field-name", "err-name");
     }
 
-    const email = $("inp-email") ? $("inp-email").value.trim() : "";
+    const emailEl = $("inp-email");
+    const email = emailEl ? emailEl.value.trim() : "";
     if (!email) {
       setError("field-email", "err-email", "Work email is required.");
       valid = false;
@@ -165,27 +186,36 @@
       clearError("field-email", "err-email");
     }
 
-    const org = $("inp-org") ? $("inp-org").value.trim() : "";
+    const orgEl = $("inp-org");
+    const org = orgEl ? orgEl.value.trim() : "";
     if (org && !ALPHA_RE.test(org)) {
-      setError("field-org", "err-org", "Only letters and spaces are allowed.");
+      // FIX: error message now matches what ALPHA_RE actually allows
+      setError(
+        "field-org",
+        "err-org",
+        "Only letters, spaces, hyphens and apostrophes are allowed.",
+      );
       valid = false;
     } else {
       clearError("field-org", "err-org");
     }
 
-    const role = $("inp-role") ? $("inp-role").value.trim() : "";
+    const roleEl = $("inp-role");
+    const role = roleEl ? roleEl.value.trim() : "";
     if (role && !ALPHA_RE.test(role)) {
+      // FIX: error message now matches what ALPHA_RE actually allows
       setError(
         "field-role",
         "err-role",
-        "Only letters and spaces are allowed.",
+        "Only letters, spaces, hyphens and apostrophes are allowed.",
       );
       valid = false;
     } else {
       clearError("field-role", "err-role");
     }
 
-    const topic = $("inp-topic") ? $("inp-topic").value : "";
+    const topicEl = $("inp-topic");
+    const topic = topicEl ? topicEl.value : "";
     if (!topic) {
       setError("field-topic", "err-topic", "Please select a topic.");
       valid = false;
@@ -193,7 +223,8 @@
       clearError("field-topic", "err-topic");
     }
 
-    const msg = $("inp-message") ? $("inp-message").value.trim() : "";
+    const msgEl = $("inp-message");
+    const msg = msgEl ? msgEl.value.trim() : "";
     if (!msg) {
       setError(
         "field-message",
