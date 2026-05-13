@@ -302,92 +302,69 @@
   height: 40px;
 }
 
-/* ── Vertical H3 Carousel (feature-program only) ─────────────────────── */
 .h3-carousel-wrap {
   overflow: hidden;
-  /* match the natural height of one h3 line — two lines at ~1.1 line-height */
-  height: calc(2 * 1.1em * 2.4rem + 0.5rem); /* fallback */
-  height: 5.5rem;
   position: relative;
+  height: var(--slide-h, 6rem);
 }
 
 .h3-carousel-track {
   display: flex;
   flex-direction: column;
-  /* 6 slides × slide-height; animation scrolls exactly 5 slide-heights */
-  animation: h3-slide-up 12.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   will-change: transform;
 }
 
 .h3-carousel-track h3 {
-  /* preserve every existing style; just make each slide a fixed-height slot */
-  flex: 0 0 5.5rem;
-  height: 5.5rem;
   margin: 0;
   display: flex;
   align-items: flex-start;
-  /* inherit all typography from the parent feature-program h3 rules in styles.css */
+  height: var(--slide-h, 6rem);
+  flex: 0 0 var(--slide-h, 6rem);
+  box-sizing: border-box;
+  padding-bottom: 0.75rem;
 }
 
-@keyframes h3-slide-up {
-  /* pause on each slide for ~2 s, then slide in 0.5 s */
-  0% {
-    transform: translateY(0);
-  }
-  /* slide 1 hold */
-  14% {
-    transform: translateY(0);
-  }
-  /* slide to 2 */
-  18% {
-    transform: translateY(-16.666%);
-  } /* -1/6 of track */
-  /* slide 2 hold */
-  32% {
-    transform: translateY(-16.666%);
-  }
-  /* slide to 3 */
-  36% {
-    transform: translateY(-33.333%);
-  }
-  /* slide 3 hold */
-  50% {
-    transform: translateY(-33.333%);
-  }
-  /* slide to 4 */
-  54% {
-    transform: translateY(-50%);
-  }
-  /* slide 4 hold */
-  68% {
-    transform: translateY(-50%);
-  }
-  /* slide to 5 */
-  72% {
-    transform: translateY(-66.666%);
-  }
-  /* slide 5 hold */
-  86% {
-    transform: translateY(-66.666%);
-  }
-  /* slide to duplicate-1 (seamless reset) */
-  90% {
-    transform: translateY(-83.333%);
-  }
-  /* hold duplicate, then snap back instantly */
-  99.99% {
-    transform: translateY(-83.333%);
-  }
-  100% {
-    transform: translateY(0);
-  }
+.meta-row-carousel-wrap {
+  overflow: hidden;
+  position: relative;
+  height: var(--meta-slide-h, 3.5rem);
+  margin: 1.25rem 0;
 }
 
-/* Responsive: on small screens the h3 may wrap more — relax the fixed height */
-@media (max-width: 600px) {
-  .h3-carousel-wrap,
+.meta-row-carousel-track {
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+}
+
+.meta-row-carousel-track .meta-row {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex: 0 0 var(--meta-slide-h, 3.5rem);
+  height: var(--meta-slide-h, 3.5rem);
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.meta-row-carousel-track .meta-row > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+@media (max-width: 425px) {
+  .h3-carousel-wrap {
+    overflow: hidden;
+  }
+
   .h3-carousel-track h3 {
-    height: 6.5rem;
-    flex-basis: 6.5rem;
+    font-size: clamp(1rem, 4.5vw, 1.25rem);
+    line-height: 1.35;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    padding-right: 0.5rem;
+    box-sizing: border-box;
   }
 }

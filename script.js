@@ -1,7 +1,6 @@
 const url = window.location.href;
 const title = document.title;
 
-// TOAST
 function showToast(message) {
   let toast = document.createElement("div");
   toast.className = "toast";
@@ -16,25 +15,139 @@ function showToast(message) {
   }, 2000);
 }
 
+function initVerticalCarousel(opts) {
+  const {
+    wrapSel,
+    trackSel,
+    slideSel,
+    wrapProp,
+    slideProp,
+    animName,
+    duration,
+    easing,
+    paddingPx,
+  } = opts;
+
+  const wrap = document.querySelector(wrapSel);
+  const track = document.querySelector(trackSel);
+  if (!wrap || !track) return;
+
+  const slides = Array.from(track.querySelectorAll(slideSel));
+  const total = slides.length;
+  const real = total - 1;
+
+  track.style.animation = "none";
+  track.style.transform = "none";
+  slides.forEach((s) => {
+    s.style.height = "auto";
+    s.style.flexBasis = "auto";
+  });
+
+  void track.offsetHeight;
+
+  const heights = slides.map((s) => s.getBoundingClientRect().height);
+  const maxH = Math.max(...heights) + (paddingPx || 0);
+  const slotPx = Math.ceil(maxH);
+
+  wrap.style.setProperty(wrapProp, slotPx + "px");
+  wrap.style.height = slotPx + "px";
+
+  slides.forEach((s) => {
+    s.style.height = slotPx + "px";
+    s.style.flexBasis = slotPx + "px";
+    s.style.setProperty(slideProp, slotPx + "px");
+  });
+
+  const holdPct = 14;
+  const transPct = 4;
+  const perSlide = holdPct + transPct;
+
+  let kf = `@keyframes ${animName} {\n`;
+  kf += `  0% { transform: translateY(0px); }\n`;
+
+  for (let i = 0; i < real; i++) {
+    const holdStart = i * perSlide;
+    const holdEnd = holdStart + holdPct;
+    const transEnd = holdEnd + transPct;
+    const yStart = -(i * slotPx);
+    const yEnd = -((i + 1) * slotPx);
+
+    kf += `  ${holdStart.toFixed(3)}% { transform: translateY(${yStart}px); }\n`;
+    kf += `  ${holdEnd.toFixed(3)}%   { transform: translateY(${yStart}px); }\n`;
+    kf += `  ${transEnd.toFixed(3)}%  { transform: translateY(${yEnd}px); }\n`;
+  }
+
+  const snapAt = real * perSlide;
+  const finalY = -(real * slotPx);
+  kf += `  ${snapAt.toFixed(3)}%   { transform: translateY(${finalY}px); }\n`;
+  kf += `  99.99%               { transform: translateY(${finalY}px); }\n`;
+  kf += `  100%                 { transform: translateY(0px); }\n`;
+  kf += `}\n`;
+
+  const styleId = "carousel-keyframes-" + animName;
+  let styleEl = document.getElementById(styleId);
+  if (!styleEl) {
+    styleEl = document.createElement("style");
+    styleEl.id = styleId;
+    document.head.appendChild(styleEl);
+  }
+  styleEl.textContent = kf;
+
+  track.style.animation = `${animName} ${duration} ${easing} infinite`;
+}
+
+function initAllCarousels() {
+  initVerticalCarousel({
+    wrapSel: ".h3-carousel-wrap",
+    trackSel: ".h3-carousel-track",
+    slideSel: "h3",
+    wrapProp: "--slide-h",
+    slideProp: "--slide-h",
+    animName: "h3CarouselSlideUp",
+    duration: "12.5s",
+    easing: "cubic-bezier(0.4,0,0.2,1)",
+    paddingPx: 12,
+  });
+
+  initVerticalCarousel({
+    wrapSel: ".meta-row-carousel-wrap",
+    trackSel: ".meta-row-carousel-track",
+    slideSel: ".meta-row",
+    wrapProp: "--meta-slide-h",
+    slideProp: "--meta-slide-h",
+    animName: "metaRowSlideUp",
+    duration: "12.5s",
+    easing: "cubic-bezier(0.4,0,0.2,1)",
+    paddingPx: 8,
+  });
+}
+
+let _carouselResizeTimer;
+window.addEventListener("resize", () => {
+  clearTimeout(_carouselResizeTimer);
+  _carouselResizeTimer = setTimeout(initAllCarousels, 220);
+});
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Mobile nav toggle (global — handles bars ↔ X icon on all pages)
+  initAllCarousels();
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(initAllCarousels);
+  }
+
+  if (window.innerWidth <= 425) {
+    setTimeout(initAllCarousels, 100);
+  }
   const toggleBtn = document.querySelector(".mobile-toggle");
   const mobileMenu = document.querySelector(".mobile-menu");
   if (toggleBtn && mobileMenu) {
     const barsIcon = toggleBtn.querySelector(".fa-bars");
     const xmarkIcon = toggleBtn.querySelector(".fa-xmark");
 
-    // FIX: explicitly set initial icon state via JS so behaviour is
-    // independent of CSS load order or CDN (Font Awesome) timing.
-    // This is the root cause of the X showing by default on all pages
-    // except Contact — styles.css never declares display for .fa-bars,
-    // so when Font Awesome CDN loads late the icon states are unpredictable.
     function setIconState(isOpen) {
       if (barsIcon) barsIcon.style.display = isOpen ? "none" : "inline-block";
       if (xmarkIcon) xmarkIcon.style.display = isOpen ? "inline-block" : "none";
     }
 
-    // Set correct default state immediately on page load
     setIconState(false);
 
     toggleBtn.addEventListener("click", () => {
@@ -44,7 +157,6 @@ document.addEventListener("DOMContentLoaded", () => {
       setIconState(isOpen);
     });
 
-    // Close when a nav link inside the menu is clicked
     mobileMenu.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
         mobileMenu.classList.remove("open");
@@ -55,14 +167,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Highlight current page in nav
   const path = window.location.pathname.split("/").pop() || "index.html";
   document.querySelectorAll(".nav-links a, .mobile-menu a").forEach((a) => {
     const href = a.getAttribute("href");
     if (href && href === path) a.classList.add("active");
   });
 
-  // Reveal on scroll
   const reveals = document.querySelectorAll(".reveal");
   if (reveals.length && "IntersectionObserver" in window) {
     const io = new IntersectionObserver(
@@ -81,12 +191,10 @@ document.addEventListener("DOMContentLoaded", () => {
     reveals.forEach((r) => r.classList.add("in"));
   }
 
-  // FAQ accordion
   document.querySelectorAll(".faq-item").forEach((item) => {
     item.addEventListener("click", () => item.classList.toggle("open"));
   });
 
-  // Filter chips (purely visual for demo)
   document.querySelectorAll(".filter-row").forEach((row) => {
     const chips = row.querySelectorAll(".filter-chip");
     chips.forEach((chip) => {
@@ -97,14 +205,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // LINKEDIN
   document.querySelectorAll(".share-linkedin").forEach((btn) => {
     btn.addEventListener("click", () => {
       window.open("https://www.linkedin.com/company/ampliskill/", "_blank");
     });
   });
 
-  // X (TWITTER)
   document.querySelectorAll(".share-x").forEach((btn) => {
     btn.addEventListener("click", () => {
       window.open(
