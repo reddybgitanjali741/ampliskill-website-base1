@@ -542,7 +542,7 @@ section {
 }
 .btn-ghost {
   background: transparent;
-  color: var(--ink);
+  color: white;
   padding: 1rem 1.5rem;
   border: 1.5px solid var(--ink);
   border-radius: 999px;
