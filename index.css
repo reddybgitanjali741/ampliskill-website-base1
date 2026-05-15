@@ -413,3 +413,40 @@
     z-index: 3;
   }
 }
+
+@media (max-width: 768px) {
+  .h3-carousel-wrap {
+    height: 190px !important;
+    overflow: hidden;
+  }
+
+  .h3-carousel-track h3 {
+    height: 190px !important;
+    flex: 0 0 190px !important;
+    font-size: 2rem;
+    line-height: 1.1;
+    display: flex;
+    align-items: flex-start;
+    word-break: break-word;
+  }
+
+  .meta-row-carousel-wrap {
+    height: 80px !important;
+    overflow: hidden;
+  }
+
+  .meta-row-carousel-track .meta-row {
+    height: 80px !important;
+    flex: 0 0 80px !important;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+}
+
+.article-thumb,
+.article-thumb img {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
+}

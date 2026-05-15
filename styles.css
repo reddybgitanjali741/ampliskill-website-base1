@@ -951,37 +951,18 @@ section {
 }
 .article-thumb {
   aspect-ratio: 4/3;
-  background: url(img4.jpeg) center/cover;
   border-radius: 4px;
   margin-bottom: 1.25rem;
-  transition: transform 0.3s;
   position: relative;
   overflow: hidden;
+  background: #ddd;
 }
-.article-thumb.v2 {
-  background: url(img5.jpeg) center/cover;
-}
-.article-thumb.v3 {
-  background: url(img6.jpeg) center/cover;
-}
-.article-thumb.v4 {
-  background: url(img7.jpeg) center/cover;
-}
-.article-thumb.v5 {
-  background: url(img8.jpeg) center/cover;
-}
-.article-thumb.v6 {
-  background: url(img9.jpeg) center/cover;
-}
-.article-thumb::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(
-    circle at 30% 40%,
-    rgba(255, 255, 255, 0.15),
-    transparent 60%
-  );
+
+.article-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .article-tile .date {
   font-family: "JetBrains Mono", monospace;
