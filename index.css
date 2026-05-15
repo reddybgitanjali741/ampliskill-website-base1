@@ -312,6 +312,9 @@
   display: flex;
   flex-direction: column;
   will-change: transform;
+  /* Hidden by default; JS reveals after fonts + layout are ready */
+  visibility: hidden;
+  opacity: 0;
 }
 
 .h3-carousel-track h3 {
@@ -335,6 +338,9 @@
   display: flex;
   flex-direction: column;
   will-change: transform;
+  /* Hidden by default; JS reveals after fonts + layout are ready */
+  visibility: hidden;
+  opacity: 0;
 }
 
 .meta-row-carousel-track .meta-row {

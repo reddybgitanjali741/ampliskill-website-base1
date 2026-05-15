@@ -15,6 +15,25 @@ function showToast(message) {
   }, 2000);
 }
 
+// ─── Carousel ────────────────────────────────────────────────────────────────
+// Hide carousel tracks immediately so they never flash all-items-visible.
+// We do this inline before DOMContentLoaded so it takes effect as soon as the
+// elements are parsed.
+(function hideCarouselsEarly() {
+  // Inject a style tag that hides both tracks until we're ready.
+  const s = document.createElement("style");
+  s.id = "carousel-init-hide";
+  s.textContent = `
+    .h3-carousel-track,
+    .meta-row-carousel-track {
+      visibility: hidden;
+      opacity: 0;
+    }
+  `;
+  // Append to <head> if available, otherwise to <html>
+  (document.head || document.documentElement).appendChild(s);
+})();
+
 function initVerticalCarousel(opts) {
   const {
     wrapSel,
@@ -36,6 +55,7 @@ function initVerticalCarousel(opts) {
   const total = slides.length;
   const real = total - 1;
 
+  // Reset any previous animation so getBoundingClientRect is accurate
   track.style.animation = "none";
   track.style.transform = "none";
   slides.forEach((s) => {
@@ -43,6 +63,7 @@ function initVerticalCarousel(opts) {
     s.style.flexBasis = "auto";
   });
 
+  // Force a reflow so the browser recalculates layout with real font metrics
   void track.offsetHeight;
 
   const heights = slides.map((s) => s.getBoundingClientRect().height);
@@ -122,21 +143,71 @@ function initAllCarousels() {
   });
 }
 
+/**
+ * Reveal the carousel tracks with a short fade-in after dimensions are set.
+ * This prevents the "all items visible" flash on first load.
+ */
+function revealCarousels() {
+  const tracks = document.querySelectorAll(
+    ".h3-carousel-track, .meta-row-carousel-track",
+  );
+  tracks.forEach((t) => {
+    t.style.transition = "opacity 0.25s ease";
+    t.style.visibility = "visible";
+    t.style.opacity = "1";
+  });
+
+  // Remove the early-hide style tag — no longer needed
+  const hideStyle = document.getElementById("carousel-init-hide");
+  if (hideStyle) hideStyle.remove();
+}
+
+/**
+ * Run init + reveal. Accepts an optional extra delay (ms) for fallbacks.
+ */
+function runCarousels(extraDelayMs) {
+  if (extraDelayMs) {
+    setTimeout(() => {
+      initAllCarousels();
+      revealCarousels();
+    }, extraDelayMs);
+  } else {
+    initAllCarousels();
+    revealCarousels();
+  }
+}
+
+// Resize handler — recalculate on viewport change (debounced)
 let _carouselResizeTimer;
 window.addEventListener("resize", () => {
   clearTimeout(_carouselResizeTimer);
-  _carouselResizeTimer = setTimeout(initAllCarousels, 220);
+  _carouselResizeTimer = setTimeout(() => {
+    // Hide briefly, recalculate, then reveal again
+    document
+      .querySelectorAll(".h3-carousel-track, .meta-row-carousel-track")
+      .forEach((t) => {
+        t.style.transition = "none";
+        t.style.opacity = "0";
+        t.style.visibility = "hidden";
+      });
+    setTimeout(() => {
+      initAllCarousels();
+      revealCarousels();
+    }, 50);
+  }, 220);
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  initAllCarousels();
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(initAllCarousels);
-  }
+// ─── Primary initialization sequence ─────────────────────────────────────────
+// Strategy:
+//  1. Wait for DOMContentLoaded so elements exist.
+//  2. Wait for document.fonts.ready so Google Fonts metrics are available.
+//  3. Wait for window load (images etc.) to ensure final layout is stable.
+//  4. Use requestAnimationFrame twice to ensure the browser has painted at
+//     least one frame with correct metrics before we read getBoundingClientRect.
+//  5. On mobile (≤425px), add an extra 150ms buffer for slower render pipelines.
 
-  if (window.innerWidth <= 425) {
-    setTimeout(initAllCarousels, 100);
-  }
+document.addEventListener("DOMContentLoaded", () => {
+  // ── Non-carousel UI setup (runs immediately) ──────────────────────────────
   const toggleBtn = document.querySelector(".mobile-toggle");
   const mobileMenu = document.querySelector(".mobile-menu");
   if (toggleBtn && mobileMenu) {
@@ -232,4 +303,50 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
   });
+
+  // ── Carousel initialization ───────────────────────────────────────────────
+  // We need both fonts AND images to be settled before reading layout metrics.
+  const isMobile = window.innerWidth <= 425;
+
+  /**
+   * After fonts are confirmed ready, wait for the window load event
+   * (images, etc.) then do two rAF ticks so the browser has definitely
+   * painted before we measure heights.
+   */
+  function scheduleCarouselAfterLoad() {
+    function doInit() {
+      // Two rAF ticks: first ensures styles are applied, second ensures paint
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          // Extra buffer on small mobile screens for slower render pipelines
+          const delay = isMobile ? 150 : 0;
+          runCarousels(delay);
+        });
+      });
+    }
+
+    if (document.readyState === "complete") {
+      // window.load already fired (e.g. script is deferred / async)
+      doInit();
+    } else {
+      window.addEventListener("load", doInit, { once: true });
+
+      // Safety net: if load doesn't fire within 4 s (e.g. slow/blocked images)
+      // init anyway so the carousel isn't permanently hidden.
+      setTimeout(() => {
+        // Only run if carousel tracks are still hidden
+        const track = document.querySelector(".h3-carousel-track");
+        if (track && track.style.opacity !== "1") {
+          doInit();
+        }
+      }, 4000);
+    }
+  }
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(scheduleCarouselAfterLoad);
+  } else {
+    // Fonts API not available — fall back to load event only
+    scheduleCarouselAfterLoad();
+  }
 });
