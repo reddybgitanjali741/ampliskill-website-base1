@@ -1,7 +1,3 @@
-/* ============================================================
-   AmpliSkill — Shared Design System
-   ============================================================ */
-
 :root {
   --coral: #f24e1e;
   --coral-deep: #d93810;
@@ -955,7 +951,7 @@ section {
 }
 .article-thumb {
   aspect-ratio: 4/3;
-  background: linear-gradient(135deg, var(--coral), var(--butter));
+  background: url(img4.jpeg) center/cover;
   border-radius: 4px;
   margin-bottom: 1.25rem;
   transition: transform 0.3s;
@@ -963,19 +959,19 @@ section {
   overflow: hidden;
 }
 .article-thumb.v2 {
-  background: linear-gradient(135deg, var(--ink), var(--coral));
+  background: url(img5.jpeg) center/cover;
 }
 .article-thumb.v3 {
-  background: linear-gradient(135deg, var(--teal), var(--butter));
+  background: url(img6.jpeg) center/cover;
 }
 .article-thumb.v4 {
-  background: linear-gradient(135deg, var(--butter), var(--teal));
+  background: url(img7.jpeg) center/cover;
 }
 .article-thumb.v5 {
-  background: linear-gradient(135deg, var(--coral-deep), var(--butter));
+  background: url(img8.jpeg) center/cover;
 }
 .article-thumb.v6 {
-  background: linear-gradient(135deg, var(--ink-soft), var(--teal));
+  background: url(img9.jpeg) center/cover;
 }
 .article-thumb::after {
   content: "";
